@@ -83,7 +83,7 @@
 
                     <li class="mr-1 d-inline-block my-auto" style="position: relative;">
                         <div style="display: flex; align-items: center;">
-                            <a href="your-deposit-link-here"
+                            <a href="{{route('user.deposit.page')}}"
                                 style="background-color: green; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-right: 10px;">
                                 Deposit
                             </a>
@@ -97,42 +97,50 @@
                                 <span style="font-size: 0.8em;">Estimate Account</span>
                             </h6>
                             <span onclick="toggleDropdown()" style="cursor: pointer; margin-left: auto;">
-                                &#9662; <!-- Chevron down icon -->
+                                &#9662;
+                                <!-- Chevron down icon -->
                             </span>
                         </div>
-                        
-                        <div id="account-dropdown" style="display: none; position: absolute; background: white; border: 1px solid #ccc; margin-top: 5px; padding: 20px; z-index: 1000; border-radius: 5px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); width: 350px;">
+
+                        <div id="account-dropdown"
+                            style="display: none; position: absolute; background: white; border: 1px solid #ccc; margin-top: 5px; padding: 20px; z-index: 1000; border-radius: 5px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); width: 350px;">
                             <h6 style="margin: 0; font-size: 1.2em; font-weight: bold;">Account List</h6>
-                            
-                            <div style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
-                                <div onclick="changeAccount('practice', 9893.940)" style="cursor: pointer; flex-grow: 1;">
+
+                            <div
+                                style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+                                <div onclick="changeAccount('practice', 9893.940)"
+                                    style="cursor: pointer; flex-grow: 1;">
                                     <strong>Practice Account</strong><br>
                                     <span style="font-size: 1.2em;">58,958.47 $</span><br>
                                     <span style="font-size: 0.9em; color: gray;">Estimate Balance</span>
                                 </div>
-                                <button onclick="creditPracticeAccount()" style="background-color: green; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-left: 10px;">
+                                <button onclick="creditPracticeAccount()"
+                                    style="background-color: green; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-left: 10px;">
                                     Credit
                                 </button>
                             </div>
-                            
-                            <div style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+
+                            <div
+                                style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
                                 <div onclick="changeAccount('real', 0.00000)" style="cursor: pointer; flex-grow: 1;">
                                     <strong>Real Account</strong><br>
                                     <span style="font-size: 1.2em;">0.00000 $</span><br>
                                     <span style="font-size: 0.9em; color: gray;">Estimate Balance</span>
                                 </div>
-                                <button onclick="depositRealAccount()" style="background-color: blue; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-left: 10px;">
+                                <button onclick="depositRealAccount()"
+                                    style="background-color: blue; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-left: 10px;">
                                     Deposit
                                 </button>
                             </div>
-                            
-                            <div onclick="withdrawAll()" style="cursor: pointer; padding: 10px; text-align: center; border-top: 1px solid #eee; margin-top: 10px;">
+
+                            <div onclick="withdrawAll()"
+                                style="cursor: pointer; padding: 10px; text-align: center; border-top: 1px solid #eee; margin-top: 10px;">
                                 <strong>Withdraw All</strong>
                             </div>
                         </div>
-                        
+
                     </li>
-                    
+
 
                     <li class="mr-1 d-inline-block my-auto d-block d-lg-none">
                         </i>
@@ -192,7 +200,7 @@
                                 <span class="icon-user mr-2 h6 mb-0"></span> Profile</a>
                             <a href="" class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-user mr-2 h6 mb-0"></span> Withdrawal/Wallets</a>
-                                
+
 
                             <div class="dropdown-divider"></div>
                             <div class="dropdown-divider"></div>
@@ -306,8 +314,7 @@
     <!-- USER DISPLAY STARTS-->
 
     <script>
-
-function toggleDropdown() {
+        function toggleDropdown() {
     const dropdown = document.getElementById('account-dropdown');
     dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
 }
@@ -356,9 +363,8 @@ function withdrawAll() {
     </script>
 
 
-<style>
-    #account-dropdown div:hover {
-    background-color: #f0f0f0;
-}
-
-</style>
+    <style>
+        #account-dropdown div:hover {
+            background-color: #f0f0f0;
+        }
+    </style>

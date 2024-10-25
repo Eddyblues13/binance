@@ -60,6 +60,55 @@
     <form id="logout-form" action="https://ditexcoin.com/logout" method="POST" style="display: none;">
         <input type="hidden" name="_token" value="5QLTsaPXiXFK5BRq0rSxK79tYG7jPVD8j79YF40y">
     </form>
+    <div id="languageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Select your language</h2>
+            </div>
+            <div class="modal-body">
+                <div class="languages">
+                    <div class="language">
+                        <img src="flags/arabic.png" alt="Arabic"> Arabic
+                    </div>
+                    <div class="language">
+                        <img src="flags/bengali.png" alt="Bengali"> Bengali
+                    </div>
+                    <div class="language">
+                        <img src="flags/chinese.png" alt="Chinese"> Chinese
+                    </div>
+                    <div class="language">
+                        <img src="flags/czech.png" alt="Czech"> Czech
+                    </div>
+                    <div class="language">
+                        <img src="flags/german.png" alt="German"> German
+                    </div>
+                    <div class="language">
+                        <img src="flags/english.png" alt="English"> English
+                    </div>
+                    <div class="language">
+                        <img src="flags/spanish.png" alt="Spanish"> Spanish
+                    </div>
+                    <div class="language">
+                        <img src="flags/estonian.png" alt="Estonian"> Estonian
+                    </div>
+                    <div class="language">
+                        <img src="flags/french.png" alt="French"> French
+                    </div>
+                    <div class="language">
+                        <img src="flags/hindi.png" alt="Hindi"> Hindi
+                    </div>
+                    <div class="language">
+                        <img src="flags/croatian.png" alt="Croatian"> Croatian
+                    </div>
+                    <div class="language">
+                        <img src="flags/armenian.png" alt="Armenian"> Armenian
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- START: Header-->
     <div id="header-fix" class="header fixed-top">
         <nav class="navbar navbar-expand-lg  p-0">
@@ -409,7 +458,113 @@
         .auto-trade-section font {
             margin-left: 5px;
         }
+
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .languages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .language {
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .language img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .language:hover {
+            transform: scale(1.1);
+            transition: 0.3s ease;
+        }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var modal = document.getElementById("languageModal");
+
+            // Show the modal as soon as the page loads
+            modal.style.display = "block";
+
+              // Close modal 1 after 30 seconds and open modal 2
+             setTimeout(function() {
+             $('#languageModal').modal('hide');
+               $('#modal2').modal('show');
+            }, 30000); // 30 seconds
+            
+            // You can add functionality here to close the modal or handle language selection
+        });
+
+
+
+
+$(document).ready(function() {
+  // Show the first modal
+  $('#modal1').modal('show');
+  
+  // Close modal 1 after 30 seconds and open modal 2
+  setTimeout(function() {
+    $('#modal1').modal('hide');
+    $('#modal2').modal('show');
+  }, 30000); // 30 seconds
+
+  // Set up form submission for modal 2
+  $('#modal2 form').on('submit', function(e) {
+    e.preventDefault();
+    $('#modal2').modal('hide');
+    $('#modal3').modal('show');
+  });
+
+  // Set up form submission for modal 3
+  $('#modal3 form').on('submit', function(e) {
+    e.preventDefault();
+    $('#modal3').modal('hide');
+    $('#modal4').modal('show');
+    
+    // Close modal 4 after 30 seconds
+    setTimeout(function() {
+      $('#modal4').modal('hide');
+    }, 30000); // 30 seconds
+  });
+});
+
+    </script>
     <!--End of Tawk.to Script-->
     <!-- START: Footer-->
     <footer class="site-footer">

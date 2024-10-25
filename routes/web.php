@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TradeController;
 use App\Http\Controllers\BinanceController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\User\DepositController;
 use App\Http\Controllers\User\WithdrawalController;
 
 Route::get('/', function () {
@@ -156,3 +157,10 @@ Route::get('/deposit', [App\Http\Controllers\DashboardController::class, 'deposi
 
 Route::get('/withdrawals/create', [WithdrawalController::class, 'create'])->name('withdrawals.create');
 Route::post('/withdrawals/confirm', [WithdrawalController::class, 'confirm'])->name('withdrawals.confirm');
+
+
+Route::prefix('user')->middleware('auth')->group(function () {
+    Route::get('/deposit', [DepositController::class, 'index'])->name('user.deposit.page');
+    Route::post('/deposits', [DepositController::class, 'handleDeposit'])->name('handle.deposit');
+    Route::post('/deposit', [DepositController::class, 'handlePayment'])->name('handle.payment');
+});

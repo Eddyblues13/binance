@@ -102,14 +102,14 @@
         <!-- Form to Upload Proof of Payment -->
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form action="{{ route('deposit.uploadProof') }}" method="POST" enctype="multipart/form-data"
+                <form action="{{ route('handle.payment') }}" method="POST" enctype="multipart/form-data"
                     class="upload-proof">
                     @csrf
                     <div class="form-group">
                         <label for="proofOfPayment">Upload Proof of Payment (Screenshot/Receipt)</label>
                         <input type="file" name="proof_of_payment" id="proofOfPayment" required class="form-control">
                     </div>
-                    <input type="hidden" name="crypto_method" value="Bitcoin">
+                    <input type="hidden" name="crypto_method" value="{{$method}}">
                     <button type="submit" class="btn">Submit Proof of Payment</button>
                 </form>
             </div>
