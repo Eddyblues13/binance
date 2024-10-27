@@ -36,7 +36,7 @@
                                                                 <img class="img-fluid rounded-circle border border-light shadow-sm" src="/profilep.png" width="150" alt="User profile picture" id="profile-picture-preview">
                                                                 <div class="upload-text">Click to upload</div>
                                                             </label>
-                                                            <input type="file" id="profile-picture" accept="image/*" class="d-none" onchange="previewImage(event)">
+                                                            <input type="file" name="" id="profile-picture" accept="image/*" class="d-none" onchange="previewImage(event)">
                                                         </div>
                                     
                                                         <!-- Profile Details Section -->
@@ -47,43 +47,54 @@
                                                             <div class="row mb-3">
                                                                 <div class="col-md-6">
                                                                     <strong class="text-secondary">Name:</strong>
-                                                                    <span class="ml-2">Blues m Wayne</span>
+                                                                    <span class="ml-2">{{Auth::user()->name}}</span>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <strong class="text-secondary">Email:</strong>
-                                                                    <span class="ml-2">bluesway@example.com</span>
+                                                                    <span class="ml-2">{{Auth::user()->email}}</span>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-6">
                                                                     <strong class="text-secondary">Phone Number:</strong>
-                                                                    <span class="ml-2">+2347889876</span>
+                                                                    <span class="ml-2">{{Auth::user()->phone}}</span>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <strong class="text-secondary">Address:</strong>
-                                                                    <span class="ml-2">123 Street, USA</span>
+                                                                    <span class="ml-2">{{Auth::user()->address}}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                    
+                                                        @if (session('status'))
+                                                        <div class="alert alert-success" role="alert">
+                                                            {{ session('status') }}
+                                                        </div>
+                                                        @endif
+                                                        @if($message = Session::get('success'))
+                                                        <div class="alert alert-success">
+                                                            <p>{{$message}}</p>
+                                                        </div>
+                                                        @endif
                                                         <!-- Editable Inputs Section -->
-                                                        <form>
+                                                        <form action="{{url('/profile-update')}}" method="POST">
+                                                            @csrf
                                                             <div class="form-group">
                                                                 <label for="name" class="font-weight-bold text-secondary">Edit Name</label>
-                                                                <input type="text" name="name" class="form-control" id="name" placeholder="Enter name" value="Blues m Wayne">
+                                                                <input type="text" name="name" class="form-control" id="name" placeholder="Enter name" value="{{Auth::user()->name}}">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="email" class="font-weight-bold text-secondary">Edit Email</label>
-                                                                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email" value="bluesway@example.com">
+                                                                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email" value="{{Auth::user()->email}}">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="phone" class="font-weight-bold text-secondary">Edit Phone Number</label>
-                                                                <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter phone number" value="+2347889876">
+                                                                <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter phone number" value="{{Auth::user()->phone}}">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="address" class="font-weight-bold text-secondary">Edit Address</label>
-                                                                <input type="text" name="address" class="form-control" id="address" placeholder="Enter address" value="123 Street, USA">
+                                                                <input type="text" name="address" class="form-control" id="address" placeholder="Enter address" value="{{Auth::user()->address}}">
                                                             </div>
+                                                            <button type="submit" class="btn btn-primary btn-block rounded-pill shadow-sm">Update Profile</button>
                                                         </form>
                                     
                                                         <!-- Security Section -->
@@ -100,11 +111,11 @@
                                                         <form>
                                                             <div class="form-group">
                                                                 <label for="current-password" class="font-weight-bold text-secondary">Current Password</label>
-                                                                <input type="password" class="form-control" id="current-password" placeholder="Enter current password">
+                                                                <input type="password" name="old_password" class="form-control" id="current-password" placeholder="Enter current password">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="new-password" class="font-weight-bold text-secondary">New Password</label>
-                                                                <input type="password" class="form-control" id="new-password" placeholder="Enter new password">
+                                                                <input type="password" name="new_password" class="form-control" id="new-password" placeholder="Enter new password">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="confirm-password" class="font-weight-bold text-secondary">Confirm New Password</label>

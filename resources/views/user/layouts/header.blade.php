@@ -87,10 +87,10 @@
                                 style="background-color: green; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-right: 10px;">
                                 Deposit
                             </a>
-                            {{-- <a href="your-withdraw-link-here"
+                            <a href="{{route('user.withdrawals.create')}}"
                                 style="background-color: red; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-right: 10px;">
                                 Withdraw
-                            </a> --}}
+                            </a>
                             <h6 style="margin: 0; flex-grow: 1;">
                                 <span id="account-type">PRACTICE ACCOUNT</span><br>
                                 <span id="account-balance" style="font-size: 1.2em;">9,893.940</span><br>
@@ -196,7 +196,7 @@
                         </a>
 
                         <div class="dropdown-menu  dropdown-menu-right p-0">
-                            <a href="" class="dropdown-item px-2 align-self-center d-flex">
+                            <a href="{{url('profile')}}" class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-user mr-2 h6 mb-0"></span> Profile</a>
                             <a href="" class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-user mr-2 h6 mb-0"></span> Withdrawal/Wallets</a>
@@ -245,15 +245,15 @@
 
         <!-- START: Menu-->
         <ul id="side-menu" class="sidebar-menu">
-            <li class="dropdown active"><a href=""><i class="icon-home"></i>BOARD</a>
+            <li class="dropdown active"><a href="{{url('home')}}"><i class="icon-home"></i>BOARD</a>
             </li>
-            <li class="dropdown"><a href=""><i class="icon-wallet"></i>ORDER BOOK</a>
+            <li class="dropdown"><a href="{{url('orderbook')}}"><i class="icon-wallet"></i>ORDER BOOK</a>
             </li>
-            <li class="dropdown"><a href=""><i class="icon-basket"></i>MARKET</a>
+            <li class="dropdown"><a href="{{url('market')}}"><i class="icon-basket"></i>MARKET</a>
             </li>
-            <li class="dropdown"><a href=""><i class="icon-grid"></i>PORTFOLIO</a>
-            <li class="dropdown"><a href="https://ditexcoin.com/dashboard/myplans"><i class="icon-grid"></i>CALC</a>
-            <li class="dropdown"><a href="https://ditexcoin.com/dashboard/tradinghistory"><i
+            <li class="dropdown"><a href="{{url('tradehistory')}}"><i class="icon-grid"></i>PORTFOLIO</a>
+            <li class="dropdown"><a href="{{url('calculator')}}"><i class="icon-grid"></i>CALC</a>
+            <li class="dropdown"><a href="{{url('news')}}"><i
                         class="icon-grid"></i>NEWS</a>
                 <!--- <div> 
                         <ul>
