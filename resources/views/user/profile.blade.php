@@ -70,19 +70,19 @@
                                                         <form>
                                                             <div class="form-group">
                                                                 <label for="name" class="font-weight-bold text-secondary">Edit Name</label>
-                                                                <input type="text" class="form-control" id="name" placeholder="Enter name" value="Blues m Wayne">
+                                                                <input type="text" name="name" class="form-control" id="name" placeholder="Enter name" value="Blues m Wayne">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="email" class="font-weight-bold text-secondary">Edit Email</label>
-                                                                <input type="email" class="form-control" id="email" placeholder="Enter email" value="bluesway@example.com">
+                                                                <input type="email" name="email" class="form-control" id="email" placeholder="Enter email" value="bluesway@example.com">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="phone" class="font-weight-bold text-secondary">Edit Phone Number</label>
-                                                                <input type="text" class="form-control" id="phone" placeholder="Enter phone number" value="+2347889876">
+                                                                <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter phone number" value="+2347889876">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="address" class="font-weight-bold text-secondary">Edit Address</label>
-                                                                <input type="text" class="form-control" id="address" placeholder="Enter address" value="123 Street, USA">
+                                                                <input type="text" name="address" class="form-control" id="address" placeholder="Enter address" value="123 Street, USA">
                                                             </div>
                                                         </form>
                                     
