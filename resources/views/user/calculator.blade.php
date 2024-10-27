@@ -7,59 +7,149 @@
                 <div class="col-12 col-lg-12 col-xl-12 mt-3">
            
 
-                    <div class="converter-container">
-                        <h3>Converter</h3>
-                        
-                        <div class="converter">
-                            <!-- Amount input -->
-                            <label for="amount">Amount:</label>
-                            <input type="number" id="amount" placeholder="Enter amount" step="0.01" />
-                    
-                            <!-- From currency -->
-                            <label for="from-currency">From Currency:</label>
-                            <select id="from-currency">
-                                <!-- Crypto Currencies -->
-                                <option value="bitcoin">Bitcoin (BTC)</option>
-                                <option value="ethereum">Ethereum (ETH)</option>
-                                <option value="litecoin">Litecoin (LTC)</option>
-                                <option value="ripple">Ripple (XRP)</option>
-                                <option value="cardano">Cardano (ADA)</option>
-                                <!-- Fiat Currencies -->
-                                <option value="usd">US Dollar (USD)</option>
-                                <option value="eur">Euro (EUR)</option>
-                                <option value="gbp">British Pound (GBP)</option>
-                                <option value="jpy">Japanese Yen (JPY)</option>
-                                <option value="cad">Canadian Dollar (CAD)</option>
-                                <option value="aud">Australian Dollar (AUD)</option>
-                            </select>
-                    
-                            <!-- To currency -->
-                            <label for="to-currency">To Currency:</label>
-                            <select id="to-currency">
-                                <!-- Crypto Currencies -->
-                                <option value="bitcoin">Bitcoin (BTC)</option>
-                                <option value="ethereum">Ethereum (ETH)</option>
-                                <option value="litecoin">Litecoin (LTC)</option>
-                                <option value="ripple">Ripple (XRP)</option>
-                                <option value="cardano">Cardano (ADA)</option>
-                                <!-- Fiat Currencies -->
-                                <option value="usd">US Dollar (USD)</option>
-                                <option value="eur">Euro (EUR)</option>
-                                <option value="gbp">British Pound (GBP)</option>
-                                <option value="jpy">Japanese Yen (JPY)</option>
-                                <option value="cad">Canadian Dollar (CAD)</option>
-                                <option value="aud">Australian Dollar (AUD)</option>
-                            </select>
-                    
-                            <!-- Exchange rate display -->
-                            <div id="exchange-rate"></div>
-                    
-                            <!-- Convert button -->
-                            <button onclick="convertCurrency()">Convert Now</button>
-                        </div>
-                    
-                        <div id="conversion-result" class="result"></div>
-                    </div>
+                    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <style>
+    
+
+        .converter-container {
+            max-width: 600px;
+            margin: 50px auto;
+            /* background-color: #fff; */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #2a9d8f;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .converter {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+        }
+
+        input[type="number"], select, button {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type="number"]:focus, select:focus, button:hover {
+            border-color: #2a9d8f;
+        }
+
+        button {
+            background-color: #2a9d8f;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #conversion-result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        #conversion-result h4 {
+            color: #2a9d8f;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="converter-container">
+    <h3>Crypto Converter</h3>
+    <div id="conversion-result" class="result"></div>
+    <div class="converter">
+        <label for="crypto-amount">Amount:</label>
+        <input type="number" id="crypto-amount" placeholder="Enter amount" step="0.01" />
+
+        <label for="from-currency">From Currency:</label>
+        <select id="from-currency">
+            <option value="bitcoin">Bitcoin (BTC)</option>
+            <option value="ethereum">Ethereum (ETH)</option>
+            <option value="litecoin">Litecoin (LTC)</option>
+            <option value="ripple">Ripple (XRP)</option>
+            <option value="cardano">Cardano (ADA)</option>
+        </select>
+
+        <button onclick="convertCrypto()">Convert</button>
+    </div>
+
+   
+</div>
+
+<script>
+async function convertCrypto() {
+    const amount = document.getElementById('crypto-amount').value;
+    const fromCurrency = document.getElementById('from-currency').value;
+    const resultDiv = document.getElementById('conversion-result');
+
+    resultDiv.innerHTML = "";  // Clear previous result
+
+    if (!amount || amount <= 0) {
+        resultDiv.innerHTML = "<p style='color: red;'>Please enter a valid amount.</p>";
+        return;
+    }
+
+    try {
+        const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${fromCurrency}&vs_currencies=btc,eth,ltc,xrp,ada`);
+        const data = await response.json();
+
+        if (!data[fromCurrency]) {
+            resultDiv.innerHTML = "<p style='color: red;'>Conversion data is not available. Please try again later.</p>";
+            return;
+        }
+
+        const rates = data[fromCurrency];
+        resultDiv.innerHTML = `<h4>Conversion Results for ${parseFloat(amount).toFixed(2)} ${fromCurrency.toUpperCase()}:</h4>`;
+        for (const [currency, rate] of Object.entries(rates)) {
+            resultDiv.innerHTML += `<p>${parseFloat(amount).toFixed(2)} ${fromCurrency.toUpperCase()} = ${(amount * rate).toFixed(5)} ${currency.toUpperCase()}</p>`;
+        }
+    } catch (error) {
+        resultDiv.innerHTML = "<p style='color: red;'>Error fetching conversion rates. Please try again later.</p>";
+        console.error("Error:", error);
+    }
+}
+</script>
+
+</body>
+</html>
+
                     
 
         <br><br><br>

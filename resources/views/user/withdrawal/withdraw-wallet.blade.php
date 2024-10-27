@@ -64,19 +64,36 @@
                     </div>
                     <div class="modal-body">
                         <form>
-                            <div class="form-group">
-                                <label for="bank-account">Account Number</label>
-                                <input type="text" class="form-control" id="bank-account" placeholder="Enter your account number">
-                            </div>
-                            <div class="form-group">
-                                <label for="bank-name">Bank Name</label>
-                                <input type="text" class="form-control" id="bank-name" placeholder="Enter your bank name">
-                            </div>
-                        </form>
+    <div class="form-group">
+        <label for="account-number">Account Number</label>
+        <input type="text" class="form-control" id="account-number" placeholder="Enter your account number">
+    </div>
+    <div class="form-group">
+        <label for="bank-name">Bank Name</label>
+        <input type="text" class="form-control" id="bank-name" placeholder="Enter your bank name">
+    </div>
+    <div class="form-group">
+        <label for="branch-name">Branch Name</label>
+        <input type="text" class="form-control" id="branch-name" placeholder="Enter your branch name">
+    </div>
+    <div class="form-group">
+        <label for="ifsc-code">IFSC Code</label>
+        <input type="text" class="form-control" id="ifsc-code" placeholder="Enter IFSC code">
+    </div>
+    <div class="form-group">
+        <label for="account-holder-name">Account Holder's Name</label>
+        <input type="text" class="form-control" id="account-holder-name" placeholder="Enter account holder's name">
+    </div>
+    <div class="form-group">
+        <label for="bank-address">Bank Address</label>
+        <textarea class="form-control" id="bank-address" rows="3" placeholder="Enter bank address"></textarea>
+    </div>
+</form>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Withdraw</button>
+                        <button type="button" class="btn btn-primary">add</button>
                     </div>
                 </div>
             </div>
@@ -100,7 +117,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Withdraw</button>
+                        <button type="button" class="btn btn-primary">add</button>
                     </div>
                 </div>
             </div>
@@ -116,6 +133,16 @@
                     </div>
                     <div class="modal-body">
                         <form>
+
+                         <div class="form-group">
+        <label for="crypto-type">Select Cryptocurrency</label>
+        <select id="crypto-type" class="form-control" onchange="updateWalletAddress()">
+            <option value="">Choose a cryptocurrency</option>
+            <option value="bitcoin">Bitcoin</option>
+            <option value="ethereum">Ethereum</option>
+            <option value="litecoin">Litecoin</option>
+        </select>
+    </div>
                             <div class="form-group">
                                 <label for="crypto-wallet">Wallet Address</label>
                                 <input type="text" class="form-control" id="crypto-wallet" placeholder="Enter your wallet address">
@@ -124,7 +151,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Withdraw</button>
+                        <button type="button" class="btn btn-primary">add</button>
                     </div>
                 </div>
             </div>

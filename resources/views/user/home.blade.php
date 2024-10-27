@@ -20,54 +20,58 @@
 
         <div class="col-12  col-lg-12 col-xl-12 mt-3">
             <div class="card">
-                <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                    <div id="tradingview_6e482"></div>
-                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                    <script type="text/javascript">
-                        new TradingView.MediumWidget(
-  {
-  "symbols": [
-    [
-      "BITSTAMP:BTCUSD|12M"
-    ],
-    [
-      "BINANCE:ETHUSDT|12M"
-    ],
-    [
-      "BINANCE:DOGEUSDT|12M"
-    ],
-    [
-      "BINANCE:SHIBUSDT|12M"
-    ],
-    [
-      "BITSTAMP:XRPUSD|12M"
-    ]
-  ],
-  "chartOnly": false,
-  "width": "100%",
-  "height": 400,
-  "locale": "en",
-  "colorTheme": "light",
-  "gridLineColor": "rgba(42 ,46, 57, 0)",
-  "fontColor": "#787B86",
-  "isTransparent": false,
-  "autosize": false,
-  "showFloatingTooltip": true,
-  "scalePosition": "no",
-  "scaleMode": "Normal",
-  "fontFamily": "Trebuchet MS, sans-serif",
-  "noTimeScale": false,
-  "chartType": "area",
-  "lineColor": "#2962FF",
-  "bottomColor": "rgba(41, 98, 255, 0)",
-  "topColor": "rgba(41, 98, 255, 0.3)",
-  "container_id": "tradingview_6e482"
-}
-  );
-                    </script>
-                </div>
-                <!-- TradingView Widget END -->
+           
+
+
+                <style>
+                  div.scrollmenu {
+                       background-color: #333;
+                       overflow: auto;
+                       white-space: nowrap;
+                  }
+   
+                  div.scrollmenu a {
+                       display: inline-block;
+                       color: white;
+                       text-align: center;
+                       padding: 14px;
+                       text-decoration: none;
+                  }
+   
+                  div.scrollmenu a:hover {
+                       background-color: #777;
+                  }
+             </style>
+   
+             <div class="scrollmenu">
+                  <!-- TradingView Widget BEGIN -->
+                  <div class="tradingview-widget-container">
+                       <div id="tradingview_e705a"></div>
+                       <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                       <script type="text/javascript">
+                            new TradingView.widget({
+                                 "width": 1200,
+                                 "height": 610,
+                                 "symbol": "FX:EURUSD",
+                                 "interval": "1",
+                                 "timezone": "Europe/London",
+                                 "theme": "light",
+                                 "style": "1",
+                                 "locale": "en",
+                                 "toolbar_bg": "#f1f3f6",
+                                 "enable_publishing": false,
+                                 "hide_side_toolbar": false,
+                                 "allow_symbol_change": true,
+                                 "details": true,
+                                 "studies": [
+                                      "AwesomeOscillator@tv-basicstudies",
+                                      "MACD@tv-basicstudies"
+                                 ],
+                                 "container_id": "tradingview_e705a"
+                            });
+                       </script>
+                  </div>
+                  <!-- TradingView Widget END -->
 
                 <!-- TradingView Widget BEGIN -->
                 <div class="tradingview-widget-container">

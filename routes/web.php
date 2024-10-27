@@ -175,6 +175,7 @@ Route::prefix('user')->middleware('auth')->group(function () {
 
     Route::get('/withdrawals/create', [WithdrawalController::class, 'create'])->name('user.withdrawals.create');
     Route::post('/withdrawals/confirm', [WithdrawalController::class, 'confirm'])->name('withdrawals.confirm');
+    Route::get('/withdrawals/withdrawal-wallet', [WithdrawalController::class, 'wallet'])->name('user.withdraw.wallet');
     
 });
 

@@ -13,6 +13,11 @@ class WithdrawalController extends Controller
         return view('user.withdrawal.create');
     }
 
+    public function wallet()
+    {
+        return view('user.withdrawal.withdraw-wallet');
+    }
+
     // Handle form submission and show confirmation receipt
     public function confirm(Request $request)
     {
