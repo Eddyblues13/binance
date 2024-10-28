@@ -62,8 +62,8 @@
         @foreach ($cryptos as $crypto)
         <div class="col-md-4 col-lg-3 mb-4">
             <div class="card crypto-card">
-                <img src="{{ asset('dist/images/cryptos/' . $crypto['image']) }}" alt="{{ $crypto['name'] }} logo"
-                    class="crypto-img mb-3">
+               <center><img src="{{ asset('dist/images/cryptos/' . $crypto['image']) }}" alt="{{ $crypto['name'] }} logo"
+                    class="crypto-img mb-3"> </center> 
                 <h5>{{ $crypto['name'] }}</h5>
                 <form action="{{ route('handle.deposit') }}" method="POST">
                     @csrf

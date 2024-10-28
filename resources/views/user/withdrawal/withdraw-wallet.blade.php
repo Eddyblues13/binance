@@ -19,7 +19,7 @@
             <!-- Bank Transfer Card -->
             <div class="col-md-4">
                 <div class="card shadow-sm border-0 rounded-lg text-center">
-                    <img src="/bank-image.png" class="card-img-top" alt="Bank Image">
+                    <img src="/dist/images/bank.png" class="card-img-top" alt="Bank Image">
                     <div class="card-body">
                         <h5 class="card-title">Bank Transfer</h5>
                         <p class="card-text">Withdraw funds directly to your bank account.</p>
@@ -31,7 +31,7 @@
             <!-- PayPal Card -->
             <div class="col-md-4">
                 <div class="card shadow-sm border-0 rounded-lg text-center">
-                    <img src="/paypal-image.png" class="card-img-top" alt="PayPal Image">
+                    <img src="/dist/images/paypal.png" class="card-img-top" alt="PayPal Image">
                     <div class="card-body">
                         <h5 class="card-title">PayPal</h5>
                         <p class="card-text">Instantly withdraw to your PayPal account.</p>
@@ -43,7 +43,7 @@
             <!-- Cryptocurrency Card -->
             <div class="col-md-4">
                 <div class="card shadow-sm border-0 rounded-lg text-center">
-                    <img src="/crypto-image.png" class="card-img-top" alt="Cryptocurrency Image">
+                    <img src="/dist/images/cryptocurrency.png" class="card-img-top" alt="Cryptocurrency Image">
                     <div class="card-body">
                         <h5 class="card-title">Cryptocurrency</h5>
                         <p class="card-text">Withdraw funds to your cryptocurrency wallet.</p>

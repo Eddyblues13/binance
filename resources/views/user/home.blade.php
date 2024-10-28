@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12  align-self-center">
                 <div class="sub-header mt-3 py-3 px-3 align-self-center d-sm-flex w-100 rounded">
-                    <div class="w-sm-100 mr-auto"> <b>Welcome to your Portfolio</b></div>
+                    <div class="w-sm-100 mr-auto"><b> Hey {{Auth::user()->name}}! Welcome to your Portfolio</b></div>
 
                     <ol class="breadcrumb bg-transparent align-self-center m-0 p-0">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
