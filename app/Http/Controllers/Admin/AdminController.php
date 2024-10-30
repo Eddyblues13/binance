@@ -11,13 +11,13 @@ use App\Models\Document;
 use App\Models\Earnings;
 use App\Models\Referral;
 use App\Mail\CreditEmail;
-use App\Models\Investment;
+// use App\Models\Investment;
 use App\Models\Withdrawal;
 use App\Mail\sendUserEmail;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Models\AccountBalance;
-use App\Models\InvestmentPlan;
+// use App\Models\InvestmentPlan;
 use Illuminate\Support\Carbon;
 use App\Models\WebsiteTemplate;
 use Illuminate\Support\Facades\DB;
@@ -288,24 +288,24 @@ class AdminController extends Controller
             ->where('status', 1) // Assuming '1' represents 'approved'
             ->sum('amount');
 
-        // Sum of profits
-        $data['profit_sum'] = Profit::where('user_id', $userId)
-            ->sum('amount');
+        // // Sum of profits
+        // $data['profit_sum'] = Profit::where('user_id', $userId)
+        //     ->sum('amount');
 
-        // Sum of investments
-        $data['investment_sum'] = Investment::where('user_id', $userId)
-            ->sum('amount');
+        // // Sum of investments
+        // $data['investment_sum'] = Investment::where('user_id', $userId)
+        //     ->sum('amount');
 
-        // Sum of referral earnings
-        $data['referral_sum'] = Referral::where('user_id', $userId)
-            ->sum('amount');
+        // // Sum of referral earnings
+        // $data['referral_sum'] = Referral::where('user_id', $userId)
+        //     ->sum('amount');
 
         // Total sum of all values
-        $data['total_sum'] =  $data['approved_deposits_sum']
-            - $data['approved_withdrawals_sum']
-            + $data['profit_sum']
-            - $data['investment_sum']
-            + $data['referral_sum'];
+        // $data['total_sum'] =  $data['approved_deposits_sum']
+        //     - $data['approved_withdrawals_sum']
+        //     + $data['profit_sum']
+        //     - $data['investment_sum']
+        //     + $data['referral_sum'];
 
         return view('admin.user_data', $data);
     }

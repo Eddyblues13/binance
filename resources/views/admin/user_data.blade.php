@@ -63,15 +63,15 @@
                             <div class="p-3 mt-4 border rounded row text-light">
                                 <div class="col-md-3">
                                     <h5 class="text-bold">Total Balance</h5>
-                                    <p>${{number_format($total_sum, 2, '.', ',')}}</p>
+                                    {{-- <p>${{number_format($total_sum, 2, '.', ',')}}</p> --}}
                                 </div>
                                 <div class="col-md-3">
                                     <h5>Total Profit</h5>
-                                    <p>${{number_format($profit_sum, 2, '.', ',')}}</p>
+                                    {{-- <p>${{number_format($profit_sum, 2, '.', ',')}}</p> --}}
                                 </div>
                                 <div class="col-md-3">
                                     <h5>Total Investment</h5>
-                                    <p>${{number_format($investment_sum, 2, '.', ',')}}</p>
+                                    {{-- <p>${{number_format($investment_sum, 2, '.', ',')}}</p> --}}
                                 </div>
                                 <div class="col-md-3">
                                     <h5>Total Deposit</h5>
@@ -79,7 +79,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <h5>Total Referral Bonus</h5>
-                                    <p>${{number_format($referral_sum, 2, '.', ',')}}</p>
+                                    {{-- <p>${{number_format($referral_sum, 2, '.', ',')}}</p> --}}
                                 </div>
                                 <div class="col-md-3">
                                     <h5>Total Withdrawal</h5>
@@ -183,7 +183,7 @@
 
                         <input type="hidden" class="form-control" name="name" value="{{$user->name}}">
                         <input type="hidden" class="form-control" name="email" value="{{$user->email}}">
-                        <input type="hidden" class="form-control" name="balance" value="{{$total_sum}}">
+                        {{-- <input type="hidden" class="form-control" name="balance" value="{{$total_sum}}"> --}}
 
 
 
