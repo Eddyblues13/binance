@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Ditexcoin | User panel</title>
+    <title>Plus500 | User Dashboard</title>
     <link rel="shortcut icon" href="{{asset('dist/images/favicon.ico')}}" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -167,9 +167,9 @@
                                         <img src="/images/logo.jpg" alt=""
                                             class="d-flex mr-3 img-fluid rounded-circle w-50">
                                         <div class="media-body">
-                                            <h6>Welcome</h6>
+                                            <h6>Welcome Back!</h6>
                                             <hr>
-                                            <p class="mb-0 text-success"> From Admin</p>
+                                            <p class="mb-0 text-success">yo</p>
                                         </div>
                                     </div>
                                 </a>
@@ -263,7 +263,7 @@
 
             </li>
 
-            <li class="dropdown"><a href="#"><i class="icon-user"></i>Profile</a>
+            {{-- <li class="dropdown"><a href="#"><i class="icon-user"></i>Profile</a>
                 <div>
                     <ul>
                         <li><a href=""><i class="icon-user-following"></i>
@@ -273,10 +273,10 @@
                     </ul>
                 </div>
 
-            </li>
-            <li class="dropdown"><a href="https://ditexcoin.com/dashboard/referuser"><i
+            </li> --}}
+            {{-- <li class="dropdown"><a href="https://ditexcoin.com/dashboard/referuser"><i
                         class="icon-link"></i>Referral</a>
-            </li>
+            </li> --}}
             <li class="dropdown"><a href="#"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
                         class="icon-logout"></i>Logout</a>

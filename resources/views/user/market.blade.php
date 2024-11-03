@@ -159,7 +159,7 @@
     .trade-form select,
     .trade-form input {
         width: 100%;
-        padding: 12px;
+        padding: 7px;
         margin-bottom: 20px;
         border: 1px solid #ccc;
         border-radius: 5px;
@@ -225,114 +225,6 @@
 </div>
 
 </main>
-        
-        <style>
-            .section-heading {
-                font-size: 26px;
-                font-weight: bold;
-                margin-bottom: 20px;
-                color: #333;
-                border-bottom: 2px solid #28a745; /* Green underline for professionalism */
-                padding-bottom: 5px;
-            }
-        
-            /* News Intro */
-            .news-intro {
-                margin-top: 40px;
-                /* background: #f9f9f9; */
-                padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s;
-            }
-        
-            .news-intro:hover {
-                transform: translateY(-2px); /* Subtle hover effect */
-            }
-        
-            .intro-text {
-                font-size: 16px;
-                color: #555;
-                margin-top: 10px;
-                line-height: 1.5;
-            }
-        
-            /* News Section */
-            .news-section {
-                margin-top: 20px;
-                /* background: #f9f9f9; */
-                padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            }
-        
-            .news-article {
-                border-bottom: 1px solid #e0e0e0;
-                padding: 20px 0;
-            }
-        
-            .news-article:last-child {
-                border-bottom: none; /* Remove last article's border */
-            }
-        
-            .news-article h4 {
-                font-size: 18px;
-                margin: 0;
-                color: #333;
-            }
-        
-            .news-article p {
-                font-size: 14px;
-                color: #666;
-                line-height: 1.5;
-            }
-        
-            .news-article a {
-                color: #007bff;
-                text-decoration: none;
-                font-weight: 500; /* Slightly bolder links for emphasis */
-            }
-        
-            .news-article a:hover {
-                text-decoration: underline;
-                color: #0056b3; /* Darker blue on hover */
-            }
-        </style>
-        
-        <script>
-            // Your NewsAPI key
-            const apiKey = '30b62edf3f55459e8e3d256451c62d4d';
-        
-            // Function to fetch latest cryptocurrency news
-            async function fetchCryptoNews() {
-                try {
-                    const response = await fetch(`https://newsapi.org/v2/everything?q=cryptocurrency&sortBy=publishedAt&apiKey=${apiKey}`);
-                    const data = await response.json();
-                    displayNews(data.articles);
-                } catch (error) {
-                    console.error('Error fetching news:', error);
-                }
-            }
-        
-            // Function to display news articles in the news container
-            function displayNews(articles) {
-                const newsContainer = document.getElementById('news-container');
-                newsContainer.innerHTML = ''; // Clear existing news
-        
-                articles.forEach(article => {
-                    const newsArticle = `
-                        <div class="news-article">
-                            <h4><a href="${article.url}" target="_blank">${article.title}</a></h4>
-                            <p>${article.description || 'No description available.'}</p>
-                        </div>
-                    `;
-                    newsContainer.innerHTML += newsArticle;
-                });
-            }
-        
-            // Call the fetch function when the page loads
-            window.onload = fetchCryptoNews;
-        </script>
         
         
 @include('user.layouts.footer')

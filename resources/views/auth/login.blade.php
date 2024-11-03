@@ -148,7 +148,7 @@
 
     <div class="login-container">
         <div class="logo">
-            <img src="plus500-logo.png" alt="Plus500 Logo">
+            <img src="logo.png" alt="Plus500 Logo">
         </div>
         <h2>Log in</h2>
         <form method="POST" action="{{ route('login') }}">
