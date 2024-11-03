@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Bitcoin Deposit | User Panel</title>
+    <title>{{$method->name}} Deposit | User Panel</title>
     <link rel="shortcut icon" href="{{ asset('dist/images/favicon.ico') }}" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="{{ asset('dist/vendors/bootstrap/css/bootstrap.min.css') }}">
@@ -80,8 +80,8 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2>Deposit with Bitcoin</h2>
-                <p>Please send your payment to the Bitcoin wallet address below.</p>
+                <h2>Deposit with {{$method->name}}</h2>
+                <p>Please send your payment to the {{$method->name}} wallet address below.</p>
             </div>
         </div>
 
@@ -89,13 +89,14 @@
             <div class="col-md-6 text-center">
                 <!-- Wallet Address Section -->
                 <div class="wallet-address">
-                    <input type="text" id="walletAddress" value="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa" readonly>
+                    <input type="text" id="walletAddress" value="{{$method->address}}" readonly>
                     <button onclick="copyAddress()">Copy</button>
                 </div>
 
                 <!-- QR Code Section -->
-                <img src="{{ asset('dist/images/bitcoin-qr-code.png') }}" alt="Bitcoin QR Code" class="qr-code">
-                <p>Scan the QR code to copy the Bitcoin wallet address.</p>
+                <img src="{{ asset('dist/images/bitcoin-qr-code.png') }}" alt="{{$method->name}} QR Code"
+                    class="qr-code">
+                <p>Scan the QR code to copy the {{$method->name}} wallet address.</p>
             </div>
         </div>
 
@@ -109,7 +110,7 @@
                         <label for="proofOfPayment">Upload Proof of Payment (Screenshot/Receipt)</label>
                         <input type="file" name="proof_of_payment" id="proofOfPayment" required class="form-control">
                     </div>
-                    <input type="hidden" name="crypto_method" value="{{$method}}">
+                    <input type="hidden" name="crypto_method" value="{{$method->name}}">
                     <button type="submit" class="btn">Submit Proof of Payment</button>
                 </form>
             </div>

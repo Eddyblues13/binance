@@ -7,6 +7,7 @@ use App\Http\Controllers\BinanceController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DepositController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\User\WithdrawalController;
 
@@ -171,9 +172,9 @@ Route::get('/deposit', [App\Http\Controllers\DashboardController::class, 'deposi
 
 
 Route::prefix('user')->middleware('auth')->group(function () {
-    Route::get('/deposit', [DepositController::class, 'index'])->name('user.deposit.page');
-    Route::post('/deposits', [DepositController::class, 'handleDeposit'])->name('handle.deposit');
-    Route::post('/deposit', [DepositController::class, 'handlePayment'])->name('handle.payment');
+    Route::get('/deposit', [App\Http\Controllers\User\DepositController::class, 'index'])->name('user.deposit.page');
+    Route::post('/deposits/{id}', [App\Http\Controllers\User\DepositController::class, 'handleDeposit'])->name('handle.deposit');
+    Route::post('/deposit', [App\Http\Controllers\User\DepositController::class, 'handlePayment'])->name('handle.payment');
 
     Route::get('/withdrawals/create', [WithdrawalController::class, 'create'])->name('user.withdrawals.create');
     Route::post('/withdrawals/confirm', [WithdrawalController::class, 'confirm'])->name('withdrawals.confirm');
@@ -205,7 +206,6 @@ Route::prefix('admin')->group(function () {
 
 
         Route::get('/home', [AdminController::class, 'index'])->name('admin.home');
-        Route::get('/payment-settings', [AdminController::class, 'paymentSettings'])->name('payment.settings');
         Route::get('/manage-users', [AdminController::class, 'manageUsersPage'])->name('manage.users.page');
         Route::get('/manage-investment-plan', [AdminController::class, 'manageInvestmentPlan'])->name('manage.investment.plan');
         Route::get('/view-deposit/{id}/', [AdminController::class, 'viewDeposit']);
@@ -309,5 +309,12 @@ Route::prefix('admin')->group(function () {
         Route::get('/view-withdrawal/{user_id}/{withdrawal_id}', [WithdrawalController::class, 'viewWithdrawal'])->name('view.withdrawal');;
         Route::get('process-withdrawal/{id}', [WithdrawalController::class, 'processWithdrawal'])->name('process.withdrawal');
         Route::get('delete-withdrawal/{id}', [WithdrawalController::class, 'deleteWithdrawal'])->name('delete.withdrawal');
+
+
+        Route::get('/toggle-notification/{id}', [AdminController::class, 'toggleNotification'])->name('toggle.notification');
+        Route::get('/toggle-2fa/{id}', [AdminController::class, 'toggle2FA'])->name('toggle.2fa');
+
+        Route::get('/admin/payment-settings', [PaymentController::class, 'paymentSettings'])->name('payment.settings');
+        Route::resource('cryptos', PaymentController::class);
     });
 });

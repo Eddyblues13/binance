@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Exception;
 use App\Models\User;
 use App\Models\Trade;
 use App\Models\Profit;
@@ -10,14 +11,14 @@ use App\Mail\DebitEmail;
 use App\Models\Document;
 use App\Models\Earnings;
 use App\Models\Referral;
-use App\Mail\CreditEmail;
 // use App\Models\Investment;
+use App\Mail\CreditEmail;
 use App\Models\Withdrawal;
 use App\Mail\sendUserEmail;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
-use App\Models\AccountBalance;
 // use App\Models\InvestmentPlan;
+use App\Models\AccountBalance;
 use Illuminate\Support\Carbon;
 use App\Models\WebsiteTemplate;
 use Illuminate\Support\Facades\DB;
@@ -25,6 +26,7 @@ use App\Http\Controllers\Controller;
 use App\Models\VerificationDocument;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
@@ -597,162 +599,6 @@ class AdminController extends Controller
 
 
 
-    public function creditDebit(Request $request)
-    {
-        $type = $request['type'];
-        $transactionType = $request['t_type'];
-        $transaction_id = strtoupper(uniqid('TXN'));
-
-
-        $full_name = $request['name'];
-        $email =  $request['email'];
-        $amount = $request->input('amount');
-        $date = Carbon::now();
-        $balance = ($transactionType === 'Credit') ? ($request->input('balance') + $amount) : ($request->input('balance') - $amount);
-        $description =  $request['description'];
-        $a_number =  '489393';
-        $currency =  "$";
-
-        $user = [
-
-            'account_number' => $a_number,
-            'account_name' => $full_name,
-            'full_name' => $full_name,
-            'description' => $description,
-            'amount' => $amount,
-            'date' => $date,
-            'balance' => $balance,
-            'currency' => $currency,
-            'ref' => $transaction_id,
-        ];
-
-        if ($type === 'Profit') {
-            $transaction_id = strtoupper(uniqid('TXN')); // Example: TXN5F2E5C1B8D3A4
-
-            // Create a New Profit Record
-            $profit = new Profit();
-            $profit->user_id = $request['user_id'];
-            $profit->amount = ($transactionType === 'Credit') ? $request['amount'] : -$request['amount'];
-
-            // Save the Profit Record
-            $profit->save();
-
-            // if ($transactionType == "Credit") {
-            //     Mail::to($email)->send(new CreditEmail($user));
-            // }
-            // if ($transactionType == "Debit") {
-            //     Mail::to($email)->send(new DebitEmail($user));
-            // }
-
-            return back()->with('message', 'User Profit Updated Successfully');
-        }
-
-
-        if ($type === 'Referral') {
-            $transaction_id = strtoupper(uniqid('TXN')); // Example: TXN5F2E5C1B8D3A4
-
-            // Create a New Referral Record
-            $referral = new Referral();
-            $referral->user_id = $request['user_id']; // User receiving the referral bonus
-            // Assuming you're managing referral bonuses like a deposit or similar transaction
-            $referral->amount = ($transactionType === 'Credit') ? $request['amount'] : -$request['amount'];
-
-            // Save the Referral Record
-            $referral->save();
-
-
-            if ($transactionType == "Credit") {
-                Mail::to($email)->send(new CreditEmail($user));
-            }
-            if ($transactionType == "Debit") {
-                Mail::to($email)->send(new DebitEmail($user));
-            }
-
-            return back()->with('message', 'Referral Bonus Updated Successfully');
-        }
-
-
-        if ($type === 'Deposit') {
-            $transaction_id = strtoupper(uniqid('TXN')); // Example: TXN5F2E5C1B8D3A4
-
-            // Create a New Deposit Record
-            $deposit = new Deposit();
-            $deposit->user_id = $request['user_id'];
-            $deposit->transaction_id = $transaction_id;
-            $deposit->amount = ($transactionType === 'Credit') ? $request['amount'] : -$request['amount'];
-            $deposit->payment_method = $request['t_type'];
-
-            $paymentMethodToWallet = [
-                'Bank' => 'BANK123456',
-                'Bitcoin' => 'BTCWALLET78910',
-                'Ethereum' => 'ETHWALLET111213',
-                'USDT(Trc20)' => 'USDTWALLET141516',
-            ];
-
-            $deposit->deposit_type = $paymentMethodToWallet[$request['t_type']] ?? null;
-
-            // Handle Image Upload (If Provided)
-            if ($request->hasFile('image')) {
-                $file = $request->file('image');
-                $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
-                $file->storeAs('public/uploads/deposits', $filename);
-                $deposit->proof = 'uploads/deposits/' . $filename;
-            }
-
-            // Save the Deposit Record
-            $deposit->save();
-
-            if ($transactionType == "Credit") {
-                Mail::to($email)->send(new CreditEmail($user));
-            }
-            if ($transactionType == "Debit") {
-                Mail::to($email)->send(new DebitEmail($user));
-            }
-
-            return back()->with('message', 'Deposit Updated Successfully');
-        }
-
-        // if ($type === 'Earning') {
-        //     $transaction_id = strtoupper(uniqid('TXN')); // Example: TXN5F2E5C1B8D3A4
-
-        //     // Create a New Earning Record
-        //     $earning = new Earnings();
-        //     $earning->user_id = $request['user_id'];
-        //     $earning->transaction_id = $transaction_id;
-        //     $earning->amount = ($transactionType === 'Credit') ? $request['amount'] : -$request['amount'];
-        //     $earning->description = $request['description'] ?? 'Earnings Update';
-
-        //     // Set status for the earning record (assuming 1 is completed and 0 is pending)
-        //     $earning->status = 1;
-
-        //     // Save the Earning Record
-        //     $earning->save();
-
-
-        //     if ($transactionType == "Credit") {
-        //         Mail::to($email)->send(new CreditEmail($user));
-        //     }
-        //     if ($transactionType == "Debit") {
-        //         Mail::to($email)->send(new DebitEmail($user));
-        //     }
-
-        //     return back()->with('message', 'Earnings Updated Successfully');
-        // }
-
-
-
-    }
-
-
-
-
-
-
-    // Add more conditions here for new types if necessary.
-
-
-
-
 
 
     // Method to show the profile update form
@@ -996,5 +842,131 @@ class AdminController extends Controller
         $status['user_status'] = 0;
         $update = DB::table('users')->where('id', $id)->update($status);
         return redirect()->back()->with('message', 'User Has Been Suspended Successfully');
+    }
+
+    public function toggleNotification($id)
+    {
+        $user = User::findOrFail($id);
+        $user->user_notification = !$user->user_notification;
+        $user->save();
+
+        return redirect()->back()->with('status', 'Notification setting updated successfully!');
+    }
+
+    public function toggle2FA($id)
+    {
+        $user = User::findOrFail($id);
+        $user->user_authentication = !$user->user_authentication;
+        $user->save();
+
+        return redirect()->back()->with('status', '2FA setting updated successfully!');
+    }
+
+
+    public function creditDebit(Request $request)
+    {
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'type' => 'required|string', // ETH, BTC, etc.
+            'amount' => 'required|numeric|min:0',
+            't_type' => 'required|string|in:ADD,SUBTRACT',
+        ]);
+
+        $user = User::find($request->user_id);
+        $cryptoType = $request->type;
+        $cryptoAmount = $request->amount;
+        $transactionType = $request->t_type;
+
+        // Fetch the current exchange rate for the selected cryptocurrency
+        $usdDollarValue = $this->convertToUSD($cryptoType, $cryptoAmount);
+        $userCurrency = $request->input('currency'); // E.g., 'EUR', 'GBP', etc.
+        $usdValue = $request->input('usd_value');    // The value in USD  
+        //$convertedValue = $this->convertToUserCurrency($usdValue, $userCurrency); // covert USD to user currency
+
+
+        // Process transaction
+        $transaction = new Transaction();
+        $transaction->user_id = $user->id;
+        $transaction->currency_type = $cryptoType;
+        $transaction->crypto_amount = $cryptoAmount;
+        $transaction->transaction_type = $transactionType;
+        $transaction->usd_value = $usdDollarValue;
+
+
+        // Update user's balance based on transaction type
+        if ($transactionType == 'ADD') {
+            $transaction->usd_value += $usdValue; // Assuming `balance` is in USD
+        } elseif ($transactionType == 'SUBTRACT' && $user->balance >= $usdValue) {
+            $transaction->usd_value -= $usdValue;
+        }
+        $transaction->save();
+
+        return redirect()->back()->with('success', 'Transaction completed successfully.');
+    }
+
+
+    private function convertToUSD($cryptoType, $amount)
+    {
+        $cryptoType = strtolower($cryptoType);
+        // Fetch exchange rate from CoinGecko API
+        $response = Http::get("https://api.coingecko.com/api/v3/simple/price", [
+            'ids' => $cryptoType,  // Use lowercase for the CoinGecko API
+            'vs_currencies' => 'usd'           // CoinGecko uses 'usd' for prices instead of 'USDT'
+        ]);
+
+
+        // Check if the response is successful and the rate exists
+        if ($response->successful() && isset($response->json()[$cryptoType]['usd'])) {
+            $rate = $response->json()[$cryptoType]['usd'];
+            return $rate * $amount; // Convert to USD
+        }
+
+        return null; // Return null if the API request fails or rate not found
+    }
+
+
+
+
+
+    private function convertToUserCurrency($usdValue, $currency)
+    {
+        // Exchangerate.host endpoint for USD as the base currency
+        $apiUrl = "https://api.exchangerate.host/convert?from=USD&to={$currency}";
+
+        // Fetch exchange rate for USD to the selected currency
+        $response = Http::get($apiUrl);
+
+        if ($response->ok() && isset($response['result'])) {
+            // Calculate the converted value
+            return $usdValue * $response['result'];
+        } else {
+            throw new Exception("Unable to retrieve exchange rate.");
+        }
+    }
+
+    public function storeTransaction(Request $request)
+    {
+        $userCurrency = $request->input('currency'); // E.g., 'EUR', 'GBP', etc.
+        $usdValue = $request->input('usd_value');    // The value in USD
+
+        // Convert the USD value to the user's currency
+        try {
+            $convertedValue = $this->convertToUserCurrency($usdValue, $userCurrency);
+        } catch (Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        // Store the transaction with both USD and converted values
+        Transaction::create([
+            'user_id' => $request->user()->id,
+            'currency_type' => $request->input('currency_type'), // e.g., 'BTC', 'ETH'
+            'crypto_amount' => $request->input('amount'),
+            'transaction_type' => $request->input('t_type'), // ADD or SUBTRACT
+            'usd_value' => $usdValue,
+            'converted_value' => $convertedValue,
+            'converted_currency' => $userCurrency,
+        ]);
+
+        return back()->with('success', 'Transaction completed in ' . $userCurrency);
     }
 }

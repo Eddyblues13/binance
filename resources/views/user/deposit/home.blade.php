@@ -44,28 +44,15 @@
 
 
     <div class="row">
-        @php
-        $cryptos = [
-        ['name' => 'Bitcoin', 'image' => 'bitcoin.png'],
-        ['name' => 'Ethereum', 'image' => 'ethereum.png'],
-        ['name' => 'Litecoin', 'image' => 'litecoin.png'],
-        ['name' => 'Ripple', 'image' => 'ripple.png'],
-        ['name' => 'Tether (USDT)', 'image' => 'tether.png'],
-        ['name' => 'Binance Coin', 'image' => 'binancecoin.png'],
-        ['name' => 'Cardano', 'image' => 'cardano.png'],
-        ['name' => 'Dogecoin', 'image' => 'dogecoin.png'],
-        ['name' => 'Polkadot', 'image' => 'polkadot.png'],
-        ['name' => 'Solana', 'image' => 'solana.png'],
-        ];
-        @endphp
+
 
         @foreach ($cryptos as $crypto)
         <div class="col-md-4 col-lg-3 mb-4">
             <div class="card crypto-card">
-               <center><img src="{{ asset('dist/images/cryptos/' . $crypto['image']) }}" alt="{{ $crypto['name'] }} logo"
-                    class="crypto-img mb-3"> </center> 
+                <center><img src="{{ asset('dist/images/cryptos/' . $crypto['image']) }}"
+                        alt="{{ $crypto['name'] }} logo" class="crypto-img mb-3"> </center>
                 <h5>{{ $crypto['name'] }}</h5>
-                <form action="{{ route('handle.deposit') }}" method="POST">
+                <form action="{{ route('handle.deposit',$crypto['id']) }}" method="POST">
                     @csrf
                     <input type="hidden" name="crypto_method" value="{{ $crypto['name'] }}">
                     <button type="submit" class="btn deposit-btn">Deposit with {{ $crypto['name'] }}</button>

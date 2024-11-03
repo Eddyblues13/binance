@@ -16,6 +16,8 @@ class DepositController extends Controller
         $data['deposits'] = User::join('deposits', 'users.id', '=', 'deposits.user_id')
             ->get(['users.email', 'users.name', 'deposits.*']);
 
+
+
         return view('admin.manage_deposit', $data);
     }
 
