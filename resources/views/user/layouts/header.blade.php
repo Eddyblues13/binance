@@ -124,7 +124,8 @@
                                 style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
                                 <div onclick="changeAccount('real', 0.00000)" style="cursor: pointer; flex-grow: 1;">
                                     <strong>Real Account</strong><br>
-                                    <span style="font-size: 1.2em;">0.00000 $</span><br>
+                                    <span style="font-size: 1.2em;">{{
+                                        number_format($usd_sum, 2) }} {{Auth::user()->currency}}</span><br>
                                     <span style="font-size: 0.9em; color: gray;">Estimate Balance</span>
                                 </div>
                                 <button onclick="depositRealAccount()"
@@ -198,7 +199,8 @@
                         <div class="dropdown-menu  dropdown-menu-right p-0">
                             <a href="{{url('profile')}}" class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-user mr-2 h6 mb-0"></span> Profile</a>
-                            <a href="{{route('user.withdraw.wallet')}}" class="dropdown-item px-2 align-self-center d-flex">
+                            <a href="{{route('user.withdraw.wallet')}}"
+                                class="dropdown-item px-2 align-self-center d-flex">
                                 <span class="icon-user mr-2 h6 mb-0"></span> Withdrawal/Wallets</a>
 
 
@@ -247,13 +249,13 @@
         <!-- START: Menu-->
         <ul id="side-menu" class="sidebar-menu">
             <li class="dropdown active"><a href="{{url('home')}}"><i class="fas fa-home"></i> BOARD</a></li>
-<li class="dropdown"><a href="{{url('orderbook')}}"><i class="fas fa-wallet"></i> ORDER BOOK</a></li>
-<li class="dropdown"><a href="{{url('market')}}"><i class="fas fa-shopping-basket"></i> MARKET</a></li>
-<li class="dropdown"><a href="{{url('tradehistory')}}"><i class="fas fa-th"></i> PORTFOLIO</a></li>
-<li class="dropdown"><a href="{{url('calculator')}}"><i class="fas fa-calculator"></i> CALC</a></li>
-<li class="dropdown"><a href="{{url('news')}}"><i class="fas fa-newspaper"></i> NEWS</a></li>
+            <li class="dropdown"><a href="{{url('orderbook')}}"><i class="fas fa-wallet"></i> ORDER BOOK</a></li>
+            <li class="dropdown"><a href="{{url('market')}}"><i class="fas fa-shopping-basket"></i> MARKET</a></li>
+            <li class="dropdown"><a href="{{url('tradehistory')}}"><i class="fas fa-th"></i> PORTFOLIO</a></li>
+            <li class="dropdown"><a href="{{url('calculator')}}"><i class="fas fa-calculator"></i> CALC</a></li>
+            <li class="dropdown"><a href="{{url('news')}}"><i class="fas fa-newspaper"></i> NEWS</a></li>
 
-                <!--- <div> 
+            <!--- <div> 
                         <ul>
                             <li><a href="https://ditexcoin.com/dashboard/mplans"><i class="icon-loop"></i> Activate Package</a></li>
                             <li><a href="https://ditexcoin.com/dashboard/myplans"><i class="icon-eye"></i> Current Package</a></li>

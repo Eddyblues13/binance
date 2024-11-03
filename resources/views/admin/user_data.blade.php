@@ -15,7 +15,9 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 ">
-                                    <h1 class="d-inline text-primary">{{$user->name}}</h1>
+                                    <h1 class="d-inline text-primary">{{ ucwords($user->name) }}</h1>
+                                    <br />
+                                    <h6 class="d-inline text-primary">{{$user->email}}</h6>
                                     <span></span>
                                     <div class="d-inline">
                                         <div class="float-right btn-group">
@@ -85,6 +87,28 @@
                                     <h5>Total Withdrawal</h5>
                                     <p>${{number_format($approved_withdrawals_sum, 2, '.', ',')}}</p>
                                 </div>
+                                <div class="col-md-3">
+                                    <h5>Notification</h5>
+                                    @if($user->user_notification == 0)
+                                    <a class="btn btn-sm btn-primary d-inline"
+                                        href="{{ route('toggle.notification', $user->id) }}">DISABLED</a>
+                                    @else
+                                    <a class="btn btn-sm btn-success d-inline"
+                                        href="{{ route('toggle.notification', $user->id) }}">ENABLED</a>
+                                    @endif
+                                </div>
+
+                                <div class="col-md-3">
+                                    <h5>2FA</h5>
+                                    @if($user->user_authentication == 0)
+                                    <a class="btn btn-sm btn-primary d-inline"
+                                        href="{{ route('toggle.2fa', $user->id) }}">DISABLED</a>
+                                    @else
+                                    <a class="btn btn-sm btn-success d-inline"
+                                        href="{{ route('toggle.2fa', $user->id) }}">ENABLED</a>
+                                    @endif
+                                </div>
+
                                 <div class="col-md-3">
                                     <h5>User Account Status</h5>
                                     @if($user->user_status == 0)
@@ -186,29 +210,28 @@
                         {{-- <input type="hidden" class="form-control" name="balance" value="{{$total_sum}}"> --}}
 
 
-
-                        <div class="form-group">
-                            <input class="form-control bg-dark text-light" placeholder="Enter amount" type="text"
-                                name="amount" required>
-                        </div>
                         <div class="form-group">
                             <h5 class="text-light">Select where to Credit/Debit</h5>
                             <select class="form-control bg-dark text-light" name="type" required>
-                                <option value="" selected disabled>Select Column</option>
-                                <option value="Deposit">Deposit</option>
-                                <option value="Earning">Earning</option>
-                                <option value="Profit">Profit</option>
-                                <option value="Ref_Bonus">Ref_Bonus</option>
+
+                                <option value="ethereum" selected>ETH</option>
+                                <option value="bitcoin">BTC</option>
                             </select>
                         </div>
+
                         <div class="form-group">
-                            <h5 class="text-light">Select credit to add, debit to subtract.</h5>
+                            <input class="form-control bg-dark text-light" placeholder="Enter amount" type="number"
+                                name="amount" step="0.00000000001" min="0" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <h5 class="text-light">Modification value</h5>
                             <select class="form-control bg-dark text-light" name="t_type" required>
-                                <option value="">Select type</option>
-                                <option value="Credit">Credit</option>
-                                <option value="Debit">Debit</option>
+                                <option value="ADD" selected>ADD</option>
+                                <option value="SUBTRACT">SUBTRACT</option>
                             </select>
-                            <small> <b>NOTE:</b> You cannot debit deposit</small>
+
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-light" value="Submit">

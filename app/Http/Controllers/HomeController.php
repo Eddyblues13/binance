@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaction;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -22,10 +25,72 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+
     public function index()
     {
-        return view('user.home');
+        $userId = Auth::id();
+
+        // Sum of investments
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->sum('usd_value');
+
+        // Get the user model
+        $user = Auth::user(); // Retrieve the authenticated user
+
+        // Get the user's currency
+        $userCurrency = $user->currency; // E.g., 'EUR', 'GBP', etc.
+        $usdValue = $data['usd_sum']; // The value in USD
+
+        // Convert the USD value to the user's currency
+        // $convertedValue = $this->convertToUserCurrency($usdValue, $userCurrency);
+
+        $usdValue = 100; // Example amount in USD
+        $currency = 'EUR'; // Target currency, e.g., EUR
+
+        // Call the conversion function
+        //$convertedValue = $this->convertToUserCurrency($usdValue, $currency);
+
+        // Add the converted value to the data array
+        //$data['converted_value'] = $convertedValue;
+
+        return view('user.home', $data);
     }
+
+
+    // private function convertToUserCurrency($usdValue, $currency)
+    // {
+    //     // Exchangerate.host endpoint for USD as the base currency
+    //     $apiUrl = "https://api.exchangerate.host/convert?from=USD&to={$currency}";
+
+    //     // Fetch exchange rate for USD to the selected currency
+    //     $response = Http::get($apiUrl);
+
+    //     if ($response->ok() && isset($response['result'])) {
+    //         // Calculate the converted value
+    //         return $usdValue * $response['result'];
+    //     } else {
+    //         throw new Exception("Unable to retrieve exchange rate.");
+    //     }
+    // }
+
+
+    private function convertToUserCurrency($usdValue, $currency)
+    {
+        // Exchangerate.host endpoint for USD as the base currency, with amount specified
+        $apiUrl = "https://api.exchangerate.host/convert?from=USD&to={$currency}&amount={$usdValue}";
+
+        // Fetch exchange rate for USD to the selected currency
+        $response = Http::get($apiUrl);
+
+        if ($response->ok() && isset($response['result'])) {
+            // Return the converted value directly from the response
+            return $response['result'];
+        } else {
+            throw new \Exception("Unable to retrieve exchange rate.");
+        }
+    }
+
 
 
     // Step 1: Show the list of available deposit methods (cryptocurrencies)
@@ -139,66 +204,62 @@ class HomeController extends Controller
     public function Market()
     {
         return view('user.market');
- 
-   }
+    }
 
-   public function Tradehistory()
-   {
-       return view('user.tradehistory');
-
-  }
+    public function Tradehistory()
+    {
+        return view('user.tradehistory');
+    }
 
 
-  public function Orderbook()
-  {
-      return view('user.orderbook');
+    public function Orderbook()
+    {
+        return view('user.orderbook');
+    }
 
- }
+
+    public function personalDp(Request $request)
+    {
 
 
-  public function personalDp(Request $request)
-  {
-
-    
-      $update = Auth::user();
-
-  
-
-      if($request->hasFile('image'))
-      {
-          $file= $request->file('image');
-  
-          $ext = $file->getClientOriginalExtension();
-          $filename = time().'.'.$ext;
-          $file->move('uploads/display',$filename);
-          $update->photo =  $filename;
-      }
-      $update->update();
-
-      return back()->with('status', 'Personal Details Updated Successfully');  
-  }
+        $update = Auth::user();
 
 
 
-//   public function uploadProfile(Request $request)
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
 
-//   {
+            $ext = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $ext;
+            $file->move('uploads/display', $filename);
+            $update->photo =  $filename;
+        }
+        $update->update();
+
+        return back()->with('status', 'Personal Details Updated Successfully');
+    }
 
 
-//       $update = Auth::user();
-//       if ($request->hasFile('image')) {
-//           $file = $request->file('image');
 
-//           $ext = $file->getClientOriginalExtension();
-//           $filename = time() . '.' . $ext;
-//           $file->move('user/uploads/id', $filename);
-//           $update->photo =  $filename;
-//       }
+    //   public function uploadProfile(Request $request)
 
-//       $update->update();
+    //   {
 
-//       return redirect('photo')->with('status', 'Profile Picture Updated!');
-//   }
+
+    //       $update = Auth::user();
+    //       if ($request->hasFile('image')) {
+    //           $file = $request->file('image');
+
+    //           $ext = $file->getClientOriginalExtension();
+    //           $filename = time() . '.' . $ext;
+    //           $file->move('user/uploads/id', $filename);
+    //           $update->photo =  $filename;
+    //       }
+
+    //       $update->update();
+
+    //       return redirect('photo')->with('status', 'Profile Picture Updated!');
+    //   }
 
 
 
@@ -207,51 +268,50 @@ class HomeController extends Controller
 
 
 
-  public function updatePassword(Request $request)
-  {
-      # Validation
-      $request->validate([
-          'old_password' => 'required',
-          'new_password' => 'required|confirmed',
-      ]);
+    public function updatePassword(Request $request)
+    {
+        # Validation
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
 
 
-      #Match The Old Password
-      if (!Hash::check($request->old_password, auth()->user()->password)) {
-          return back()->with("error", "Old Password Doesn't match!");
-      }
+        #Match The Old Password
+        if (!Hash::check($request->old_password, auth()->user()->password)) {
+            return back()->with("error", "Old Password Doesn't match!");
+        }
 
 
-      #Update the new Password
-      User::whereId(auth()->user()->id)->update([
-          'password' => Hash::make($request->new_password)
-      ]);
+        #Update the new Password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
 
-      return back()->with("status", "Password changed successfully!");
-  }
-
-
-
-  public function profileUpdate(Request $request)
-  {
-      //validation rules
-
-      $request->validate([
-          'name' => 'string',
-          'email' => 'string',
-          'phone' => 'string',
-          'address' => 'string'
-
-      ]);
-      $user = Auth::user();
-      $user->name = $request['name'];
-      $user->email = $request['email'];
-      $user->phone = $request['phone'];
-      $user->address = $request['address'];
+        return back()->with("status", "Password changed successfully!");
+    }
 
 
-      $user->update();
-      return back()->with('status', 'Profile Updated');
-  }
-   
+
+    public function profileUpdate(Request $request)
+    {
+        //validation rules
+
+        $request->validate([
+            'name' => 'string',
+            'email' => 'string',
+            'phone' => 'string',
+            'address' => 'string'
+
+        ]);
+        $user = Auth::user();
+        $user->name = $request['name'];
+        $user->email = $request['email'];
+        $user->phone = $request['phone'];
+        $user->address = $request['address'];
+
+
+        $user->update();
+        return back()->with('status', 'Profile Updated');
+    }
 }

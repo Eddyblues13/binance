@@ -223,68 +223,52 @@
                                     </div>
 
                                     <div class="mt-4 col-md-12 bg-dark text-light absolute">
-                                        <div class=" table-responsive">
+                                        <div class="table-responsive">
                                             <table class="table table-hover">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Method Name</th>
-                                                        <th scope="col">Type</th>
-                                                        <th scope="col">Used for</th>
-                                                        <th scope="col">Status</th>
-                                                        <th scope="col">Option</th>
+                                                        <th>Logo</th>
+                                                        <th>Cryptocurrency</th>
+                                                        <th>Deposit Option</th>
+                                                        <th>Actions</th> <!-- Added Actions column -->
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    {{-- @foreach($payment as $payment)
+                                                    @foreach ($payment as $crypto)
                                                     <tr>
-                                                        <th>{{$payment->name}}</th>
-                                                        <td>{{$payment->type}}</td>
-                                                        <td>{{$payment->type_for}}</td>
                                                         <td>
-                                                            @if($payment->status === 'disabled')
-                                                            <span class=" badge badge-danger">disabled</span>
-                                                            @elseif($payment->status === 'enabled')
-                                                            <span class=" badge badge-success">enabled</span>
-                                                            @endif
-
-
+                                                            <img src="{{ asset('dist/images/cryptos/' . $crypto->name) }}"
+                                                                alt="{{ $crypto->name }} logo" class="crypto-img">
+                                                        </td>
+                                                        <td>{{ $crypto->name }}</td>
+                                                        <td>
+                                                            <!-- You may want to display deposit options here -->
+                                                            {{ $crypto->deposit_option ?? 'N/A' }}
                                                         </td>
                                                         <td>
-                                                            <a href="{{route('edit.payment',$payment->id)}}"
-                                                                class="m-1 btn btn-primary btn-sm" title="View">
-                                                                <i class="fa fa-eye"></i>
+                                                            <!-- Edit button -->
+                                                            <a href="{{ route('cryptos.edit', $crypto->id) }}"
+                                                                class="btn btn-warning btn-sm">
+                                                                Edit
                                                             </a>
-                                                            @if($payment->name === 'Ethereum')
-                                                            <button class=" btn btn-danger btn-sm" disabled
-                                                                data-toggle="tooltip" data-placement="top"
-                                                                title="you cannot delete default method">Delete</button>
-
-
-                                                            @elseif($payment->name === 'Bitcoin')
-                                                            <button class=" btn btn-danger btn-sm" disabled
-                                                                data-toggle="tooltip" data-placement="top"
-                                                                title="you cannot delete default method">Delete</button>
-
-
-                                                            @elseif($payment->name === 'Litecoin')
-                                                            <button class=" btn btn-danger btn-sm" disabled
-                                                                data-toggle="tooltip" data-placement="top"
-                                                                title="you cannot delete default method">Delete</button>
-
-                                                            @else
-                                                            <a href="{{route('delete.payment',$payment->id)}}"
-                                                                class="m-1 btn btn-danger btn-sm">Delete</a>
-
-                                                            @endif
-
+                                                            <!-- Delete button -->
+                                                            <form action="{{ route('cryptos.destroy', $crypto->id) }}"
+                                                                method="POST" style="display:inline;">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger btn-sm"
+                                                                    onclick="return confirm('Are you sure you want to delete this cryptocurrency?');">
+                                                                    Delete
+                                                                </button>
+                                                            </form>
                                                         </td>
                                                     </tr>
-                                                    @endforeach --}}
-
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
+
                                     <div class="absolute top-0 w-10 bg-light">
 
                                     </div>

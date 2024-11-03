@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Models\Deposit;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
+use App\Models\PaymentSetting;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -12,11 +14,19 @@ class DepositController extends Controller
 {
     public function index()
     {
-        return view('user.deposit.home');
+        $userId = Auth::id();
+
+        // Sum of investments
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->sum('usd_value');
+
+        $data['cryptos'] =  PaymentSetting::get();
+
+        return view('user.deposit.home', $data);
     }
 
 
-    public function handleDeposit(Request $request)
+    public function handleDeposit(Request $request, $id)
     {
         // Validate the request data
         $validatedData = $request->validate([
@@ -25,17 +35,15 @@ class DepositController extends Controller
 
         ]);
 
+        $data['method'] =  PaymentSetting::where('id', $id)->first();
+
 
         // Assuming Wallet model stores details about payment methods (like BTC, ETH, etc.)
         // Use where to search for a wallet by its payment mode (code or type)
         // $wallet = Wallet::first();
 
         // Pass all necessary data to the view
-        return view('user.deposit.payment', [
-            // 'wallet' => $wallet, // Wallet details
-            'method' => $validatedData['crypto_method'], // Amount
-
-        ]);
+        return view('user.deposit.payment', $data);
     }
 
 
