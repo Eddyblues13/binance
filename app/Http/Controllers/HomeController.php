@@ -54,6 +54,8 @@ class HomeController extends Controller
         // Add the converted value to the data array
         //$data['converted_value'] = $convertedValue;
 
+        
+
         return view('user.home', $data);
     }
 
@@ -188,33 +190,63 @@ class HomeController extends Controller
 
     public function Profile()
     {
-        return view('user.profile');
+        $userId = Auth::id();
+
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+        ->sum('usd_value');
+        return view('user.profile',$data);
     }
 
     public function News()
     {
-        return view('user.news');
+        $userId = Auth::id();
+
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+        ->sum('usd_value');
+        return view('user.news',$data);
     }
 
     public function Calculator()
     {
-        return view('user.calculator');
+        $userId = Auth::id();
+
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+        ->sum('usd_value');
+        return view('user.calculator',$data);
     }
 
     public function Market()
     {
-        return view('user.market');
+        $userId = Auth::id();
+
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+        ->sum('usd_value');
+        return view('user.market',$data);
+    }
+
+    public function logout()
+    {
+        Auth::guard('user')->logout();
+        return redirect('/');
     }
 
     public function Tradehistory()
     {
-        return view('user.tradehistory');
+        $userId = Auth::id();
+
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+        ->sum('usd_value');
+        return view('user.tradehistory',$data);
     }
 
 
     public function Orderbook()
     {
-        return view('user.orderbook');
+        $userId = Auth::id();
+
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+        ->sum('usd_value');
+        return view('user.orderbook',$data);
     }
 
 

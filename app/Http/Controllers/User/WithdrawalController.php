@@ -2,20 +2,30 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class WithdrawalController extends Controller
 {
     // Show the withdrawal form
     public function create()
     {
-        return view('user.withdrawal.create');
+        $userId = Auth::id();
+
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+        ->sum('usd_value');
+        return view('user.withdrawal.create',$data);
     }
 
     public function wallet()
     {
-        return view('user.withdrawal.withdraw-wallet');
+        $userId = Auth::id();
+
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+        ->sum('usd_value');
+        return view('user.withdrawal.withdraw-wallet',$data);
     }
 
     // Handle form submission and show confirmation receipt

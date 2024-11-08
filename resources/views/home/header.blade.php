@@ -159,14 +159,14 @@
                         <ul data-menu-name="markets">
                             <li class="back-link-wrapper"><button type="button" class="back-link">Back</button></li>
                                         <li class="separator category-separator no-border"><span>Futures on:</span></li>
-                                        <li><a  href="/markets" data-page="AllInstruments" data-analytics="menuClick">All Markets</a></li>
-                                        <li><a  href="/markets/crypto" data-page="CryptoCurrencies" data-analytics="menuClick">Crypto</a></li>
-                                        <li><a  href="/markets/agriculture" data-page="Agriculture" data-analytics="menuClick">Agriculture</a></li>
-                                        <li><a  href="/markets/metals" data-page="Metals" data-analytics="menuClick">Metals</a></li>
-                                        <li><a  href="/markets/forex" data-page="Forex" data-analytics="menuClick">Forex</a></li>
-                                        <li><a  href="/markets/interestrates" data-page="InterestRates" data-analytics="menuClick">Interest Rates</a></li>
-                                        <li><a  href="/markets/energy" data-page="Energy" data-analytics="menuClick">Energy</a></li>
-                                        <li><a  href="/markets/equityindices" data-page="EquityIndices" data-analytics="menuClick">Equity Index</a></li>
+                                        <li><a  href="{{url('all-market')}}" data-page="AllInstruments" data-analytics="menuClick">All Markets</a></li>
+                                        <li><a  href="{{url('crypto')}}" data-page="CryptoCurrencies" data-analytics="menuClick">Crypto</a></li>
+                                        <li><a  href="{{url('agriculture')}}" data-page="Agriculture" data-analytics="menuClick">Agriculture</a></li>
+                                        <li><a  href="{{url('metals')}}" data-page="Metals" data-analytics="menuClick">Metals</a></li>
+                                        <li><a  href="{{url('forex')}}" data-page="Forex" data-analytics="menuClick">Forex</a></li>
+                                        <li><a  href="{{url('interest')}}" data-page="InterestRates" data-analytics="menuClick">Interest Rates</a></li>
+                                        <li><a  href="{{url('energy')}}" data-page="Energy" data-analytics="menuClick">Energy</a></li>
+                                        <li><a  href="{{url('equity')}}" data-page="EquityIndices" data-analytics="menuClick">Equity Index</a></li>
                         </ul>
                     </li>
                                         <li class="has-submenu">
@@ -176,30 +176,30 @@
                         </button>
                         <ul data-menu-name="company">
                             <li class="back-link-wrapper"><button type="button" class="back-link">Back</button></li>
-                                        <li><a  href="/aboutus" data-page="AboutUs" data-analytics="menuClick">About Us</a></li>
-                                        <li><a  href="https://investors.plus500.com/" target="_blank"rel="noopener noreferrer"data-analytics="menuClick">Investor Relations</a></li>
-                                        <li><a  href="/financialservices" data-page="FuturesFinancialServices" data-analytics="menuClick">Financial Services</a></li>
+                                        <li><a  href="{{url('about')}}" data-page="AboutUs" data-analytics="menuClick">About Us</a></li>
+                                        <li><a  href="{{url('investor')}}" target="_blank"rel="noopener noreferrer"data-analytics="menuClick">Investor Relations</a></li>
+                                        <li><a  href="#" data-page="FuturesFinancialServices" data-analytics="menuClick">Financial Services</a></li>
                                         <li><a  href="https://cdn-main.plus500.com/Regulatory/CFTC/default/default/Futures/1716971168/PrivacyPolicy.pdf" target="_blank"rel="noopener noreferrer"doc-href="https://cdn-main.plus500.com/Regulatory/CFTC/default/default/Futures/1716971168/PrivacyPolicy.pdf"data-analytics="menuClick">Cookies & Privacy</a></li>
-                                        <li><a  href="/feescharges" data-page="FuturesFinancialServices" data-analytics="menuClick">Fees & Charges</a></li>
+                                        <li><a  href="{{url('fees')}}" data-page="FuturesFinancialServices" data-analytics="menuClick">Fees & Charges</a></li>
                                         <li class="separator"><span>Sponsorships</span></li>
-                                        <li><a  href="/sponsorships/bulls" data-page="Bulls" data-analytics="menuClick">Chicago Bulls</a></li>
-                                        <li><a  href="/sponsorships/legiawarsaw" data-page="LegiaWarsaw" data-analytics="menuClick">Legia Warsaw</a></li>
-                                        <li><a  href="/sponsorships/youngboys" data-page="YoungBoys" data-analytics="menuClick">BSC Young Boys</a></li>
+                                        <li><a  href="{{url('bulls')}}" data-page="Bulls" data-analytics="menuClick">Chicago Bulls</a></li>
+                                        <li><a  href="{{url('legiawarsaw')}}" data-page="LegiaWarsaw" data-analytics="menuClick">Legia Warsaw</a></li>
+                                        <li><a  href="{{url('youngboys')}}" data-page="YoungBoys" data-analytics="menuClick">BSC Young Boys</a></li>
                         </ul>
                         
                     </li>
                     <li data-menu-name="learn" class="link-learn no-hover-link">
-                        <a data-analytics="menuClick" class="menu-link" href="/academy" title="Learn to trade Futures with Plus500US&#39; Trading Academy">
+                        <a data-analytics="menuClick" class="menu-link" href="{{url('academy')}}" title="Learn to trade Futures with Plus500US&#39; Trading Academy">
                             Learn
                         </a>
                     </li>
                     <li data-menu-name="support" class="link-support no-hover-link">
-                        <a data-analytics="menuClick" class="menu-link" href="/support">
+                        <a data-analytics="menuClick" class="menu-link" href="{{url('support')}}">
                             Support
                         </a>
                     </li>
                     <li data-menu-name="margins" class="link-margin no-hover-link">
-                        <a data-analytics="menuClick" class="menu-link" href="/margins">
+                        <a data-analytics="menuClick" class="menu-link" href="{{url('margins')}}">
                             Margins
                         </a>
                     </li>

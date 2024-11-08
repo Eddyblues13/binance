@@ -42,7 +42,7 @@
 
                 <div class="text-center mt-4">
                     <button class="btn btn-primary" onclick="window.print()">Print Receipt</button>
-                    <a href="{{ route('withdrawals.create') }}" class="btn btn-secondary">Make Another Withdrawal</a>
+                    <a href="{{ route('user.withdrawals.create') }}" class="btn btn-secondary">Make Another Withdrawal</a>
                 </div>
             </div>
         </div>

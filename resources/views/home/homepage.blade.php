@@ -1,5 +1,7 @@
 
 @include('home.header')
+
+
 <div class="sentinel"></div>
 <main>
     

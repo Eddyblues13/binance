@@ -15,8 +15,16 @@ Route::get('/', function () {
     return view('home.homepage');
 });
 
-Route::get('/indices', function () {
-    return view('home.indices');
+Route::get('/crypto', function () {
+    return view('home.crypto');
+});
+
+Route::get('/support', function () {
+    return view('home.support');
+});
+
+Route::get('/margins', function () {
+    return view('home.margins');
 });
 
 Route::get('/forex', function () {
@@ -83,6 +91,10 @@ Route::get('/about', function () {
     return view('home.about');
 });
 
+Route::get('/investor', function () {
+    return view('home.investor');
+});
+
 Route::get('/esg', function () {
     return view('home.esg');
 });
@@ -99,8 +111,8 @@ Route::get('/youngboys', function () {
     return view('home.youngboys');
 });
 
-Route::get('/tradingacademy', function () {
-    return view('home.tradingacademy');
+Route::get('/academy', function () {
+    return view('home.academy');
 });
 
 Route::get('/newsandmarketinsights', function () {
@@ -123,6 +135,28 @@ Route::get('/riskmanagement', function () {
 Route::get('/bulls', function () {
     return view('home.bulls');
 });
+
+Route::get('/all-market', function () {
+    return view('home.market');
+});
+Route::get('/metals', function () {
+    return view('home.metals');
+});
+
+Route::get('/agriculture', function () {
+    return view('home.agriculture');
+});
+
+Route::get('/interest', function () {
+    return view('home.interest');
+});
+
+Route::get('/equity', function () {
+    return view('home.equityindices');
+});
+
+
+
 
 Route::get('/market-update', function () {
     return view('dashboard.market-update');
@@ -156,13 +190,13 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'Profile'])->name('profile');
 Route::get('/news', [App\Http\Controllers\HomeController::class, 'News'])->name('news');
-Route::get('/calcuator', [App\Http\Controllers\HomeController::class, 'Calcuator'])->name('calcuator');
-Route::get('/market', [App\Http\Controllers\HomeController::class, 'Market'])->name('market');
+Route::get('/calculator', [App\Http\Controllers\HomeController::class, 'Calculator'])->name('calcuator');
 Route::get('/tradehistory', [App\Http\Controllers\HomeController::class, 'Tradehistory'])->name('tradehistory');
 Route::get('/orderbook', [App\Http\Controllers\HomeController::class, 'Orderbook'])->name('orderbook');
 Route::post('/change-password', [App\Http\Controllers\HomeController::class, 'updatePassword'])->name('update-password');
 Route::post('/personal-dp', [App\Http\Controllers\HomeController::class, 'personalDp'])->name('personal.dp');
 Route::post('/profile-update', [App\Http\Controllers\HomeController::class, 'profileUpdate'])->name('profileupdate');
+Route::post('/logout', [App\Http\Controllers\HomeController::class, 'logout'])->name('logout');
 
 
 
@@ -172,6 +206,7 @@ Route::get('/deposit', [App\Http\Controllers\DashboardController::class, 'deposi
 
 
 Route::prefix('user')->middleware('auth')->group(function () {
+    Route::get('/pay', [App\Http\Controllers\User\DepositController::class, 'Pay'])->name('user.pay.page');
     Route::get('/deposit', [App\Http\Controllers\User\DepositController::class, 'index'])->name('user.deposit.page');
     Route::post('/deposits/{id}', [App\Http\Controllers\User\DepositController::class, 'handleDeposit'])->name('handle.deposit');
     Route::post('/deposit', [App\Http\Controllers\User\DepositController::class, 'handlePayment'])->name('handle.payment');

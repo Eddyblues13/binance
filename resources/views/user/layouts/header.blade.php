@@ -51,13 +51,170 @@
 <!-- START: Body-->
 <!-- START: Body-->
 
+
+
+<style>
+  /* Basic styling for the dashboard */
+  #dashboard-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Logo styling */
+  #logo-container img {
+    max-width: 150px;
+    height: auto;
+  }
+
+  /* Orientation overlay for phone view only */
+  #orientation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: #ffffff;
+    display: none; /* Default to hidden */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 9999;
+  }
+</style>
+</head>
+<body>
+
+<!-- Dashboard Content -->
+
+
+<!-- Orientation Warning Overlay (for phone portrait view only) -->
+<div id="orientation-overlay">
+  <div id="logo-container">
+    <img src="https://test.mlfunit.com/logo.png" alt="Your Logo"> <!-- Replace 'logo.png' with your logo path -->
+  </div>
+  <p>Please turn your device to landscape mode for the best experience.</p>
+</div>
+
+<script>
+  // Function to toggle orientation overlay based on device orientation and screen width
+  function checkOrientation() {
+    const overlay = document.getElementById('orientation-overlay');
+    const dashboardContent = document.getElementById('dashboard-content');
+    const isPortrait = window.innerHeight > window.innerWidth;
+    const isPhoneView = window.innerWidth <= 768; // Adjust width threshold for phone view if needed
+
+    // Show overlay only in portrait mode and on phone view
+    if (isPortrait && isPhoneView) {
+      overlay.style.display = 'flex';
+      dashboardContent.style.display = 'none'; // Hide the main dashboard content
+    } else {
+      overlay.style.display = 'none';
+      dashboardContent.style.display = 'flex'; // Show the main dashboard content in landscape mode
+    }
+  }
+
+  // Check orientation on load and on resize
+  window.addEventListener('load', checkOrientation);
+  window.addEventListener('resize', checkOrientation);
+</script>
+
 <body id="main-container" class="default">
     <!-- START: Pre Loader-->
-    <div class="se-pre-con">
-        <img src="{{asset('dist/images/logo.jpg')}}" alt="logo" width="20" class="img-fluid" />
+<!-- START: Pre Loader -->
+<div class="se-pre-con">
+    <div class="sk-folding-cube sk-folding-cube-orange">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
     </div>
+</div>
+<!-- END: Pre Loader -->
+<style>body {
+    overflow: hidden; /* Prevent scrolling while loading */
+}
+
+.se-pre-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Background color behind the loader */
+    z-index: 9999; /* Ensure it's on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Orange folding cube preloader */
+.sk-folding-cube {
+    width: 80px; /* Size for a bold look */
+    height: 80px;
+    position: relative;
+    transform: rotateZ(45deg);
+    animation: spin 2s linear infinite; /* Smooth spin for the entire cube */
+}
+
+.sk-folding-cube-orange .sk-cube {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    background-color: #f39c12; /* Orange color */
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Diamond shape */
+    transform-origin: 100% 100%;
+    animation: sk-folding-cube 1.5s infinite ease-in-out;
+}
+
+.sk-cube1 { transform: rotateZ(0deg); animation-delay: 0s; }
+.sk-cube2 { transform: rotateZ(90deg); animation-delay: 0.3s; }
+.sk-cube3 { transform: rotateZ(180deg); animation-delay: 0.6s; }
+.sk-cube4 { transform: rotateZ(270deg); animation-delay: 0.9s; }
+
+/* Keyframes for folding cube animation */
+@keyframes sk-folding-cube {
+    0%, 10% {
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%, 75% {
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%, 100% {
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+/* Smooth spin for the entire cube */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+
+<script>
+    // Wait for window load to hide the pre-loader and enable scrolling
+    window.onload = function() {
+        // Hide the pre-loader
+        document.querySelector('.se-pre-con').style.display = 'none';
+
+        // Enable scrolling by removing overflow:hidden
+        document.body.style.overflow = 'auto';
+    };
+</script>
+
     <!-- END: Pre Loader-->
-    <form id="logout-form" action="https://ditexcoin.com/logout" method="POST" style="display: none;">
+    <form id="logout-form" action="" method="POST" style="display: none;">
         <input type="hidden" name="_token" value="5QLTsaPXiXFK5BRq0rSxK79tYG7jPVD8j79YF40y">
     </form>
     <!-- START: Header-->
@@ -81,66 +238,94 @@
             <div class="navbar-right ml-auto">
                 <ul class="ml-auto p-0 m-0 list-unstyled d-flex">
 
-                    <li class="mr-1 d-inline-block my-auto" style="position: relative;">
-                        <div style="display: flex; align-items: center;">
-                            <a href="{{route('user.deposit.page')}}"
-                                style="background-color: green; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-right: 10px;">
-                                Deposit
-                            </a>
-                            <a href="{{route('user.withdrawals.create')}}"
-                                style="background-color: red; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-right: 10px;">
-                                Withdraw
-                            </a>
-                            <h6 style="margin: 0; flex-grow: 1;">
-                                <span id="account-type">PRACTICE ACCOUNT</span><br>
-                                <span id="account-balance" style="font-size: 1.2em;">9,893.940</span><br>
-                                <span style="font-size: 0.8em;">Estimate Account</span>
-                            </h6>
-                            <span onclick="toggleDropdown()" style="cursor: pointer; margin-left: auto;">
-                                &#9662;
-                                <!-- Chevron down icon -->
-                            </span>
-                        </div>
+                   <li class="mr-1 d-inline-block my-auto" style="position: relative;">
+    <div style="display: flex; align-items: center;">
+        <a href="javascript:void(0)" onclick="openDepositModal()" 
+            style="background-color: green; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-right: 10px;">
+            Deposit
+        </a>
+        <a href="{{route('user.withdrawals.create')}}"
+            style="background-color: red; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-right: 10px;">
+            Withdraw
+        </a>
+        <h6 style="margin: 0; flex-grow: 1;">
+            <span id="account-type">PRACTICE ACCOUNT</span><br>
+            <span id="account-balance" style="font-size: 1.2em;">9,893.940</span><br>
+            <span style="font-size: 0.8em;">Estimate Account</span>
+        </h6>
+        <span onclick="toggleDropdown()" style="cursor: pointer; margin-left: auto;">
+            &#9662;
+            <!-- Chevron down icon -->
+        </span>
+    </div>
 
-                        <div id="account-dropdown"
-                            style="display: none; position: absolute; background: white; border: 1px solid #ccc; margin-top: 5px; padding: 20px; z-index: 1000; border-radius: 5px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); width: 350px;">
-                            <h6 style="margin: 0; font-size: 1.2em; font-weight: bold;">Account List</h6>
+    <div id="account-dropdown"
+        style="display: none; position: absolute; background: white; border: 1px solid #ccc; margin-top: 5px; padding: 20px; z-index: 1000; border-radius: 5px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); width: 350px;">
+        <h6 style="margin: 0; font-size: 1.2em; font-weight: bold;">Account List</h6>
 
-                            <div
-                                style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
-                                <div onclick="changeAccount('practice', 9893.940)"
-                                    style="cursor: pointer; flex-grow: 1;">
-                                    <strong>Practice Account</strong><br>
-                                    <span style="font-size: 1.2em;">58,958.47 $</span><br>
-                                    <span style="font-size: 0.9em; color: gray;">Estimate Balance</span>
-                                </div>
-                                <button onclick="creditPracticeAccount()"
-                                    style="background-color: green; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-left: 10px;">
-                                    Credit
-                                </button>
-                            </div>
+        <div
+            style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+            <div onclick="changeAccount('practice', 9893.940)"
+                style="cursor: pointer; flex-grow: 1;">
+                <strong>Practice Account</strong><br>
+                <span style="font-size: 1.2em;">58,958.47 $</span><br>
+                <span style="font-size: 0.9em; color: gray;">Estimate Balance</span>
+            </div>
+            <button onclick="creditPracticeAccount()"
+                style="background-color: green; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-left: 10px;">
+                Credit
+            </button>
+        </div>
 
-                            <div
-                                style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
-                                <div onclick="changeAccount('real', 0.00000)" style="cursor: pointer; flex-grow: 1;">
-                                    <strong>Real Account</strong><br>
-                                    <span style="font-size: 1.2em;">{{
-                                        number_format($usd_sum, 2) }} {{Auth::user()->currency}}</span><br>
-                                    <span style="font-size: 0.9em; color: gray;">Estimate Balance</span>
-                                </div>
-                                <button onclick="depositRealAccount()"
-                                    style="background-color: blue; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-left: 10px;">
-                                    Deposit
-                                </button>
-                            </div>
+        <div style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+            <div onclick="changeAccount('real', 0.00000)" style="cursor: pointer; flex-grow: 1;">
+                <strong>Real Account</strong><br>
+                <span style="font-size: 1.2em;">{{ number_format($usd_sum, 2) }} {{ Auth::user()->currency }}</span><br>
+                <span style="font-size: 0.9em; color: gray;">Estimate Balance</span>
+            </div>
+            <button onclick="openDepositModal()"
+                style="background-color: blue; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-left: 10px;">
+                Deposit
+            </button>
+        </div>
+        
+        <!-- Withdraw All -->
+        <div onclick="withdrawAll()"
+            style="cursor: pointer; padding: 10px; text-align: center; border-top: 1px solid #eee; margin-top: 10px;">
+            <strong>Withdraw All</strong>
+        </div>
+    </div>
 
-                            <div onclick="withdrawAll()"
-                                style="cursor: pointer; padding: 10px; text-align: center; border-top: 1px solid #eee; margin-top: 10px;">
-                                <strong>Withdraw All</strong>
-                            </div>
-                        </div>
+    <!-- Deposit Modal -->
+    <div id="depositModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; z-index: 1000;">
+        <div style="background: white; padding: 20px; border-radius: 5px; width: 300px; text-align: center;">
+            <h2>Deposit Funds</h2>
+            <p>Are you sure you want to proceed to deposit?</p>
+            <button onclick="window.location.href='{{route('user.deposit.page')}}'" style="background-color: green; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; cursor: pointer;">
+                Proceed to Deposit
+            </button>
+            <button onclick="closeModal()" style="background-color: red; color: white; border: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 10px;">
+                Cancel
+            </button>
+        </div>
+    </div>
 
-                    </li>
+    <script>
+        function openDepositModal() {
+            document.getElementById('depositModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('depositModal').style.display = 'none';
+        }
+
+        function toggleDropdown() {
+            var dropdown = document.getElementById('account-dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</li>
+
 
 
                     <li class="mr-1 d-inline-block my-auto d-block d-lg-none">
@@ -246,50 +431,52 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
-        <!-- START: Menu-->
-        <ul id="side-menu" class="sidebar-menu">
-            <li class="dropdown active"><a href="{{url('home')}}"><i class="fas fa-home"></i> BOARD</a></li>
-            <li class="dropdown"><a href="{{url('orderbook')}}"><i class="fas fa-wallet"></i> ORDER BOOK</a></li>
-            <li class="dropdown"><a href="{{url('market')}}"><i class="fas fa-shopping-basket"></i> MARKET</a></li>
-            <li class="dropdown"><a href="{{url('tradehistory')}}"><i class="fas fa-th"></i> PORTFOLIO</a></li>
-            <li class="dropdown"><a href="{{url('calculator')}}"><i class="fas fa-calculator"></i> CALC</a></li>
-            <li class="dropdown"><a href="{{url('news')}}"><i class="fas fa-newspaper"></i> NEWS</a></li>
+       <!-- START: Menu -->
+<div id="sidebar-container">
+    <ul id="side-menu" class="sidebar-menu">
+        <li class="dropdown active"><a href="{{url('home')}}"><i class="fas fa-home"></i> BOARD</a></li>
+        <li class="dropdown"><a href="{{url('orderbook')}}"><i class="fas fa-wallet"></i> ORDER BOOK</a></li>
+        <li class="dropdown"><a href="{{url('market')}}"><i class="fas fa-shopping-basket"></i> MARKET</a></li>
+        <li class="dropdown"><a href="{{url('tradehistory')}}"><i class="fas fa-th"></i> PORTFOLIO</a></li>
+        <li class="dropdown"><a href="{{url('calculator')}}"><i class="fas fa-calculator"></i> CALC</a></li>
+        <li class="dropdown"><a href="{{url('news')}}"><i class="fas fa-newspaper"></i> NEWS</a></li>
 
-            <!--- <div> 
-                        <ul>
-                            <li><a href="https://ditexcoin.com/dashboard/mplans"><i class="icon-loop"></i> Activate Package</a></li>
-                            <li><a href="https://ditexcoin.com/dashboard/myplans"><i class="icon-eye"></i> Current Package</a></li>
-                            <li><a href="https://ditexcoin.com/dashboard/tradinghistory"><i class="icon-compass"></i> Transaction ROI</a></li>                        
-                        </ul> 
-                    </div>-->
+        <li class="dropdown"><a href="#"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                    class="icon-logout"></i>Logout</a>
+        </li>
+    </ul>
+</div>
 
-            </li>
+<style>
+    /* Sidebar container to take full viewport height */
+    #sidebar-container {
+        height: 100vh;
+        overflow-y: auto;
+    }
 
-            {{-- <li class="dropdown"><a href="#"><i class="icon-user"></i>Profile</a>
-                <div>
-                    <ul>
-                        <li><a href=""><i class="icon-user-following"></i>
-                                Personal Account</a></li>
-                        <li><a href=""><i class="icon-pencil"></i> Update
-                                Payment Details</a></li>
-                    </ul>
-                </div>
+    /* Sidebar menu with smooth scrolling */
+    #side-menu {
+        max-height: 100%;
+        overflow-y: auto;
+        padding-right: 5px; /* Avoid scrollbar overlap */
+    }
 
-            </li> --}}
-            {{-- <li class="dropdown"><a href="https://ditexcoin.com/dashboard/referuser"><i
-                        class="icon-link"></i>Referral</a>
-            </li> --}}
-            <li class="dropdown"><a href="#"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
-                        class="icon-logout"></i>Logout</a>
+    /* Custom scrollbar styling */
+    #side-menu::-webkit-scrollbar {
+        width: 6px;
+    }
 
-            <li><a href="#"><i class=" "></i></a></li>
+    #side-menu::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 3px;
+    }
 
-            </li>
-
-
-        </ul>
-        <!-- END: Menu-->
+    #side-menu::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+</style>
+nu-->
     </div>
     <!-- END: Main Menu-->
     <!-- END: Main Menu-->

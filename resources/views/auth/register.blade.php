@@ -65,7 +65,7 @@
                         <img src="apple.png" alt="Apple" class="social-icon">
                     </div>
                 </div>
-                <a href="#" class="login-link">Already have an account?</a>
+                <a href="{{route('login')}}" class="login-link">Already have an account?</a>
             </form>
         </div>
     </div>

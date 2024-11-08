@@ -25,6 +25,19 @@ class DepositController extends Controller
         return view('user.deposit.home', $data);
     }
 
+    public function Pay()
+    {
+        $userId = Auth::id();
+
+        // Sum of investments
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->sum('usd_value');
+
+        $data['cryptos'] =  PaymentSetting::get();
+
+        return view('user.deposit.pay', $data);
+    }
+
 
     public function handleDeposit(Request $request, $id)
     {
@@ -52,7 +65,7 @@ class DepositController extends Controller
         // Validate the incoming request data
         $validator = Validator::make($request->all(), [
             'amount' => 'required|numeric|min:0',
-            'payment_mode' => 'required|string',
+            'payment_mode' => 'string',
             'proof' => 'sometimes|file|mimes:jpg,jpeg,png,pdf|max:2048', // Validate the proof of payment if uploaded
         ]);
 
@@ -90,7 +103,10 @@ class DepositController extends Controller
 
 
             // Redirect to the deposits page with a success message
-            return redirect()->route('deposits')->with('status', 'Payment submitted successfully!');
+            return redirect()->route('user.pay.page')->with([
+                'status' => 'Payment submitted successfully!',
+                'amount' => $amount
+            ]);
         }
 
         // If user is not authenticated, redirect back with an error

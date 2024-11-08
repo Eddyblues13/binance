@@ -1,67 +1,93 @@
 @include('user.layouts.header')
-<style>
-    .card {
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: normal;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #666;
+            box-sizing: border-box;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #ffa500;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #ff8c00;
+        }
+        .footer-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 15px;
+        }
+        .footer-text a {
+            color: #666;
+            text-decoration: underline;
+        }
+        /* Center the container within the page */
+        .center-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
 
-    .card:hover {
-        transform: translateY(-5px);
-    }
+<div class="center-wrapper">
+    <div class="container">
+        <h2>Enter Amount to be paid: (USD)</h2>
+        <form action="{{ route('handle.payment') }}" method="POST">
+            @csrf
 
-    .crypto-img {
-        width: 80px;
-        height: 80px;
-        object-fit: contain;
-    }
-
-    .crypto-card {
-        text-align: center;
-        padding: 20px;
-    }
-
-    .deposit-btn {
-        margin-top: 10px;
-        background-color: #28a745;
-        color: #fff;
-        border-radius: 5px;
-    }
-
-    .deposit-btn:hover {
-        background-color: #218838;
-    }
-</style>
-
-
-<div class="container mt-5">
-    <div class="row mt-5" style="margin-top: 20px;">
-        <div class="col-12 text-center" style="margin: 10px;">
-            <h2>Select Deposit Method</h2>
-            <p>Choose a cryptocurrency method to make your deposit</p>
-        </div>
-    </div>
-
-
-    <div class="row">
-
-
-        @foreach ($cryptos as $crypto)
-        <div class="col-md-4 col-lg-3 mb-4">
-            <div class="card crypto-card">
-                <center><img src="{{ asset('dist/images/cryptos/' . $crypto['image']) }}"
-                        alt="{{ $crypto['name'] }} logo" class="crypto-img mb-3"> </center>
-                <h5>{{ $crypto['name'] }}</h5>
-                <form action="{{ route('handle.deposit',$crypto['id']) }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="crypto_method" value="{{ $crypto['name'] }}">
-                    <button type="submit" class="btn deposit-btn">Deposit with {{ $crypto['name'] }}</button>
-                </form>
+            <div class="form-group">
+                <input type="number" id="amount" name="amount" placeholder="Enter amount eg: 1000" required>
             </div>
-        </div>
-        @endforeach
+
+            <button type="submit" class="btn">Pay Now</button>
+
+            <p class="footer-text">
+                Payments processed by Trust Wallet.<br>
+                <a href="#">Payment Privacy Policy</a>
+            </p>
+        </form>
     </div>
 </div>
 
-<script src="{{ asset('dist/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
+
+
 @include('user.layouts.footer')

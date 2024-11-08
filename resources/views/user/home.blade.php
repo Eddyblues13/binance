@@ -1,4 +1,77 @@
 @include('user.layouts.header')
+<style>
+  /* Basic styling for the dashboard */
+  #dashboard-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Logo styling */
+  #logo-container img {
+    max-width: 150px;
+    height: auto;
+  }
+
+  /* Orientation overlay for phone view only */
+  #orientation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: #ffffff;
+    display: none; /* Default to hidden */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 9999;
+  }
+</style>
+</head>
+<body>
+
+<!-- Dashboard Content -->
+
+
+<!-- Orientation Warning Overlay (for phone portrait view only) -->
+<div id="orientation-overlay">
+  <div id="logo-container">
+    <img src="logo.png" alt="Your Logo"> <!-- Replace 'logo.png' with your logo path -->
+  </div>
+  <p>Please turn your device to landscape mode for the best experience.</p>
+</div>
+
+<script>
+  // Function to toggle orientation overlay based on device orientation and screen width
+  function checkOrientation() {
+    const overlay = document.getElementById('orientation-overlay');
+    const dashboardContent = document.getElementById('dashboard-content');
+    const isPortrait = window.innerHeight > window.innerWidth;
+    const isPhoneView = window.innerWidth <= 768; // Adjust width threshold for phone view if needed
+
+    // Show overlay only in portrait mode and on phone view
+    if (isPortrait && isPhoneView) {
+      overlay.style.display = 'flex';
+      dashboardContent.style.display = 'none'; // Hide the main dashboard content
+    } else {
+      overlay.style.display = 'none';
+      dashboardContent.style.display = 'flex'; // Show the main dashboard content in landscape mode
+    }
+  }
+
+  // Check orientation on load and on resize
+  window.addEventListener('load', checkOrientation);
+  window.addEventListener('resize', checkOrientation);
+</script>
+
 <main>
     <div class="container-fluid">
         <!-- START: Breadcrumbs-->

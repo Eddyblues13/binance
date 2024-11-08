@@ -6,16 +6,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="unsafe-url">
-    <title>About Us | Plus500</title>
-        <meta name="description" content="Trade US Futures on Bitcoin, S&amp;P500, Oil, and more with Plus500, a global leader with 24/7 customer support at your disposal." />
+    <title>Trade Futures with Plus500 | Plus500</title>
+        <meta name="description" content="Trade Futures with a Plus. Trade Futures on Indices, Forex, Crypto, Agriculture, and more." />
 
 
-        <link rel="canonical" href="https://us.plus500.com/aboutus" />
+        <link rel="canonical" href="https://us.plus500.com/markets" />
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap" as="style" rel="preload" onload="this.rel='stylesheet'; this.onload=null;" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" as="style" rel="preload" onload="this.rel='stylesheet'; this.onload=null;" crossorigin>
     
-    <link rel="stylesheet" href="https://cdn-main.plus500.com/1.0.0.120805/Resources/CSS/futures/about-us.css"/>
+    <link rel="stylesheet" href="https://cdn-main.plus500.com/1.0.0.120805/Resources/CSS/futures/all-instruments.css"/>
 
 
     <!-- Start VWO Async SmartCode -->
@@ -63,10 +63,10 @@
                         analyticsParameters['mainSiteSubdomain']='Futures'
                 
                 
-                        analyticsParameters['pageType']='General'
+                        analyticsParameters['pageType']='InstrumentCategory'
                 
                 
-                        analyticsParameters['pageTitle']='AboutUs'
+                        analyticsParameters['pageTitle']='AllInstruments'
                 
                 
                         analyticsParameters['experimentName_0']='IdHomeViewExp'
@@ -79,6 +79,15 @@
                 
                 
                         analyticsParameters['experimentVariant_1']='Control'
+                
+                
+                        analyticsParameters['pageLanguage']='en'
+                
+                
+                        analyticsParameters['operator']='Plus500US'
+                
+                
+                        analyticsParameters['productType']='CFD'
                 
             window.dataLayer.push({
                 'event': 'pageMetaData',
@@ -117,10 +126,10 @@
         }
     </script>
 
-    <link rel="alternate" href="https://us.plus500.com/aboutus" hreflang="en-US" />
+    <link rel="alternate" href="https://us.plus500.com/markets" hreflang="en-US" />
     
 </head>
-<body class="aboutus regulator-cftc country-us lang-en Win10">
+<body class="allinstruments regulator-cftc country-us lang-en Win10">
 <!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGBN3Q"
@@ -237,441 +246,533 @@
 <main>
     
 
-<section class="main-banner" data-section-name="hero-section">
-    <figure aria-hidden="true" class="plus-bg plus-bg-medium white-fill semi-transparent first"></figure>
-    <figure aria-hidden="true" class="plus-bg plus-bg-large white-fill semi-transparent second"></figure>
-    <figure aria-hidden="true" class="plus-bg white-fill semi-transparent third"></figure>
-    <div class="main-banner-wrap container-lg">
-        <div class="main-banner-content hero-content">
-            <div class="col-lg-5 col-xl-6 col-xxxl-7">
-                <figure class="main-banner-logo" aria-hidden="true">
-                    <img src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/svg/plus500-logo.svg" alt="" />
-                </figure>
-                <h1 class="main-banner-title main-title-font">About Plus500™</h1>
-                <p>Plus500 is a global multi-asset fintech group operating proprietary technology-based trading platforms. Plus500 has offered customers around the world a range of trading products for years, including Contracts for Difference (“CFDs”) and Share dealing. With this strong background in making the world of trading accessible to retail and professional customers alike, Plus500 is now offering futures and options on futures to customers. Plus500, via its subsidiary Plus500US Financial Services LLC, is a full member of the CME Group and the National Futures Association. Plus500 has a premium listing on the Main Market of the London Stock Exchange (symbol: PLUS) and is a constituent of the FTSE 250 index.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="who-we-are" data-section-name="who-we-are-section">
-    <figure aria-hidden="true" class="plus-bg turquoise-white-gr first"></figure>
-    <figure aria-hidden="true" class="plus-bg turquoise-white-gr second"></figure>
-    <figure aria-hidden="true" class="plus-bg turquoise-white-gr third"></figure>
-    <figure aria-hidden="true" class="plus-bg turquoise-white-gr forth"></figure>
-    <figure aria-hidden="true" class="plus-bg turquoise-white-gr fifth"></figure>
-    <figure aria-hidden="true" class="plus-bg turquoise-white-gr sixth"></figure>
-    <div class="container-xl">
-        <div class="cards">
-            <div class="card">
-                <figure aria-hidden="true" class="plus-bg turquoise-white-gr first-mobile"></figure>
-                <figure aria-hidden="true" class="plus-bg turquoise-white-gr second-mobile"></figure>
-                <div class="card-content">
-                    <figure class="icon" aria-hidden="true">
-                        <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/svg/about-us-who-we-are-icon1.svg" alt="Who We Are">
-                    </figure>
-                    <h2 class="card-title">Who We Are</h2>
-                    <p>Plus500US Ltd is a company registered in the United States, licensed to offer the trading of futures via Plus500US Financial Services LLC, a Futures Commission Merchant registered with the US Commodity Futures Trading Commission and a member of the National Futures Association (NFA ID number 0001398). Plus500US Financial Services LLC is a wholly-owned subsidiary of Plus500US Inc. Plus500US is a subsidiary of Plus500 Ltd, which is listed on the London Stock Exchange’s Main Market for Listed Companies, Plus500, via its subsidiary Plus500US Financial Services LLC, is a full member of the CME Group.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <figure class="icon" aria-hidden="true">
-                        <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/svg/about-us-who-we-are-icon2.svg" alt="Client Money
-">
-                    </figure>
-                    <h2 class="card-title">Client Money
-</h2>
-                    <p>When you open an account, Plus500US Financial Services LLC will hold your funds in a segregated bank account, which separates customer funds from the company's funds.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <figure class="icon" aria-hidden="true">
-                        <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/svg/about-us-who-we-are-icon3.svg" alt="Highly-Rated Trading Provider">
-                    </figure>
-                    <h2 class="card-title">Highly-Rated Trading Provider</h2>
-                    <p>Plus500 is one of the highest-rated CFD trading apps on Apple's App Store and Google Play as it is understandable yet powerful in its many advanced features.</p>
-                </div>
-            </div>
-            <figure aria-hidden="true" class="plus-bg turquoise-white-gr third-mobile"></figure>
-        </div>
-    </div>
-</section>
-<section class="objectives-and-vision" data-section-name="objectives-and-vision-section">
-    <figure class="image-wrapper" aria-hidden="true">
-        <img loading="lazy" data-src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/objectives-and-vision-image-mobile.webp" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/objectives-and-vision-image-mobile.webp" alt="" class="lazyload mobile">
-        <img loading="lazy" data-src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/objectives-and-vision-image-desktop.webp" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/objectives-and-vision-image-desktop.webp" alt="" class="lazyload desktop">
-    </figure>
-    <div class="objectives-wrapper">
-        <div class="blue-card-bg full-height">
-            <figure aria-hidden="true" class="plus-bg white first"></figure>
-            <figure aria-hidden="true" class="plus-bg white second"></figure>
-            <figure aria-hidden="true" class="plus-bg white third"></figure>
-        </div>
-        <div class="container-xl">
-            <h2 class="secondary-title">Objectives &amp; Vision</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6 objectives-content">
-                    <h3 class="title">Our Vision</h3>
-<p>Plus500 is continually expanding our core product offering to new and existing markets and launching new trading and financial products, strengthening our position as a multi-asset fintech group over time and further deepening our engagement with customers.</p>
-<h3 class="title">Our Purpose</h3>
-<p>Plus500 provides our clients with reliable and intuitive access to financial opportunities, operating across products, devices, and countries.</p>
-<h3 class="title">Our Values</h3>
-<p>With state-of-the-art proprietary technology and a customer-centric approach, we continually strive for excellence in bringing our users a best-in-class trading service experience.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="milestones" data-section-name="milestones-section">
-    <h2 class="title-section text-center">Key Milestones</h2>
-    <div class="milestones-wrapper">
-        <figure aria-hidden="true" class="plus-bg plus-bg-medium turquoise-white-gr"></figure>
-        <figure aria-hidden="true" class="plus-bg plus-bg-large turquoise-white-gr"></figure>
-        <div class="container-xl">
-            <div class="row justify-content-center">
-                <div class="col-lg-11 col-xl-10 col-xxl-9 milestones-slider-wrap">
-                    <div class="slick-slider slider-for milestones-slider">
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2008.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">The original Plus500 Group is founded, launching its first PC-based online trading platform.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2009.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500 begins its Affiliates Marketing program.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2010.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500 launches its first web app, providing trading access to Mac, Linux, and smartphone users.</li>
-                                    <li class="slide-description">Plus500 expands abroad, as subsidiary Plus500UK begins operations in London, England.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2011.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500 Group launches its first iPhone and iPad application.</li>
-                                    <li class="slide-description">Plus500 becomes the highest-rated CFD trading app on Apple's App Store.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2012.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500 Group brings its app to Android smartphones and tablets.</li>
-                                    <li class="slide-description">Plus500AU subsidiary begins operations in Sydney, Australia.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2013.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500 Ltd goes public on the London Stock Exchange.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2014.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500 enters the European market as Plus500CY subsidiary begins operations in Limassol, Cyprus.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2015.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500IL subsidiary begins operations in Tel Aviv, Israel.</li>
-                                    <li class="slide-description">Plus500 signs a sponsorship deal with Spanish football club Atlético de Madrid.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2016.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500BOS subsidiary begins operations in Sofia, Bulgaria.</li>
-                                    <li class="slide-description">Plus500 enters the New Zealand market.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2017.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500SG subsidiary begins operations in Singapore.</li>
-                                    <li class="slide-description">Plus500 enters the South African market.</li>
-                                    <li class="slide-description">Customer base reaches 10 million.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2018.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500 Ltd’s ordinary shares move to the London Stock Exchange’s Main Market for Listed Companies, joining the UK FTSE 250 index.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2020.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500 signs sponsorship agreements with football clubs BSC Young Boys, Atalanta B.C., and Legia Warsaw.</li>
-                                    <li class="slide-description">Plus500’s financial technology group defines a new vision for the company.</li>
-                                    <li class="slide-description">Plus500SEY begins operations in Victoria, Seychelles.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2021.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500 opens a new Research & Development facility in Tel Aviv.</li>
-                                    <li class="slide-description">Plus500Invest brings share trading to customers.</li>
-                                    <li class="slide-description">Plus500 completes its first acquisition deal of CTS and Cunningham Commodities and enters the American market.</li>
-                                    <li class="slide-description">Customer base reaches 20 million.</li>
-                                </ul>
-                            </div>
-                            <div class="slide">
-                                <figure class="slide-image" aria-hidden="true">
-                                    <img loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/img/milestones/logo-2022.svg" alt="" />                                                                                                                                        
-                                </figure>
-                                <ul class="slide-list">
-                                    <li class="slide-description">Plus500 expands to the Japanese market.</li>
-                                    <li class="slide-description">Plus500 launches its new global branding campaign featuring Emmy award-winning actor, Kiefer Sutherland.</li>
-                                    <li class="slide-description">Plus500 begins Futures Trading operations in the U.S. with TradeSniper.</li>
-                                    <li class="slide-description">Plus500 signs sponsorship deal with the Chicago Bulls.</li>
-                                </ul>
-                            </div>
-                    </div>
-                    <div class="blue-card-bg white-bg flip not-rotate full-height"></div>
-                </div>
-            </div>
-        </div>
-        <div class="slick-slider slider-nav milestones-slider-nav">
-                <div>
+<section class="main-banner inner-banner">
+    <div class="container-lg hero-container" data-section-name="hero-section">
+        <div class="row justify-content-center hero-content-wrap">
+            <div class="col-12 col-xl-10 text-center main-banner-content hero-content">
+                <h1 class="main-banner-title main-title-font">All the Futures You Need</h1>
+                <p class="main-banner-slogan">Elevate your trading with the most popular Futures like S&amp;P 500, Bitcoin, Oil, Gold, and more.</p>
+                <div class="main-banner-buttons button-group">
                     
-                        <div class="slide-year">2008</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2009</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2010</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2011</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2012</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2013</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2014</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2015</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2016</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2017</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2018</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2020</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2021</div>
-                    
-                </div>
-                <div>
-                    
-                        <div class="slide-year">2022</div>
-                    
-                </div>
-        </div>
-        <div class="slick-slider-progress">
-            <div class="progress"></div>
-        </div>
-        <aside class="slick-navigation">
-            <button class="slick-arrow slick-prev prev-arrow">
-                <span class="prev">prev</span>
-            </button>
-            <div class="slider-dots"></div>
-            <div class="slider-count"></div>
-            <button class="slick-arrow slick-next next-arrow">
-                <span class="next">next</span>
-            </button>
-        </aside>
-        <div class="container-xl">
-        <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-9 col-xl-7">
-                <div class="disclaimer text-center">Plus500US Ltd is a company registered in the United States that offers the trading of futures via Plus500US Financial Services LLC, a Futures Commission Merchant registered with the US Commodity Futures Trading Commission and a member of the National Futures Association (NFA ID number 0001398).
-</div>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
-<section class="communication" data-section-name="communication-section">
-    <div class="container-xl block">
-        <div class="row row-cols-1 row-cols-md-2 g-5 justify-content-between">
-            <div class="col block-item">
-                <h2 class="title">Complaints Process</h2>
-                <p class="free-content">We are obliged to put in place internal procedures for handling complaints fairly and promptly. You may submit a complaint to us by email. We will send you a written acknowledgement of your complaint promptly following receipt.)</p>
-            </div>
-            <div class="col block-item">
-                <h2 class="title">Communication with customers and unsolicited approaches</h2>
-                <p class="free-content">All communication with customers is done in writing, either by email or live chat. To contact Plus500 by email, you should fill in the form available on the “Contact Us” page (the &quot;Request Form&quot;). Following the submission of the Request Form, Plus500’s response will be sent by email directly to the email address that you specified in the form.</p>
-            </div>
-        </div>
-    </div>
-    <div class="block-two">
-        <figure aria-hidden="true" class="plus-bg white first"></figure>
-        <figure aria-hidden="true" class="plus-bg white second"></figure>
-        <figure aria-hidden="true" class="plus-bg white third"></figure>
-        <div class="container-xl">
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6 free-content">
-                    <strong>Only emails received from the plus500.com domain are legitimate email communications from Plus500.</strong>
-<p>Any other emails claiming to be from Plus500 are deemed to be fraudulent. Make sure you are only visiting Plus500’s official website - www.plus500.com, and using Plus500’s official app available on Google Play, App Store, Huawei AppGallery, and Microsoft Store. Note that Plus500 does not have a sales department or a call center.</p>
-<strong>Plus500 will never contact customers by phone with a request to deposit funds.</strong>
-<p>Plus500 does not offer investment advice to its clients.</p>    
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="sponsorships-section-wrapper mb-5">
-    <figure aria-hidden="true" class="plus-bg turquoise-transparent-gr first"></figure>
-    <figure aria-hidden="true" class="plus-bg turquoise-transparent-gr second"></figure>
-    
-<section class="sponsorships-section" data-section-name="sponsorships">
-    <div class="container-xxl">
-        <header class="row justify-content-center text-center sponsorships-header">
-                <h3 class="title-section">We <strong>Sponsor</strong></h3>
-        </header>
-        <div class="row">
-            <div class="column col">
-                <div class="sponsorships-wrapper" data-featured-sponsorship="bulls">
-                        <div class="row sponsorships-main-row">
-                            <div data-index="2" style="z-index:2" class="sponsorships-item sponsorships-item-legia">
-                                <a data-analytics="buttonClick" href="/sponsorships/legiawarsaw" class="sponsorships-item-link">
-                                    <div class="sponsorships-item-image" data-cta-name="legia-players">
-                                        <img loading="lazy" data-src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/img/legia-formation.webp" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/img/legia-formation.webp" alt="" class="lazyload ">
-                                    </div>
-                                    <div class="sponsorships-item-logo sponsorships-item-logo-legia" data-cta-name="legia-badge">
-                                        <div class="sponsorships-item-logo-image">
-                                            <img width="80" class="sponsorship-logo-back" loading="lazy" data-src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/svg/sponsorship-logo-legia-back.svg" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/svg/sponsorship-logo-legia-back.svg" alt="" class="lazyload ">
-                                            <img width="80" class="sponsorship-logo-front" loading="lazy" data-src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/svg/sponsorship-logo-legia-front.svg" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/svg/sponsorship-logo-legia-front.svg" alt="" class="lazyload ">
-                                        </div>
-                                        <span>Legia Warsaw</span>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div data-index="3" style="z-index:3" class="sponsorships-item sponsorships-item-bulls">
-                                <a data-analytics="buttonClick" href="/sponsorships/bulls" class="sponsorships-item-link">
-                                    <div class="sponsorships-item-image" data-cta-name="bulls-players">
-                                        <img loading="lazy" data-src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/img/bulls-formation.webp" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/img/bulls-formation.webp" alt="" class="lazyload ">
-                                    </div>
-                                    <div class="sponsorships-item-logo sponsorships-item-logo-bulls" data-cta-name="bulls-badge">
-                                        <div class="sponsorships-item-logo-image">
-                                            <img width="120" class="sponsorship-logo-back" loading="lazy" data-src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/svg/sponsorship-logo-bulls-back.svg" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/svg/sponsorship-logo-bulls-back.svg" alt="" class="lazyload ">
-                                            <img width="120" class="sponsorship-logo-front" loading="lazy" data-src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/svg/sponsorship-logo-bulls-front.svg" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/svg/sponsorship-logo-bulls-front.svg" alt="" class="lazyload ">
-                                        </div>
-                                        <span>Chicago Bulls</span>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div data-index="1" style="z-index:1" class="sponsorships-item sponsorships-item-young-boys">
-                                <a data-analytics="buttonClick" href="/sponsorships/youngboys" class="sponsorships-item-link">
-                                    <div class="sponsorships-item-image" data-cta-name="young-boys-players">
-                                        <img loading="lazy" data-src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/img/youngboys-formation.webp" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/img/youngboys-formation.webp" alt="" class="lazyload ">
-                                    </div>
-                                    <div class="sponsorships-item-logo sponsorships-item-logo-young-boys" data-cta-name="young-boys-badge">
-                                        <div class="sponsorships-item-logo-image">
-                                            <img width="100" class="sponsorship-logo-back" loading="lazy" data-src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/svg/sponsorship-logo-young-boys-back.svg" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/svg/sponsorship-logo-young-boys-back.svg" alt="" class="lazyload ">
-                                            <img width="100" class="sponsorship-logo-front" loading="lazy" data-src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/svg/sponsorship-logo-young-boys-front.svg" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/newhome/svg/sponsorship-logo-young-boys-front.svg" alt="" class="lazyload ">
-                                        </div>
-                                        <span>BSC Young Boys</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-</section>
-<section class="partners-section" data-section-name="partners-section">
-    <h2 class="title-section text-center"><strong>Our Partners</strong></h2>
-    <div class="partners">
-        <div class="item">
-            <a href="https://www.fxempire.com/" target="_blank" class="" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499.85 70.19" width="216" height="31">
-	                <title class="visually-hidden">Logo of FX Empire)</title>
-	                <path d="M269.5 0h-4.25l-30.73 52.61L203.5 0h-4.27l-11.94 70.06h11.72l7.16-44.09 26.05 44.09h4.52l25.74-43.73 7.19 43.73h11.83L269.5 0 M334.13 20a8.56 8.56 0 0 1-1.84 5.31 10.1 10.1 0 0 1-5 3.37c-2.07.7-5.89 1.14-11.2 1.13l-11.43-.12V10.36h12c5.24 0 8.94.42 10.83 1.06a9.73 9.73 0 0 1 4.76 3.31 8.36 8.36 0 0 1 1.88 5.27zm7.42-12.09a23.3 23.3 0 0 0-12.18-6.34c-3.55-.73-9.67-1-18.82-1h-17.82v69.96h11.94v-31h3.67c9.92 0 16.68-.35 20.65-1.14A23.83 23.83 0 0 0 341.67 32a16.68 16.68 0 0 0 4.66-12.06 16.54 16.54 0 0 0-4.78-12.08z M357.06 70.06H369V0h-11.94v70.06z M132.01 0v70.06h49.18v-9.9h-37.23V39.02h37.52v-9.89h-37.51v-1.7h-.02V9.89h37.56V0h-49.5 M450.35 0v70.06h49.18v-9.9h-37.24V39.02h37.52v-9.89h-37.5v-1.7h-.02V9.89h37.56V0h-49.5 M391.66 29.71V10.43h12c5.24 0 8.95.42 10.84 1.06a9.8 9.8 0 0 1 4.76 3.32 8.36 8.36 0 0 1 1.86 5.19 8.49 8.49 0 0 1-1.83 5.31 10.15 10.15 0 0 1-5 3.38c-2.07.69-5.89 1.13-11.2 1.12zm51.9 40.86l-24.29-33.09.74-.14a21.92 21.92 0 0 0 8.66-5.28A16.68 16.68 0 0 0 433.32 20a16.54 16.54 0 0 0-4.77-12.07 23.38 23.38 0 0 0-12.18-6.34c-3.55-.73-9.68-1-18.83-1h-17.81V70.6h11.93v-31h3.67c4.05 0 7.54-.06 10.55-.18l22.88 31.16z M15.74 40.46h44.35l5.3-6.88-4.59-5.95H15.74v-5.29h.04v-9.29h33.36l-1.39-2.35L39.53.03H0v70.16h15.78V46.95h-.04v-6.49 M110.42 49.28l-.08.05-10.13-13.05-8.88 11.45 17.5 22.46h17.88l-16.29-20.91 M125.04.03h-17.86L91.24 20.45l8.93 11.51L125.04.03 M80.43 15.94L68.04.03H50.15l26.49 33.99-28.25 36.17h18l19.22-24.67.05.08 8.9-11.46-14.13-18.2" fill="#9e9e9e" />
-                </svg>
-            </a>
-        </div>
-    </div>
-</section>
-<section class="call-to-actions button-group" data-section-name="call-to-action-section">
-    
 <div class="cta-wrap">
             <a data-analytics="CTA_real" data-start-trading data-cta-name="start-trading-real-futures" class="button blue-gradient" href="https://futures.plus500.com/trade?hl=en&amp;refurl=https%3a%2f%2fwww.google.com%2f&amp;refts=2024-11-02T01%3a35%3a55.4948156+00%3a00&amp;innerTags=_cc_+cfdwv+uswsv+ecmp_ct+&amp;IsRealMode=True&amp;ms=True">Start Trading Now</a>
         <a data-analytics="CTA_demo" data-cta-name="start-trading-demo-futures" class="button white-bg hollow link-demo" href="https://futures.plus500.com/trade?hl=en&amp;refurl=https%3a%2f%2fwww.google.com%2f&amp;refts=2024-11-02T01%3a35%3a55.4948156+00%3a00&amp;innerTags=_cc_+cfdwv+uswsv+ecmp_ct+&amp;IsRealMode=False&amp;ms=True">Try Free Demo</a>
-</div> 
+</div>
+                </div>
+            </div>
+        </div>
+        <ul id="instrumentCategoriesTabList" class="instruments-nav" role="tablist">
+
+                <li class="equityindices instrument-btn active" role="presentation" data-slide-parent="0">
+                    <button type="button" id="equityindices_tab" data-slide="0" role="tab" aria-controls="equityindices_tabpanel" aria-selected="true">
+                        <span class="icon icon-futures-equityindices" aria-hidden="true"></span>
+                        <span class="item-name">Equity Index</span>
+                    </button>
+                </li>
+                <li class="energy instrument-btn " role="presentation" data-slide-parent="1">
+                    <button type="button" id="energy_tab" data-slide="1" role="tab" aria-controls="energy_tabpanel" aria-selected="false">
+                        <span class="icon icon-futures-energy" aria-hidden="true"></span>
+                        <span class="item-name">Energy</span>
+                    </button>
+                </li>
+                <li class="agriculture instrument-btn " role="presentation" data-slide-parent="2">
+                    <button type="button" id="agriculture_tab" data-slide="2" role="tab" aria-controls="agriculture_tabpanel" aria-selected="false">
+                        <span class="icon icon-futures-agriculture" aria-hidden="true"></span>
+                        <span class="item-name">Agriculture</span>
+                    </button>
+                </li>
+                <li class="metals instrument-btn " role="presentation" data-slide-parent="3">
+                    <button type="button" id="metals_tab" data-slide="3" role="tab" aria-controls="metals_tabpanel" aria-selected="false">
+                        <span class="icon icon-futures-metals" aria-hidden="true"></span>
+                        <span class="item-name">Metals</span>
+                    </button>
+                </li>
+                <li class="forex instrument-btn " role="presentation" data-slide-parent="4">
+                    <button type="button" id="forex_tab" data-slide="4" role="tab" aria-controls="forex_tabpanel" aria-selected="false">
+                        <span class="icon icon-futures-forex" aria-hidden="true"></span>
+                        <span class="item-name">Forex</span>
+                    </button>
+                </li>
+                <li class="crypto instrument-btn " role="presentation" data-slide-parent="5">
+                    <button type="button" id="crypto_tab" data-slide="5" role="tab" aria-controls="crypto_tabpanel" aria-selected="false">
+                        <span class="icon icon-futures-crypto" aria-hidden="true"></span>
+                        <span class="item-name">Crypto</span>
+                    </button>
+                </li>
+                <li class="interestrates instrument-btn " role="presentation" data-slide-parent="6">
+                    <button type="button" id="interestrates_tab" data-slide="6" role="tab" aria-controls="interestrates_tabpanel" aria-selected="false">
+                        <span class="icon icon-futures-interestrates" aria-hidden="true"></span>
+                        <span class="item-name">Interest Rates</span>
+                    </button>
+                </li>
+        </ul>
+    </div>
 </section>
+
+<div class="container-lg">
+    <div class="row">
+        <div class="page-sections gs-anim-target" id="allInstrumentsTopAnchor">
+            <figure aria-hidden="true" class="plus-bg plus-bg-large blue-gr"></figure>
+            <figure aria-hidden="true" class="plus-bg plus-bg-medium blue-gr"></figure>
+            <div class="all-instruments">
+                    <section id="equityindices_tabpanel" class="instrument-section" role="tabpanel" aria-labelledby="equityindices_tab">
+                        <h2 class="text-center title-section">
+                            <strong>Equity Index</strong>
+                        </h2>
+                        <table class="table-design">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Symbol</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col" class="text-center">Intraday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>EMDZ4</td>
+                                    <td>E-mini S&amp;P MidCap 400</td>
+                                    <td class="text-center">$1,000</td>
+                                </tr>
+                                <tr>
+                                    <td>MESZ4</td>
+                                    <td>Micro E-mini S&amp;P 500</td>
+                                    <td class="text-center">$50</td>
+                                </tr>
+                                <tr>
+                                    <td>ESZ4</td>
+                                    <td>E-mini S&amp;P 500</td>
+                                    <td class="text-center">$500</td>
+                                </tr>
+                                <tr>
+                                    <td>NQZ4</td>
+                                    <td>E-mini Nasdaq-100</td>
+                                    <td class="text-center">$1,000</td>
+                                </tr>
+                                <tr>
+                                    <td>YMZ4</td>
+                                    <td>E-mini Dow Jones</td>
+                                    <td class="text-center">$500</td>
+                                </tr>
+                                <tr>
+                                    <td>MYMZ4</td>
+                                    <td>Micro E-mini Dow Jones</td>
+                                    <td class="text-center">$50</td>
+                                </tr>
+                                <tr>
+                                    <td>NKDZ4</td>
+                                    <td>Nikkei</td>
+                                    <td class="text-center">$1,500</td>
+                                </tr>
+                                <tr>
+                                    <td>MNQZ4</td>
+                                    <td>Micro E-mini Nasdaq-100</td>
+                                    <td class="text-center">$100</td>
+                                </tr>
+                                <tr>
+                                    <td>M2KZ4</td>
+                                    <td>Micro E-mini Russell 2000</td>
+                                    <td class="text-center">$50</td>
+                                </tr>
+                                <tr>
+                                    <td>RTYZ4</td>
+                                    <td>E-mini Russell 2000</td>
+                                    <td class="text-center">$500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section id="energy_tabpanel" class="instrument-section" role="tabpanel" aria-labelledby="energy_tab">
+                        <h2 class="text-center title-section">
+                            <strong>Energy</strong>
+                        </h2>
+                        <table class="table-design">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Symbol</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col" class="text-center">Intraday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MCLZ4</td>
+                                    <td>Micro WTI Crude Oil</td>
+                                    <td class="text-center">$80</td>
+                                </tr>
+                                <tr>
+                                    <td>BZF5</td>
+                                    <td>Brent Crude Oil</td>
+                                    <td class="text-center">$1,000</td>
+                                </tr>
+                                <tr>
+                                    <td>CLZ4</td>
+                                    <td>Crude Oil</td>
+                                    <td class="text-center">$800</td>
+                                </tr>
+                                <tr>
+                                    <td>CLF5</td>
+                                    <td>Crude Oil</td>
+                                    <td class="text-center">$800</td>
+                                </tr>
+                                <tr>
+                                    <td>HOZ4</td>
+                                    <td>Heating Oil</td>
+                                    <td class="text-center">$1,500</td>
+                                </tr>
+                                <tr>
+                                    <td>NGZ4</td>
+                                    <td>Natural Gas</td>
+                                    <td class="text-center">$1,000</td>
+                                </tr>
+                                <tr>
+                                    <td>QGZ4</td>
+                                    <td>E-mini Natural Gas</td>
+                                    <td class="text-center">$250</td>
+                                </tr>
+                                <tr>
+                                    <td>RBZ4</td>
+                                    <td>RBOB Gasoline</td>
+                                    <td class="text-center">$1,000</td>
+                                </tr>
+                                <tr>
+                                    <td>QMZ4</td>
+                                    <td>E-mini Crude Oil</td>
+                                    <td class="text-center">$400</td>
+                                </tr>
+                                <tr>
+                                    <td>MNGZ4</td>
+                                    <td>Micro Natural Gas</td>
+                                    <td class="text-center">$100</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section id="agriculture_tabpanel" class="instrument-section" role="tabpanel" aria-labelledby="agriculture_tab">
+                        <h2 class="text-center title-section">
+                            <strong>Agriculture</strong>
+                        </h2>
+                        <table class="table-design">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Symbol</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col" class="text-center">Intraday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ZMZ4</td>
+                                    <td>Soybean Meal</td>
+                                    <td class="text-center">$715</td>
+                                </tr>
+                                <tr>
+                                    <td>ZCZ4</td>
+                                    <td>Corn</td>
+                                    <td class="text-center">$250</td>
+                                </tr>
+                                <tr>
+                                    <td>ZSF5</td>
+                                    <td>Soybean</td>
+                                    <td class="text-center">$910</td>
+                                </tr>
+                                <tr>
+                                    <td>ZWZ4</td>
+                                    <td>Wheat</td>
+                                    <td class="text-center">$250</td>
+                                </tr>
+                                <tr>
+                                    <td>ZLZ4</td>
+                                    <td>Soybean Oil</td>
+                                    <td class="text-center">$550</td>
+                                </tr>
+                                <tr>
+                                    <td>HEZ4</td>
+                                    <td>Lean Hogs</td>
+                                    <td class="text-center">$250</td>
+                                </tr>
+                                <tr>
+                                    <td>LEZ4</td>
+                                    <td>Live Cattle</td>
+                                    <td class="text-center">$300</td>
+                                </tr>
+                                <tr>
+                                    <td>GFF5</td>
+                                    <td>Feeder Cattle</td>
+                                    <td class="text-center">$500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section id="metals_tabpanel" class="instrument-section" role="tabpanel" aria-labelledby="metals_tab">
+                        <h2 class="text-center title-section">
+                            <strong>Metals</strong>
+                        </h2>
+                        <table class="table-design">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Symbol</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col" class="text-center">Intraday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>GCZ4</td>
+                                    <td>Gold</td>
+                                    <td class="text-center">$500</td>
+                                </tr>
+                                <tr>
+                                    <td>MGCZ4</td>
+                                    <td>Micro Gold</td>
+                                    <td class="text-center">$50</td>
+                                </tr>
+                                <tr>
+                                    <td>MHGZ4</td>
+                                    <td>Micro Copper</td>
+                                    <td class="text-center">$150</td>
+                                </tr>
+                                <tr>
+                                    <td>PLF5</td>
+                                    <td>Platinum</td>
+                                    <td class="text-center">$690</td>
+                                </tr>
+                                <tr>
+                                    <td>SIZ4</td>
+                                    <td>Silver</td>
+                                    <td class="text-center">$2,200</td>
+                                </tr>
+                                <tr>
+                                    <td>QOZ4</td>
+                                    <td>E-mini Gold</td>
+                                    <td class="text-center">$250</td>
+                                </tr>
+                                <tr>
+                                    <td>SILZ4</td>
+                                    <td>Micro Silver</td>
+                                    <td class="text-center">$200</td>
+                                </tr>
+                                <tr>
+                                    <td>HGZ4</td>
+                                    <td>Copper</td>
+                                    <td class="text-center">$1,375</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section id="forex_tabpanel" class="instrument-section" role="tabpanel" aria-labelledby="forex_tab">
+                        <h2 class="text-center title-section">
+                            <strong>Forex</strong>
+                        </h2>
+                        <table class="table-design">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Symbol</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col" class="text-center">Intraday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>6AZ4</td>
+                                    <td>Australian Dollar</td>
+                                    <td class="text-center">$400</td>
+                                </tr>
+                                <tr>
+                                    <td>6BZ4</td>
+                                    <td>British Pound</td>
+                                    <td class="text-center">$500</td>
+                                </tr>
+                                <tr>
+                                    <td>6CZ4</td>
+                                    <td>Canadian Dollar</td>
+                                    <td class="text-center">$400</td>
+                                </tr>
+                                <tr>
+                                    <td>6SZ4</td>
+                                    <td>Swiss Franc</td>
+                                    <td class="text-center">$400</td>
+                                </tr>
+                                <tr>
+                                    <td>6NZ4</td>
+                                    <td>New Zealand Dollar</td>
+                                    <td class="text-center">$250</td>
+                                </tr>
+                                <tr>
+                                    <td>6EZ4</td>
+                                    <td>Euro FX</td>
+                                    <td class="text-center">$300</td>
+                                </tr>
+                                <tr>
+                                    <td>E7Z4</td>
+                                    <td>E-mini Euro FX</td>
+                                    <td class="text-center">$150</td>
+                                </tr>
+                                <tr>
+                                    <td>M6AZ4</td>
+                                    <td>Micro AUD/USD</td>
+                                    <td class="text-center">$40</td>
+                                </tr>
+                                <tr>
+                                    <td>M6BZ4</td>
+                                    <td>Micro GBP/USD</td>
+                                    <td class="text-center">$50</td>
+                                </tr>
+                                <tr>
+                                    <td>M6EZ4</td>
+                                    <td>Micro EUR/USD</td>
+                                    <td class="text-center">$50</td>
+                                </tr>
+                                <tr>
+                                    <td>MCDZ4</td>
+                                    <td>Micro CAD/USD</td>
+                                    <td class="text-center">$40</td>
+                                </tr>
+                                <tr>
+                                    <td>6JZ4</td>
+                                    <td>Japanese Yen</td>
+                                    <td class="text-center">$825</td>
+                                </tr>
+                                <tr>
+                                    <td>6LZ4</td>
+                                    <td>Brazilian Real</td>
+                                    <td class="text-center">$235</td>
+                                </tr>
+                                <tr>
+                                    <td>6ZZ4</td>
+                                    <td>South African Rand</td>
+                                    <td class="text-center">$385</td>
+                                </tr>
+                                <tr>
+                                    <td>6MZ4</td>
+                                    <td>Mexican Peso</td>
+                                    <td class="text-center">$385</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section id="crypto_tabpanel" class="instrument-section" role="tabpanel" aria-labelledby="crypto_tab">
+                        <h2 class="text-center title-section">
+                            <strong>Crypto</strong>
+                        </h2>
+                        <table class="table-design">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Symbol</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col" class="text-center">Intraday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MBTX4</td>
+                                    <td>Micro Bitcoin</td>
+                                    <td class="text-center">$100</td>
+                                </tr>
+                                <tr>
+                                    <td>METX4</td>
+                                    <td>Micro Ether</td>
+                                    <td class="text-center">$20</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section id="interestrates_tabpanel" class="instrument-section" role="tabpanel" aria-labelledby="interestrates_tab">
+                        <h2 class="text-center title-section">
+                            <strong>Interest Rates</strong>
+                        </h2>
+                        <table class="table-design">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Symbol</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col" class="text-center">Intraday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ZTZ4</td>
+                                    <td>2Y T-Note</td>
+                                    <td class="text-center">$200</td>
+                                </tr>
+                                <tr>
+                                    <td>ZFZ4</td>
+                                    <td>5Y T-Note</td>
+                                    <td class="text-center">$200</td>
+                                </tr>
+                                <tr>
+                                    <td>ZNZ4</td>
+                                    <td>10Y T-Note</td>
+                                    <td class="text-center">$200</td>
+                                </tr>
+                                <tr>
+                                    <td>MTNZ4</td>
+                                    <td>Micro Ultra 10-Year U.S Treasury Note</td>
+                                    <td class="text-center">$100</td>
+                                </tr>
+                                <tr>
+                                    <td>ZBZ4</td>
+                                    <td>US T-Bond</td>
+                                    <td class="text-center">$500</td>
+                                </tr>
+                                <tr>
+                                    <td>UBZ4</td>
+                                    <td>Ultra T-Bond</td>
+                                    <td class="text-center">$500</td>
+                                </tr>
+                                <tr>
+                                    <td>MWNZ4</td>
+                                    <td>Micro Ultra U.S. T-Bond</td>
+                                    <td class="text-center">$120</td>
+                                </tr>
+                                <tr>
+                                    <td>10YX4</td>
+                                    <td>Micro 10-Year Yield</td>
+                                    <td class="text-center">$45</td>
+                                </tr>
+                                <tr>
+                                    <td>TNZ4</td>
+                                    <td>Ultra 10Y T-Note</td>
+                                    <td class="text-center">$300</td>
+                                </tr>
+                                <tr>
+                                    <td>Z3NZ4</td>
+                                    <td>3Y T-Note</td>
+                                    <td class="text-center">$500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="container-xxl instrument-card general-section gs-anim-target">
+    <figure aria-hidden="true" class="plus-bg plus-bg-medium"></figure>
+    <figure aria-hidden="true" class="plus-bg plus-bg-large"></figure>
+    <div class="blue-card-parent">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 instrument-wrap">
+                <div class="blue-card-bg shadow-card full-height not-rotate"></div>
+                <div class="blue-card-content container-wrap row justify-content-center">
+                    <div class="col-lg-10 col-xl-9 instrument-content">
+                        <figure class="instrument-title-icon">
+                            <img loading="lazy" alt="Academy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/svg/icon-academy.svg"/>
+                        </figure>
+                        <h2 class="title-section white instrument-title">
+                            Trade Futures Like a Boss
+                        </h2>
+                        <div class="free-content">
+                            Browse our free educational videos and articles to stay in the loop on the Futures market. Jump in and learn the ins and outs of Futures trading!
+                        </div>
+                        <a data-analytics="buttonClick" class="button white-bg dark" href="/academy">Start Learning</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 </main>
 
@@ -770,119 +871,46 @@ IMPORTANT: Trading in futures and options carries substantial risk of loss and i
 
     <script src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Scripts/futures.layout.bundle.min.js"></script>
 
-<script>
-    window.addEventListener("load", () => {
-        let slickScript = document.createElement("script");
-        slickScript.src = "https://cdn-main.plus500.com/1.0.0.120805/Resources/Scripts/slick.min.js";
-        slickScript.async = true;
-        document.body.appendChild(slickScript);
-        slickScript.addEventListener("load", () => {
-            const slickSlider = $('.slick-slider');
-            const milestonesSliderElem = $('.milestones-slider');
-            const milestonesSliderElemNav = $('.milestones-slider-nav');             
-            function slickOnResize(){
-                milestonesSliderElem.slick({
-                    arrows: false,
-                    dots: false,
-                    infinite: false,
-                    centerMode: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    asNavFor: '.slider-nav',
+<script src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Scripts/slick.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+         $('.all-instruments').slick({
+              mobileFirst: true,
+              arrows: false,
+              adaptiveHeight: true,
+              infinite: false,
+              speed:500,
+              cssEase:'ease-out',
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              responsive: [
+                {
+                  breakpoint: 320,
+                  settings: {
                     fade: true,
-                    speed: 500,
-                    cssEase: 'linear',
-                    autoplay: true,
-                    autoplaySpeed: 5000,
-                    mobileFirst: true
-                });
-                milestonesSliderElemNav.slick({
-                  arrows: false,
-                  dots: false,
-                  infinite: false,
-                  centerMode: true,
-                  slidesToShow: 3,
-                  slidesToScroll: 1,
-                  swipeToSlide: true,
-                  asNavFor: '.slider-for',
-                  focusOnSelect: true,
-                  autoplay: true,
-                  autoplaySpeed: 5000,
-                  mobileFirst: true,
-                  prevArrow: $('.prev-arrow'),
-                  nextArrow: $('.next-arrow'),
-                  appendDots: $('.slider-dots'),
-                  responsive: 
-                    [
-                        {
-                          breakpoint: 480,
-                          settings: {
-                            slidesToShow: 5
-                          }
-                        },
-                        {
-                          breakpoint: 992,
-                          settings: {
-                            dots: true,
-                            arrows: true,
-                            slidesToShow: 7
-                          }
-                        },
-                        {
-                          breakpoint: 1200,
-                          settings: {
-                            dots: true,
-                            arrows: true,
-                            slidesToShow: 9
-                          }
-                        },
-                    ]
-                });
-            }
-             slickSlider.mouseenter(function() {
-                isPause = true;
-             });
-             slickSlider.mouseleave(function() {
-                isPause = false;
-             })
-            let tick, isPause, percentTime, $barProgress = $('.slick-slider-progress .progress'), time = 5;
-            function startProgressbar() {
-                resetProgressbar();
-                percentTime = 0;
-                isPause = false;
-                tick = setInterval(interval, 10);
-            }  
-            function interval() {
-                if (isPause === false) {
-                    percentTime += 1 / (time + 0.1);
-                    $barProgress.css({width: percentTime + "%"});
-                    if (percentTime >= 100) {
-                        if (milestonesSliderElemNav.slick('slickCurrentSlide') == milestonesSliderElem.slick("getSlick").$slides.length-1 ) {
-                            milestonesSliderElemNav.slick('slickGoTo', 0);
-                        } else {
-                            milestonesSliderElemNav.slick('slickNext');
-                        }
-                        startProgressbar();
-                    }
-                }
-            }
-            function resetProgressbar() {
-                $barProgress.css({width: 0 + '%'});
-                clearTimeout(tick);
-            }
-            startProgressbar();
-            milestonesSliderElem.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
-                resetProgressbar();
-                startProgressbar();
-                $barProgress.css({width: 100 + "%"});
-                if (nextSlide === 0) {
-                     milestonesSliderElemNav.slick( 'slickGoTo', nextSlide );
-                }
-            });  
-            slickOnResize();
+                  }
+                },
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    centerMode: true,
+                    centerPadding: '12%',
+                  }
+                },
+            ]
+          })
+          .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            $(".instruments-nav").find("[data-slide-parent]").removeClass("active").end().find("[data-slide-parent=" + nextSlide +"]").addClass("active");
+          });
+
+        $('[data-slide]').on("click keyup", function(ev) {
+            if (ev.keyCode !== 13 && ev.type === "keyup") return;
+            $(this).parent().siblings(".instrument-btn").removeClass("active").end().addClass("active");
+            $('.all-instruments').slick('slickGoTo', $(this).data('slide'));
         });
     });
 </script>
+<script src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Scripts/gsap.bundle.min.js"></script>
 
     <script>
     window.addEventListener("load", () => {

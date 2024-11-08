@@ -1,619 +1,894 @@
-@include('home.header')
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="unsafe-url">
+    <title>Trade Crypto Futures with Plus500 | Plus500</title>
+        <meta name="description" content="Trade Crypto Futures with Plus500. Trade Futures on Bitcoin, Ethereum, Litecoin, and more." />
 
-<div class="sentinal"></div>
+
+        <link rel="canonical" href="https://us.plus500.com/markets/forex" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap" as="style" rel="preload" onload="this.rel='stylesheet'; this.onload=null;" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" as="style" rel="preload" onload="this.rel='stylesheet'; this.onload=null;" crossorigin>
     
-    <main>
-    
+    <link rel="stylesheet" href="https://cdn-main.plus500.com/1.0.0.120805/Resources/CSS/futures/instrument-category.css"/>
 
-<section class="inner-page instrument instrument-page forex">
-    <section class="instrument-banner inner-banner main-banner forex general-section gs-anim-target" data-section-name="hero-section">
-        <figure aria-hidden="true" class="plus-bg plus-bg-medium blue-turquoise-gr"></figure>
-        <figure aria-hidden="true" class="plus-bg plus-bg-large blue-fill"></figure>
-        <div class="container-xxl">
-            <div class="row align-center-middle main-banner-wrap">
-                <figure aria-hidden="true" class="plus-bg plus-bg-small white"></figure>
-                <div class="col col-md-11 col-lg-9 main-banner-content hero-content container-wrap">
-                    <h1 class="main-banner-title">Trade Forex CFDs</h1>
-                    <div class="main-banner-desc">Trade the most popular forex pairs like EUR/USD, GBP/USD, and EUR/GBP at Plus500. Use our advanced trading tools to protect your profits and limit losses.</div> 
-                    <div class="start-trading-box start-trading-banner-zone">
-                        <div class="start-trading-buttons">
-    <div class="cta-wrap"> 
-            <a data-analytics="CTA_real" data-start-trading data-cta-name="start-trading-real-cfd" class="button blue-gradient" href="https://app.plus500.com/trade?hl=en&amp;innerTags=_cc_+uswsv&amp;product=CFD&amp;IsRealMode=True&amp;ms=True" target="_blank">Start Trading Now</a>
-                    <a data-analytics="CTA_demo" data-cta-name="start-trading-demo-cfd" class="button white-bg hollow link-demo" href="https://app.plus500.com/trade?hl=en&amp;innerTags=_cc_+uswsv&amp;product=CFD&amp;IsRealMode=False&amp;ms=True" target="_blank">Try Free Demo</a>
-    </div>
-    </div>
-                    </div>
-                                                    <div class="comment">
-                                    <span>Plus500UK Ltd is authorised and regulated by the Financial Conduct Authority (FRN&nbsp;509909).
-</span>
-                                    <br>
-                                    <span>Based in London</span>
-                                </div>
-                </div>
-            </div>
-        </div>
-    </section> 
-    
-        <section class="payment-section general-section">
-            <div class="blue-card-bg white full-height not-rotate"></div>
-            <div class="container">
-    <div class="row justify-content-center align-center payment-brands">
-        <div class="col main-column">
-            <div class="payment-brand-list row align-middle align-center">
-                        <div class="col payment-brand">
-                            <figure class="payment-brand-img">
-                                <img loading="lazy" title="Visa" alt="Visa" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/pay_methods/visa.svg" />
-                            </figure>
-                        </div>
-                        <div class="col payment-brand ">
-                            <figure class="payment-brand-img">
-                                <img loading="lazy" title="MasterCard" alt="MasterCard" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/pay_methods/mastercard.svg" />
-                            </figure>
-                        </div>
-                        <div class="col payment-brand">
-                            <figure class="payment-brand-img">
-                                <img loading="lazy" title="PayPal" alt="PayPal" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/pay_methods/paypal.svg" />
-                            </figure>
-                        </div>
-                        <div class="col payment-brand">
-                            <figure class="payment-brand-img">
-                                <img loading="lazy" title="Bank transfer" alt="Bank transfer" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/pay_methods/wire.svg" />
-                            </figure>
-                        </div>
-                        <div class="col payment-brand">
-                            <figure class="payment-brand-img">
-                                <img loading="lazy" title="Fast Bank Transfer" alt="Fast Bank Transfer" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/pay_methods/onlinebanking.svg" />
-                            </figure>
-                        </div>
-                        <div class="col payment-brand">
-                            <figure class="payment-brand-img">
-                                <img loading="lazy" title="Apple Pay" alt="Apple Pay" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/pay_methods/applepay.svg" />
-                            </figure>
-                        </div>
-                        <div class="col payment-brand">
-                            <figure class="payment-brand-img">
-                                <img loading="lazy" title="Google Pay" alt="Google Pay" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/pay_methods/googlepay.svg" />
-                            </figure>
-                        </div>
-                                    <div class="col payment-brand">
-                        <figure class="payment-brand-img">
-                            <img loading="lazy" title="Trustly" alt="Trustly" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/pay_methods/trustly.svg" />
-                        </figure>
-                    </div>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center disclaimer-zone">
-        <div class="col col-md-8">
-            * Plus500 offers multiple global payment methods.
-        </div>
-    </div>
-</div> 
-        </section>
 
-<section class="markets-section general-section" data-section-name="global-markets">
-    <div class="container-xxl px-0">
-        <div class="row">
-            <div class="col blue-card-parent gs-anim-target">
-                <figure aria-hidden="true" class="plus-bg plus-bg-small blue-white-gr"></figure>
-                <figure aria-hidden="true" class="plus-bg plus-bg-medium blue-white-gr"></figure>
-                <div class="blue-card-bg"></div>
-                <div class="row justify-content-sm-center justify-content-lg-around ">
-                    <div class="col-sm-12 col-md-8 col-lg-6 markets-item-wrap">
-                        <div class="blue-card-content container-wrap">
-                                    <div class="markets-item">
-                                        <h2 class="title-section instrument-category">Trade on 60+ Forex Pairs With Leverage</h2>
-                                        <div class="free-content">Trade forex with up to 1:30 leverage. With as little as £100 you can gain the effect of £3,000 capital!</div>
-                                            <a data-analytics="buttonClick" href="../instruments.html#Forex" class="button btn btn-lg btn-light">View Our Forex Pairs</a>
-                                    </div>
+    <!-- Start VWO Async SmartCode -->
+    <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+    <script type='text/javascript' id='vwoCode'>
+        window._vwo_code || (function () {
+            var account_id = 697204,
+                version = 2.1,
+                settings_tolerance = 2000,
+                hide_element = 'body',
+                hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
+                /* DO NOT EDIT BELOW THIS LINE */
+                f = false, w = window, d = document, v = d.querySelector('#vwoCode'), cK = '_vwo_' + account_id + '_settings', cc = {}; try { var c = JSON.parse(localStorage.getItem('_vwo_' + account_id + '_config')); cc = c && typeof c === 'object' ? c : {} } catch (e) { } var stT = cc.stT === 'session' ? w.sessionStorage : w.localStorage; code = { use_existing_jquery: function () { return typeof use_existing_jquery !== 'undefined' ? use_existing_jquery : undefined }, library_tolerance: function () { return typeof library_tolerance !== 'undefined' ? library_tolerance : undefined }, settings_tolerance: function () { return cc.sT || settings_tolerance }, hide_element_style: function () { return '{' + (cc.hES || hide_element_style) + '}' }, hide_element: function () { if (performance.getEntriesByName('first-contentful-paint')[0]) { return '' } return typeof cc.hE === 'string' ? cc.hE : hide_element }, getVersion: function () { return version }, finish: function (e) { if (!f) { f = true; var t = d.getElementById('_vis_opt_path_hides'); if (t) t.parentNode.removeChild(t); if (e) (new Image).src = 'https://dev.visualwebsiteoptimizer.com/ee.gif?a=' + account_id + e } }, finished: function () { return f }, addScript: function (e) { var t = d.createElement('script'); t.type = 'text/javascript'; if (e.src) { t.src = e.src } else { t.text = e.text } d.getElementsByTagName('head')[0].appendChild(t) }, load: function (e, t) { var i = this.getSettings(), n = d.createElement('script'), r = this; t = t || {}; if (i) { n.textContent = i; d.getElementsByTagName('head')[0].appendChild(n); if (!w.VWO || VWO.caE) { stT.removeItem(cK); r.load(e) } } else { var o = new XMLHttpRequest; o.open('GET', e, true); o.withCredentials = !t.dSC; o.responseType = t.responseType || 'text'; o.onload = function () { if (t.onloadCb) { return t.onloadCb(o, e) } if (o.status === 200) { _vwo_code.addScript({ text: o.responseText }) } else { _vwo_code.finish('&e=loading_failure:' + e) } }; o.onerror = function () { if (t.onerrorCb) { return t.onerrorCb(e) } _vwo_code.finish('&e=loading_failure:' + e) }; o.send() } }, getSettings: function () { try { var e = stT.getItem(cK); if (!e) { return } e = JSON.parse(e); if (Date.now() > e.e) { stT.removeItem(cK); return } return e.s } catch (e) { return } }, init: function () { if (d.URL.indexOf('__vwo_disable__') > -1) return; var e = this.settings_tolerance(); w._vwo_settings_timer = setTimeout(function () { _vwo_code.finish(); stT.removeItem(cK) }, e); var t; if (this.hide_element() !== 'body') { t = d.createElement('style'); var i = this.hide_element(), n = i ? i + this.hide_element_style() : '', r = d.getElementsByTagName('head')[0]; t.setAttribute('id', '_vis_opt_path_hides'); v && t.setAttribute('nonce', v.nonce); t.setAttribute('type', 'text/css'); if (t.styleSheet) t.styleSheet.cssText = n; else t.appendChild(d.createTextNode(n)); r.appendChild(t) } else { t = d.getElementsByTagName('head')[0]; var n = d.createElement('div'); n.style.cssText = 'z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;'; n.setAttribute('id', '_vis_opt_path_hides'); n.classList.add('_vis_hide_layer'); t.parentNode.insertBefore(n, t.nextSibling) } var o = 'https://dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&vn=' + version; if (w.location.search.indexOf('_vwo_xhr') !== -1) { this.addScript({ src: o }) } else { this.load(o + '&x=true') } } }; w._vwo_code = code; code.init();
+        })();
+    </script>
+    <!-- End VWO Async SmartCode -->
 
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-8 col-lg-5 markets-widget-wrap">
-                        <div class="markets-widget gs-markets-widget">
-                            
-<div id="feedTable" class="feed-table feeds-top-tabs">
-    <div v-if="shouldDisplaySideCategoriesTabs" class="instruments-widget-tabs" :class="categoriesClass">
-        <button class="btn" data-analytics="widgetInteractions_tab" type-of-Widget="feedsWidget" :category="categoryId" v-for="(category, categoryId) in categories" type="button" :data-tab-id="'tab_' + categoryId" :aria-label="categoryId" :class="categoryId == activeCategory ? 'selected' : ''" v-on:click="onCategoryTabClick(categoryId)" :title="category.categoryName">
-            <span class="tab-icon" :class="category.icon"></span>
-        </button>
-    </div>
-    <div class="instruments-widget-items">
-        {{-- <h2 v-cloak>{{activeCategoryName}}</h2> --}}
-        <div class="instruments-table" v-cloak>
-            <template v-for="(instrument, i) in activeInstruments">
-                <div class="instrument-item">
-                    <div class="instrument-basic-info">
-                        <figure class="skeleton-box" v-instrument-icon="instrument.instrumentIconImage">
-                            <img loading="lazy" :src="instrument.instrumentIconImage" :alt="instrument.name" :title="instrument.name" aria-hidden="True"/>
-                        </figure>
-                    </div>
-                    <span class="inst-name-wrapper">
-
-                        {{-- <a data-analytics="widgetInteractions_instrumentName" type-of-Widget="feedsWidget" :category="activeCategory" :instrumentName="instrument.symbol" :href="instrument.instrumentLink" :title="instrument.name" :dir="resolveInstrumentLangDir(instrument)">{{instrument.name}}</a> --}}
-                        <sup v-if="instrument.isDelayedInstrument" title="Delayed data. Use the platform to gain access to real time prices.">
-                            <span class="icon-clock3 table-clock"></span>
-                        </sup>
-                    </span>
-                    <div class="sell-buy-grid">
-                        <span :class="['sell', resolveSellPriceClass(instrument)]">
-                            {{-- <span>{{instrument.sellPrice ? instrument.sellPrice?.toFixed(instrument.precision) : '--'}}</span> --}}
-                        </span>
-                        <span :class="['change rate-change', resolvePercentClass(instrument)]">
-                            {{-- <span :class="resolveThresholdClass(instrument)">{{instrument.changeRate?.toFixed(percentPrecision)}}%</span> --}}
-                        </span>
-                    </div>
-                    <span class="trade">
-                        <a data-analytics="CTA_demo" type-of-Widget="feedsWidget" :href="instrument.tradingLink" class="btn btn-sm btn-outline-primary trade-button lh-1" v-on:click="onTradeClick(activeCategory)">Trade</a>
-                    </span>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-<script>
-    let feedsInitialData = {"Forex":{"categoryName":"Forex","instruments":[{"instrumentId":2,"precision":5,"threshold":"0.5","name":"EUR/USD","instrumentLink":"/en/instruments/eurusd","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":1.08888,"buyPrice":1.08913,"changeRate":-0.04,"symbol":"EURUSD","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Forex/EURUSD.png?v=1718693396"},{"instrumentId":5,"precision":5,"threshold":"0.5","name":"EUR/GBP","instrumentLink":"/en/instruments/eurgbp","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":0.83306,"buyPrice":0.83337,"changeRate":0.0,"symbol":"EURGBP","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Forex/EURGBP.png?v=1718693394"},{"instrumentId":177,"precision":5,"threshold":"0.5","name":"EUR/AUD","instrumentLink":"/en/instruments/euraud","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":1.62543,"buyPrice":1.62624,"changeRate":0.05,"symbol":"EURAUD","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Forex/EURAUD.png?v=1718693376"},{"instrumentId":376,"precision":5,"threshold":"0.5","name":"EUR/NZD","instrumentLink":"/en/instruments/eurnzd","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":1.79498,"buyPrice":1.79630,"changeRate":0.28,"symbol":"EURNZD","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Forex/EURNZD.png?v=1718693378"},{"instrumentId":72,"precision":4,"threshold":"0.5","name":"EUR/CAD","instrumentLink":"/en/instruments/eurcad","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":1.5004,"buyPrice":1.5010,"changeRate":0.02,"symbol":"EURCAD","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Forex/EURCAD.png?v=1718693377"},{"instrumentId":100,"precision":4,"threshold":"0.5","name":"EUR/CHF","instrumentLink":"/en/instruments/eurchf","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":0.9386,"buyPrice":0.9392,"changeRate":-0.01,"symbol":"EURCHF","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Forex/EURCHF.png?v=1718693386"},{"instrumentId":4,"precision":5,"threshold":"0.5","name":"GBP/USD","instrumentLink":"/en/instruments/gbpusd","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":1.30678,"buyPrice":1.30717,"changeRate":-0.03,"symbol":"GBPUSD","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Forex/GBPUSD.png?v=1718693375"},{"instrumentId":39,"precision":5,"threshold":"0.5","name":"AUD/USD","instrumentLink":"/en/instruments/audusd","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":0.66968,"buyPrice":0.66992,"changeRate":-0.08,"symbol":"AUDUSD","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Forex/AUDUSD.png?v=1718693375"}],"icon":"icon-forex"},"MostPopular":{"categoryName":"Most Popular","instruments":[{"instrumentId":10,"precision":2,"threshold":"2.0","name":"Oil","instrumentLink":"/en/instruments/cl","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":70.92,"buyPrice":70.96,"changeRate":0.51,"symbol":"CL","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/CL_border.png?v=1718693369"},{"instrumentId":123,"precision":3,"threshold":"2.0","name":"Natural Gas","instrumentLink":"/en/instruments/ng","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":2.478,"buyPrice":2.482,"changeRate":-0.72,"symbol":"NG","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/NG.png?v=1718693370"},{"instrumentId":1069887,"precision":2,"threshold":"40.0","name":"Oil | Call 72","instrumentLink":"/en/instruments/cldec24c72","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":2.82,"buyPrice":2.97,"changeRate":5.66,"symbol":"CLDEC24C72","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/CL_border.png?v=1718693369"},{"instrumentId":85,"precision":0,"threshold":"1.0","name":"USA 30","instrumentLink":"/en/instruments/ym","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":42978.0,"buyPrice":42982.0,"changeRate":-0.08,"symbol":"YM","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/YM.png?v=1718693361"},{"instrumentId":1069497,"precision":2,"threshold":"40.0","name":"Gold | Call 2650","instrumentLink":"/en/instruments/ognov24c2650","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":42.09,"buyPrice":43.31,"changeRate":-1.39,"symbol":"OGNOV24C2650","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/XAU.png?v=1720339249"},{"instrumentId":431,"precision":2,"threshold":"2.0","name":"Brent Oil","instrumentLink":"/en/instruments/eb","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":74.64,"buyPrice":74.69,"changeRate":-3.61,"symbol":"EB","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/EB_border.png?v=1718693363"},{"instrumentId":3017,"precision":2,"threshold":"1.0","name":"Germany 40","instrumentLink":"/en/instruments/fdax","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":19604.42,"buyPrice":19606.57,"changeRate":-0.14,"symbol":"FDAX","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/FDAX.png?v=1718693346"},{"instrumentId":4078,"precision":2,"threshold":"1.0","name":"Nasdaq 100","instrumentLink":"/en/instruments/nq","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":20321.42,"buyPrice":20323.32,"changeRate":-0.1,"symbol":"NQ","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/NQ.png?v=1718693360"}],"icon":"icon-flame"},"Stocks":{"categoryName":"Shares","instruments":[{"instrumentId":1067539,"precision":2,"threshold":"4.0","name":"Alphabet (Extended Hours)","instrumentLink":"/en/instruments/goog_eh","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":166.34,"buyPrice":167.59,"changeRate":0.37,"symbol":"GOOG_EH","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Stocks/GOOG_EH_border.png?v=1723708729"},{"instrumentId":1067544,"precision":2,"threshold":"4.0","name":"NVIDIA (Extended Hours)","instrumentLink":"/en/instruments/nvda_eh","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":130.41,"buyPrice":131.39,"changeRate":-5.19,"symbol":"NVDA_EH","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Stocks/NVDA_EH.png?v=1723708817"},{"instrumentId":1067545,"precision":2,"threshold":"4.0","name":"Tesla (Extended Hours)","instrumentLink":"/en/instruments/tsla_eh","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":218.09,"buyPrice":219.73,"changeRate":-0.11,"symbol":"TSLA_EH","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Stocks/TSLA_EH.png?v=1723708918"},{"instrumentId":1067543,"precision":2,"threshold":"4.0","name":"Meta (Extended Hours)","instrumentLink":"/en/instruments/meta_eh","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":583.07,"buyPrice":587.46,"changeRate":-0.87,"symbol":"META_EH","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Stocks/META_EH_border.png?v=1723708791"},{"instrumentId":1067541,"precision":2,"threshold":"4.0","name":"Microsoft (Extended Hours)","instrumentLink":"/en/instruments/msft_eh","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":417.23,"buyPrice":420.37,"changeRate":-0.08,"symbol":"MSFT_EH","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Stocks/MSFT_EH_border.png?v=1723708801"},{"instrumentId":1067542,"precision":2,"threshold":"4.0","name":"Amazon (Extended Hours)","instrumentLink":"/en/instruments/amzn_eh","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":186.99,"buyPrice":188.40,"changeRate":0.08,"symbol":"AMZN_EH","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Stocks/AMZN_EH_border.png?v=1723708609"},{"instrumentId":5069,"precision":2,"threshold":"4.0","name":"Trump Media & Technology Group","instrumentLink":"/en/instruments/djt","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":27.00,"buyPrice":27.20,"changeRate":-9.52,"symbol":"DJT","instrumentIconImage":""},{"instrumentId":2104,"precision":2,"threshold":"4.0","name":"Wolfspeed","instrumentLink":"/en/instruments/wolf","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":13.68,"buyPrice":13.78,"changeRate":20.7,"symbol":"WOLF","instrumentIconImage":""}],"icon":"icon-stocks"},"Commodities":{"categoryName":"Commodities","instruments":[{"instrumentId":10,"precision":2,"threshold":"2.0","name":"Oil","instrumentLink":"/en/instruments/cl","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":70.92,"buyPrice":70.96,"changeRate":0.51,"symbol":"CL","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/CL_border.png?v=1718693369"},{"instrumentId":431,"precision":2,"threshold":"2.0","name":"Brent Oil","instrumentLink":"/en/instruments/eb","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":74.64,"buyPrice":74.69,"changeRate":-3.61,"symbol":"EB","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/EB_border.png?v=1718693363"},{"instrumentId":430,"precision":4,"threshold":"2.0","name":"Heating Oil","instrumentLink":"/en/instruments/ho","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":2.1929,"buyPrice":2.1945,"changeRate":0.27,"symbol":"HO","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/HO_border.png?v=1718693368"},{"instrumentId":11,"precision":2,"threshold":"2.0","name":"Gold","instrumentLink":"/en/instruments/xau","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":2661.50,"buyPrice":2662.15,"changeRate":-0.03,"symbol":"XAU","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/XAU.png?v=1720339249"},{"instrumentId":1062021,"precision":2,"threshold":"2.0","name":"Aluminum","instrumentLink":"/en/instruments/ali","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":2544.43,"buyPrice":2549.32,"changeRate":-0.75,"symbol":"ALI","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/ALI.png?v=1718693365"},{"instrumentId":12,"precision":3,"threshold":"2.0","name":"Silver","instrumentLink":"/en/instruments/xag","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":31.476,"buyPrice":31.504,"changeRate":-0.03,"symbol":"XAG","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/XAG.png?v=1718693367"},{"instrumentId":4092,"precision":2,"threshold":"2.0","name":"Low Sulphur Gasoil","instrumentLink":"/en/instruments/g","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":662.06,"buyPrice":664.44,"changeRate":-4.19,"symbol":"G","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/G.png?v=1718693370"},{"instrumentId":115,"precision":2,"threshold":"2.0","name":"Coffee","instrumentLink":"/en/instruments/kc","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":256.28,"buyPrice":256.48,"changeRate":-2.16,"symbol":"KC","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/KC.png?v=1718693366"}],"icon":"icon-commodities"},"Indices":{"categoryName":"Indices","instruments":[{"instrumentId":3869,"precision":2,"threshold":"1.0","name":"UK 100","instrumentLink":"/en/instruments/uk100","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":8275.00,"buyPrice":8277.00,"changeRate":-0.58,"symbol":"UK100","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/UK100.png?v=1718693345"},{"instrumentId":98,"precision":0,"threshold":"1.0","name":"ASX 200","instrumentLink":"/en/instruments/spi200","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":8315.0,"buyPrice":8318.0,"changeRate":0.39,"symbol":"SPI200","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/SPI200.png?v=1718693350"},{"instrumentId":3017,"precision":2,"threshold":"1.0","name":"Germany 40","instrumentLink":"/en/instruments/fdax","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":19604.42,"buyPrice":19606.57,"changeRate":-0.14,"symbol":"FDAX","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/FDAX.png?v=1718693346"},{"instrumentId":4173,"precision":0,"threshold":"1.0","name":"Spain 35","instrumentLink":"/en/instruments/ibx","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":11913.0,"buyPrice":11922.0,"changeRate":0.55,"symbol":"IBX","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/IBX.png?v=1718693349"},{"instrumentId":85,"precision":0,"threshold":"1.0","name":"USA 30","instrumentLink":"/en/instruments/ym","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":42978.0,"buyPrice":42982.0,"changeRate":-0.08,"symbol":"YM","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/YM.png?v=1718693361"},{"instrumentId":4310,"precision":2,"threshold":"1.0","name":"Netherlands 25","instrumentLink":"/en/instruments/ft","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":898.08,"buyPrice":898.88,"changeRate":-2.68,"symbol":"FT","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/FT.png?v=1718693351"},{"instrumentId":18,"precision":2,"threshold":"1.0","name":"S&P 500","instrumentLink":"/en/instruments/es","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":5857.28,"buyPrice":5857.98,"changeRate":-0.09,"symbol":"ES","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/ES.png?v=1718693355"},{"instrumentId":295,"precision":0,"threshold":"1.0","name":"Italy 40","instrumentLink":"/en/instruments/fibi","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":34240.0,"buyPrice":34260.0,"changeRate":-0.85,"symbol":"FIBi","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/FIBi.png?v=1718693352"}],"icon":"icon-indices"},"Options":{"categoryName":"Options","instruments":[{"instrumentId":1070165,"precision":2,"threshold":"40.0","name":"NVIDIA | Put 129","instrumentLink":"/en/instruments/nvidianov24p129","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":6.13,"buyPrice":6.27,"changeRate":72.22,"symbol":"NVIDIANOV24P129","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Stocks/NVDA.png?v=1723708817"},{"instrumentId":1070159,"precision":2,"threshold":"40.0","name":"ARM | Put 135","instrumentLink":"/en/instruments/armnov24p135","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":6.54,"buyPrice":6.85,"changeRate":57.53,"symbol":"ARMNOV24P135","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Stocks/ARM.png?v=1723708613"},{"instrumentId":1069454,"precision":4,"threshold":"40.0","name":"Natural Gas | Call 2.7","instrumentLink":"/en/instruments/ngnov24c2.7","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":0.0381,"buyPrice":0.0429,"changeRate":-20.9,"symbol":"NGNOV24C2.7","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/NG.png?v=1718693370"},{"instrumentId":1070086,"precision":2,"threshold":"40.0","name":"UK 100 | Call 8400","instrumentLink":"/en/instruments/ftsenov24c8400","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":43.20,"buyPrice":55.80,"changeRate":-18.85,"symbol":"FTSENOV24C8400","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/UK100.png?v=1718693345"},{"instrumentId":1069580,"precision":2,"threshold":"40.0","name":"S&P 500 | Put 5800","instrumentLink":"/en/instruments/ewoct24p5800","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":41.20,"buyPrice":42.55,"changeRate":4.69,"symbol":"EWOCT24P5800","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/ES.png?v=1718693355"},{"instrumentId":1069592,"precision":2,"threshold":"40.0","name":"Nasdaq 100 | Put 20000","instrumentLink":"/en/instruments/nqoct24p20000","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":190.66,"buyPrice":194.09,"changeRate":63.03,"symbol":"NQOCT24P20000","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/NQ.png?v=1718693360"},{"instrumentId":1069855,"precision":2,"threshold":"40.0","name":"VIX | Call 22","instrumentLink":"/en/instruments/vixnov24c22","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":1.71,"buyPrice":1.80,"changeRate":19.39,"symbol":"VIXNOV24C22","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/VIX.png?v=1718693345"},{"instrumentId":1069773,"precision":5,"threshold":"40.0","name":"EUR/USD | Put 1.085","instrumentLink":"/en/instruments/eurusdnov24p1.085","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":0.00567,"buyPrice":0.00593,"changeRate":12.4,"symbol":"EURUSDNOV24P1.085","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Forex/EURUSD.png?v=1718693396"}],"icon":"icon-options"},"ETFs":{"categoryName":"ETFs","instruments":[{"instrumentId":145,"precision":2,"threshold":"3.0","name":"USO-Oil Fund","instrumentLink":"/en/instruments/uso","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":72.70,"buyPrice":72.86,"changeRate":-4.15,"symbol":"USO","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/ETF/USO_border.png?v=1718693546"},{"instrumentId":403,"precision":2,"threshold":"3.0","name":"iShares Silver","instrumentLink":"/en/instruments/slv","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":28.69,"buyPrice":28.77,"changeRate":0.67,"symbol":"SLV","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/ETF/SLV.png?v=1718693512"},{"instrumentId":148,"precision":2,"threshold":"3.0","name":"UNG-Gas Fund","instrumentLink":"/en/instruments/ung","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":13.91,"buyPrice":14.11,"changeRate":0.14,"symbol":"UNG","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/ETF/UNG_border.png?v=1718693509"},{"instrumentId":150,"precision":2,"threshold":"3.0","name":"OIH-Oil Service","instrumentLink":"/en/instruments/oih","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":283.42,"buyPrice":284.52,"changeRate":-3.78,"symbol":"OIH","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/ETF/OIH_border.png?v=1718693519"},{"instrumentId":144,"precision":2,"threshold":"3.0","name":"GLD Gold","instrumentLink":"/en/instruments/gld","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":245.83,"buyPrice":245.98,"changeRate":0.34,"symbol":"GLD","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/ETF/GLD.png?v=1718693536"},{"instrumentId":1349,"precision":2,"threshold":"3.0","name":"Commodity Index Fund","instrumentLink":"/en/instruments/dbc","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":22.45,"buyPrice":22.51,"changeRate":-1.92,"symbol":"DBC","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/ETF/DBC.png?v=1718693509"},{"instrumentId":3519,"precision":2,"threshold":"3.0","name":"Global X Lithium & Battery Tech","instrumentLink":"/en/instruments/lit","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":42.52,"buyPrice":42.65,"changeRate":-3.24,"symbol":"LIT","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/ETF/LIT.png?v=1718693535"},{"instrumentId":4202,"precision":2,"threshold":"3.0","name":"NUGT","instrumentLink":"/en/instruments/nugt","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":51.45,"buyPrice":51.70,"changeRate":2.45,"symbol":"NUGT","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/ETF/NUGT.png?v=1718693509"}],"icon":"icon-etfs"},"RisersAndFallers":{"categoryName":"Risers & Fallers","instruments":[{"instrumentId":1069272,"precision":2,"threshold":"40.0","name":"Netherlands 25 | Put 900","instrumentLink":"/en/instruments/aexoct24p900","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":5.15,"buyPrice":5.95,"changeRate":692.86,"symbol":"AEXOCT24P900","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/FT.png?v=1718693351"},{"instrumentId":2104,"precision":2,"threshold":"4.0","name":"Wolfspeed","instrumentLink":"/en/instruments/wolf","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":13.68,"buyPrice":13.78,"changeRate":20.7,"symbol":"WOLF","instrumentIconImage":""},{"instrumentId":3468,"precision":2,"threshold":"1.0","name":"VIX Volatility Index","instrumentLink":"/en/instruments/vix","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":19.31,"buyPrice":19.54,"changeRate":0.62,"symbol":"VIX","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/VIX.png?v=1718693345"},{"instrumentId":10,"precision":2,"threshold":"2.0","name":"Oil","instrumentLink":"/en/instruments/cl","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":70.92,"buyPrice":70.96,"changeRate":0.51,"symbol":"CL","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/CL_border.png?v=1718693369"},{"instrumentId":1069297,"precision":2,"threshold":"40.0","name":"Netherlands 25 | Call 930","instrumentLink":"/en/instruments/aexoct24c930","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":0.09,"buyPrice":0.17,"changeRate":-95.15,"symbol":"AEXOCT24C930","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/FT.png?v=1718693351"},{"instrumentId":1067544,"precision":2,"threshold":"4.0","name":"NVIDIA (Extended Hours)","instrumentLink":"/en/instruments/nvda_eh","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":130.41,"buyPrice":131.39,"changeRate":-5.19,"symbol":"NVDA_EH","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Stocks/NVDA_EH.png?v=1723708817"},{"instrumentId":3427,"precision":2,"threshold":"1.0","name":"China A50","instrumentLink":"/en/instruments/cn","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":13239.88,"buyPrice":13253.13,"changeRate":-4.27,"symbol":"CN","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Indices/CN.png?v=1718693344"},{"instrumentId":123,"precision":3,"threshold":"2.0","name":"Natural Gas","instrumentLink":"/en/instruments/ng","isDelayedInstrument":false,"tradingLink":"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True","sellPrice":2.478,"buyPrice":2.482,"changeRate":-0.72,"symbol":"NG","instrumentIconImage":"https://cdn.plus500.com/Media/Apps/cfd_invest/Commodities/NG.png?v=1718693370"}],"icon":"icon-risers-fallers"}};
-    const feedsWidgetOptions = {
-        rootElement: '#feedTable',
-        initialData: feedsInitialData,
-        apiUrl: '/en/api/LiveData/FeedsUpdates',
-        priceDownClass: 'red',
-        priceUpClass: 'green',
-        percentUpClass: 'inst-up',
-        percentDownClass: 'inst-down',
-        thresholdClass: "highlight-threshold",
-        updateInterval: 3000,
-        percentPrecision: 2
-    }
-    let feedsApp;
-
-    const observer = new window.IntersectionObserver(function (entries){
-        const entry = entries[0]
-        if (entry.isIntersecting){
-            loadJS("../../../cdn-main.plus500.com/1.0.0.120279/Resources/Scripts/vue.min.js", document.body, function () {
-                loadJS("../../../cdn-main.plus500.com/1.0.0.120279/Resources/Scripts/feedsApp.min.js", document.body, function () {
-                    feedsApp = initFeedsApp(feedsWidgetOptions) 
-                }, false);    
-            }, false)
-            observer.unobserve(entry.target);
+    <script>
+        function deleteCookie(name, domain, path){
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=" + path +"; domain=" + domain;
         }
-    }, {threshold: 0.05, rootMargin: '20%'});
-    observer.observe(document.querySelector(feedsWidgetOptions.rootElement));
-</script>
+        function disableGoogleAnalytics(disable){
+            window['ga-disable-GTM-NJGBN3Q'] = disable;
+            if(disable){
+                var cookiesDomain = "localhost";
+                if (window.location.host.lastIndexOf("localhost", 0) !== 0){
+                    cookiesDomain = "." + window.location.host.split(".").slice(1).join(".");
+                }
+                deleteCookie("_ga", cookiesDomain, '/')
+                deleteCookie("_gid", cookiesDomain, '/')
+                deleteCookie("_gat_GTM-NJGBN3Q", cookiesDomain, '/')
+            }
+        }
+        if (window.localStorage["Disable3rdPartyAnalytics"] === "true"){
+            disableGoogleAnalytics(true)
+        }
+    </script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            var analyticsParameters = {};
+                
+                        analyticsParameters['userCountry']='NG'
+                
+                
+                        analyticsParameters['mainSiteSubdomain']='Futures'
+                
+                
+                        analyticsParameters['pageType']='InstrumentCategory'
+                
+                
+                        analyticsParameters['pageTitle']='Forex'
+                
+                
+                        analyticsParameters['experimentName_0']='IdHomeViewExp'
+                
+                
+                        analyticsParameters['experimentVariant_0']='undefined'
+                
+                
+                        analyticsParameters['experimentName_1']='ExternalCmp'
+                
+                
+                        analyticsParameters['experimentVariant_1']='Control'
+                
+                
+                        analyticsParameters['instrumentType']='Forex'
+                
+            window.dataLayer.push({
+                'event': 'pageMetaData',
+                 ...analyticsParameters
+            });
+        </script>
+        <!-- Google Tag Manager -->
+        <script>
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-NJGBN3Q');
+        </script>
+        <!-- End Google Tag Manager -->
+    <script>
+        let loadedJS = [];
+        function loadJS(url, element, callback, async = true) {
+            if (loadedJS.indexOf(url) > -1) {
+                if (callback !== undefined) {
+                    callback();
+                }
+                return;
+            }
+            const script = document.createElement("script");
+            script.async = async;
+            script.src = url;
+            element.appendChild(script);
 
-                        </div>
-                    </div>
-                </div>
-            </div> 
+            script.addEventListener("load", function () {
+                loadedJS.push(url);
+                if (callback !== undefined) {
+                    callback();
+                }
+            });
+        }
+    </script>
+
+    <link rel="alternate" href="https://us.plus500.com/markets/forex" hreflang="en-US" />
+    
+</head>
+<body class="forex regulator-cftc country-us lang-en Win10">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGBN3Q"
+            height="0" width="0" style="display:none;visibility:hidden">
+    </iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header id="mainHeader" class="main-header">
+    <div class="main-header-wrapper">
+        <div class="container-xl main-column">
+            <div class="logo">
+                <a class="menu-link" href="/">
+                    <svg viewBox="0 0 160 38" width="160" height="38" aria-labelledby="logoTitle logoDesc" role="img">
+                        <title id="logoTitle">Plus500 US Futures logo</title>
+                        <desc id="logoDesc">This Plus500 logo takes you the Plus500 US Futures homepage</desc>
+                        <path class="logo-color-2" d="M142.17 14.9452H155.174C155.562 14.9452 155.915 14.9849 156.246 15.0572C156.578 15.1319 156.881 15.2183 157.157 15.3256C157.476 15.475 157.763 15.6478 158.02 15.8485C158.276 16.0492 158.497 16.2756 158.69 16.53C158.949 16.8265 159.153 17.1532 159.313 17.5127C159.475 17.8721 159.605 18.2339 159.713 18.5887C159.819 18.9692 159.894 19.3496 159.936 19.7301C159.979 20.1105 160 20.4793 160 20.8411V31.8114C160 32.2152 159.979 32.6003 159.936 32.9714C159.894 33.3425 159.816 33.695 159.713 34.0311C159.605 34.4349 159.464 34.8177 159.28 35.1748C159.101 35.5366 158.904 35.8517 158.69 36.1271C158.478 36.3815 158.243 36.6079 157.987 36.8086C157.728 37.0117 157.462 37.1751 157.189 37.2988C156.888 37.4505 156.587 37.5532 156.277 37.6162C155.966 37.6793 155.656 37.7096 155.336 37.7096H142.105C141.742 37.7096 141.38 37.6723 141.018 37.5952C140.658 37.5229 140.315 37.4038 139.997 37.2358C139.677 37.0677 139.379 36.8623 139.104 36.6173C138.826 36.3768 138.572 36.0827 138.337 35.742C138.165 35.4689 138.008 35.1631 137.855 34.8223C137.709 34.4862 137.589 34.1151 137.504 33.716C137.441 33.3962 137.384 33.0671 137.347 32.7147C137.302 32.3692 137.283 31.9958 137.283 31.592V21.1562C137.283 20.7594 137.309 20.3486 137.358 19.9378C137.413 19.5224 137.493 19.1186 137.601 18.7171C137.683 18.3133 137.812 17.9282 137.984 17.5594C138.153 17.1859 138.356 16.8568 138.591 16.5604C138.803 16.285 139.047 16.0352 139.327 15.8135C139.604 15.5894 139.924 15.419 140.284 15.2906C140.543 15.1879 140.83 15.0992 141.147 15.0362C141.467 14.9755 141.808 14.9452 142.17 14.9452ZM150.734 18.7498H146.484C146.338 18.7498 146.183 18.7941 146.02 18.8758C145.863 18.9598 145.729 19.0672 145.621 19.1909C145.494 19.3193 145.392 19.457 145.32 19.6064C145.244 19.7534 145.211 19.9098 145.211 20.0802V32.6376C145.211 32.808 145.254 32.9714 145.352 33.1324C145.447 33.2888 145.559 33.4172 145.684 33.5269C145.816 33.6553 145.964 33.7603 146.136 33.8444C146.305 33.9307 146.477 33.9704 146.646 33.9704H150.736C150.863 33.9704 150.997 33.9377 151.136 33.877C151.277 33.814 151.406 33.7276 151.536 33.6203C151.641 33.5386 151.731 33.4312 151.806 33.3052C151.881 33.1768 151.917 33.0484 151.917 32.9247V19.7954C151.917 19.6717 151.881 19.5457 151.806 19.4173C151.731 19.2913 151.641 19.1862 151.536 19.1022C151.406 18.9972 151.277 18.9108 151.136 18.8478C150.992 18.7824 150.861 18.7498 150.734 18.7498Z" fill="white" />
+                        <path class="logo-color-2" d="M116.575 14.9452H129.581C129.962 14.9452 130.317 14.9849 130.651 15.0572C130.98 15.1319 131.281 15.2183 131.561 15.3256C131.881 15.475 132.17 15.6478 132.424 15.8485C132.678 16.0492 132.902 16.2756 133.094 16.53C133.348 16.8265 133.558 17.1532 133.715 17.5127C133.875 17.8721 134.007 18.2339 134.115 18.5887C134.223 18.9692 134.296 19.3496 134.339 19.7301C134.386 20.1105 134.402 20.4793 134.402 20.8411V31.8114C134.402 32.2152 134.383 32.6003 134.339 32.9714C134.299 33.3425 134.226 33.695 134.115 34.0311C134.007 34.4349 133.866 34.8177 133.685 35.1748C133.504 35.5366 133.306 35.8517 133.094 36.1271C132.878 36.3815 132.643 36.6079 132.389 36.8086C132.137 37.0117 131.867 37.1751 131.592 37.2988C131.293 37.4505 130.989 37.5532 130.679 37.6162C130.371 37.6793 130.056 37.7096 129.738 37.7096H116.511C116.147 37.7096 115.785 37.6723 115.425 37.5952C115.058 37.5229 114.719 37.4038 114.399 37.2358C114.082 37.0677 113.783 36.8623 113.503 36.6173C113.226 36.3768 112.969 36.0827 112.737 35.742C112.565 35.4689 112.405 35.1631 112.262 34.8223C112.109 34.4862 111.996 34.1151 111.906 33.716C111.843 33.3962 111.791 33.0671 111.749 32.7147C111.704 32.3692 111.685 31.9958 111.685 31.592V21.1562C111.685 20.7594 111.711 20.3486 111.768 19.9378C111.817 19.5224 111.897 19.1186 112.005 18.7171C112.092 18.3133 112.217 17.9282 112.389 17.5594C112.56 17.1859 112.762 16.8568 112.995 16.5604C113.207 16.285 113.456 16.0352 113.731 15.8135C114.007 15.5894 114.326 15.419 114.689 15.2906C114.947 15.1879 115.232 15.0992 115.552 15.0362C115.874 14.9755 116.213 14.9452 116.575 14.9452ZM125.143 18.7498H120.891C120.74 18.7498 120.587 18.7941 120.427 18.8758C120.267 18.9598 120.131 19.0672 120.027 19.1909C119.898 19.3193 119.795 19.457 119.724 19.6064C119.649 19.7534 119.609 19.9098 119.609 20.0802V32.6376C119.609 32.808 119.661 32.9714 119.755 33.1324C119.853 33.2888 119.966 33.4172 120.091 33.5269C120.218 33.6553 120.364 33.7603 120.535 33.8444C120.707 33.9307 120.879 33.9704 121.048 33.9704H125.14C125.267 33.9704 125.397 33.9377 125.535 33.877C125.672 33.814 125.808 33.7276 125.935 33.6203C126.041 33.5386 126.131 33.4312 126.206 33.3052C126.281 33.1768 126.321 33.0484 126.321 32.9247V19.7954C126.321 19.6717 126.281 19.5457 126.206 19.4173C126.131 19.2913 126.041 19.1862 125.935 19.1022C125.811 18.9972 125.672 18.9108 125.535 18.8478C125.399 18.7824 125.27 18.7498 125.143 18.7498Z" fill="white" />
+                        <path class="logo-color-2" d="M108.555 14.9756V18.7195H95.2624L95.039 23.1893H104.404C104.997 23.1893 105.552 23.2733 106.062 23.4437C106.382 23.5511 106.674 23.6888 106.942 23.8568C107.208 24.0272 107.45 24.2256 107.662 24.4567C107.857 24.6504 108.024 24.8581 108.172 25.0939C108.32 25.3273 108.438 25.5677 108.525 25.8198C108.63 26.0976 108.713 26.373 108.762 26.6647C108.814 26.9448 108.845 27.2483 108.845 27.5634V33.527C108.845 33.8631 108.814 34.1712 108.762 34.4466C108.71 34.722 108.628 34.9881 108.525 35.2402C108.416 35.5576 108.266 35.8377 108.078 36.0805C107.887 36.3255 107.685 36.538 107.469 36.7317C107.255 36.8811 107.029 37.0141 106.798 37.1448C106.558 37.2709 106.321 37.3666 106.062 37.4272C105.804 37.5159 105.538 37.579 105.267 37.621C104.985 37.663 104.708 37.684 104.437 37.684H87.7858V34.0055H100.121C100.248 34.0055 100.359 33.9611 100.453 33.8631C100.552 33.7697 100.629 33.6507 100.698 33.499C100.759 33.3519 100.801 33.2002 100.822 33.0391C100.846 32.8828 100.853 32.7357 100.853 32.6097V28.1399C100.853 27.9462 100.822 27.7758 100.775 27.6334C100.721 27.4863 100.651 27.3696 100.564 27.2856C100.481 27.1806 100.38 27.1059 100.263 27.0639C100.145 27.0172 100.023 27.0008 99.8956 27.0008H87.3672L87.5271 14.9803H108.555V14.9756Z" fill="white" />
+                        <path class="logo-color-2" d="M83.1244 19.499V22.8578H71.8919C71.819 22.8578 71.7343 22.8765 71.6285 22.9091C71.5226 22.9465 71.4238 22.9862 71.3298 23.0305C71.238 23.0772 71.1604 23.1355 71.104 23.2056C71.0452 23.2733 71.017 23.3549 71.017 23.446V24.4496C71.017 24.5453 71.0523 24.62 71.1205 24.6784C71.191 24.7321 71.271 24.7834 71.3674 24.8301C71.4568 24.8791 71.5579 24.9118 71.6614 24.9351C71.7672 24.9608 71.866 24.9701 71.9577 24.9701H80.2292C80.4856 24.9701 80.7443 24.9911 81.0148 25.0402C81.2829 25.0868 81.5322 25.1452 81.765 25.2129C82.0214 25.3086 82.2589 25.4206 82.4823 25.5607C82.7011 25.6984 82.9057 25.8618 83.0938 26.0462C83.2537 26.2095 83.3996 26.3916 83.5289 26.5993C83.6536 26.8071 83.7664 27.0405 83.8605 27.2926C83.9522 27.5236 84.0205 27.7897 84.0698 28.0862C84.1169 28.3872 84.1404 28.7094 84.1404 29.0571V33.3169C84.1404 33.6413 84.1098 33.9517 84.051 34.2528C83.9946 34.5516 83.9076 34.8434 83.79 35.1164C83.6959 35.3709 83.5665 35.6089 83.4066 35.8284C83.242 36.0501 83.0774 36.2508 82.9174 36.4329C82.7058 36.6196 82.487 36.783 82.2542 36.937C82.0237 37.0888 81.7885 37.2218 81.5581 37.3338C81.2288 37.4739 80.8995 37.5742 80.5632 37.6303C80.2245 37.6839 79.8929 37.7143 79.5684 37.7143H63.3781V34.4232H75.382C75.4761 34.4232 75.5749 34.3999 75.6784 34.3555C75.7842 34.3112 75.8712 34.2505 75.9394 34.1805C76.0312 34.1338 76.1017 34.0661 76.1511 33.9727C76.1958 33.8817 76.2193 33.7883 76.2193 33.695V32.6913C76.2193 32.6026 76.1958 32.5163 76.1511 32.4346C76.1017 32.3529 76.0312 32.2899 75.9394 32.2432C75.8454 32.1731 75.7536 32.1195 75.6619 32.0891C75.5655 32.0494 75.4761 32.0354 75.382 32.0354H67.1152C66.7883 32.0354 66.4567 32.0051 66.1204 31.9491C65.7817 31.8931 65.4525 31.7927 65.1255 31.6527C64.9162 31.5616 64.7116 31.4449 64.5141 31.3072C64.3165 31.1695 64.1495 31.0084 64.0084 30.8217C63.8697 30.6607 63.7473 30.4809 63.6439 30.2849C63.5404 30.0911 63.451 29.8857 63.3805 29.678C63.3334 29.4913 63.2981 29.2975 63.277 29.0898C63.2535 28.8844 63.2417 28.6603 63.2417 28.4316V23.5837C63.2417 23.2592 63.277 22.9675 63.3475 22.6991C63.4157 22.4353 63.5075 22.1762 63.6251 21.9195C63.7662 21.6907 63.9167 21.469 64.079 21.2636C64.2412 21.0559 64.427 20.8738 64.6364 20.7104C64.8457 20.526 65.0738 20.3626 65.316 20.2249C65.5606 20.0849 65.8099 19.9728 66.0663 19.8795C66.3909 19.7674 66.7295 19.6717 67.0776 19.6017C67.428 19.5317 67.762 19.499 68.0889 19.499H83.1244V19.499Z" fill="white" />
+                        <path class="logo-color-2" d="M46.1059 19.4313V33.1441C46.1059 33.2585 46.1412 33.3799 46.2117 33.5036C46.2823 33.632 46.3622 33.744 46.4563 33.835C46.5716 33.9237 46.6939 34.0007 46.8232 34.0568C46.9502 34.1174 47.0725 34.1455 47.1901 34.1455H50.9907C51.1083 34.1455 51.2283 34.1221 51.3576 34.0754C51.4846 34.0311 51.5952 33.9611 51.6892 33.8677C51.7833 33.7767 51.8656 33.6786 51.9362 33.5713C52.0044 33.4709 52.0397 33.3589 52.0397 33.2445V19.4617H60.5181V37.7096H42.6886C42.2912 37.7096 41.9219 37.6699 41.5715 37.5859C41.2234 37.5089 40.8965 37.3968 40.5955 37.2591C40.2921 37.0981 40.0146 36.9067 39.7582 36.6873C39.5018 36.4679 39.269 36.2345 39.0597 35.9777C38.8504 35.7233 38.6575 35.4385 38.4835 35.1304C38.3094 34.8153 38.1636 34.5002 38.0484 34.1758C37.9543 33.8514 37.8791 33.5246 37.8226 33.1908C37.7638 32.857 37.7356 32.5256 37.7356 32.2011V19.4243H46.1059V19.4313Z" fill="white" />
+                        <path class="logo-color-2" d="M34.8947 37.5953C34.8947 37.5953 30.7436 37.635 30.3932 37.5953C30.0357 37.5509 29.7158 37.3432 29.4148 37.1588C29.1114 36.9488 28.8315 36.6943 28.5775 36.4002C28.3188 36.1108 28.0884 35.8004 27.879 35.4643C27.6697 35.1258 27.4769 34.75 27.3028 34.3439C27.1288 33.9261 26.983 33.5106 26.8677 33.0835C26.7737 32.654 26.6984 32.2222 26.642 31.7787C26.5832 31.3399 26.5549 30.9011 26.5549 30.4693V13.5681H34.9299L34.8947 37.5953Z" fill="white" />
+                        <path class="logo-color-2" d="M0 30.915V12.9215H18.4928C18.8173 12.9215 19.156 12.9425 19.5041 12.9915C19.8545 13.0382 20.1908 13.1082 20.5177 13.1993C20.8423 13.316 21.1645 13.4607 21.4773 13.6311C21.7924 13.8085 22.0746 14.0092 22.3334 14.2403C22.5192 14.448 22.6932 14.6697 22.8555 14.9148C23.0177 15.1552 23.1565 15.4283 23.2741 15.7271C23.3893 16.0305 23.4764 16.3573 23.5375 16.7167C23.594 17.0762 23.6245 17.4613 23.6245 17.8768V24.0411C23.6245 24.4333 23.5963 24.8021 23.5375 25.1498C23.4787 25.4953 23.3917 25.808 23.2741 26.0835C23.18 26.3612 23.053 26.6226 22.8907 26.8607C22.7261 27.1058 22.5521 27.3205 22.3663 27.5026C22.157 27.7103 21.9312 27.8901 21.6866 28.0371C21.442 28.1888 21.1809 28.3195 20.9011 28.4362C20.553 28.5763 20.1908 28.6743 19.8192 28.7303C19.4476 28.7887 19.0737 28.819 18.7021 28.819H8.68781V37.6489H3.8359H0V30.915ZM8.68781 17.0062V24.7297H13.8502C13.9913 24.7297 14.123 24.6853 14.2523 24.5896C14.3793 24.4986 14.4899 24.3819 14.5839 24.2442C14.6757 24.1042 14.7462 23.9548 14.7933 23.7937C14.8379 23.635 14.8615 23.4809 14.8615 23.3432V18.2176C14.8615 18.0355 14.8332 17.8651 14.7744 17.7134C14.7156 17.564 14.6404 17.4426 14.5487 17.3516C14.4546 17.2349 14.3441 17.1486 14.2171 17.0902C14.0901 17.0318 13.9678 17.0038 13.8502 17.0038H8.68781V17.0062Z" fill="white" />
+                        <path class="logo-color-1" d="M88.0966 4.36708H83.1271V0H75.4647V4.36708H70.4976V11.5117H75.4647V15.8788H83.1271V11.5117H88.0966V4.36708Z" fill="white" />
+                    </svg>
+                </a>
+            </div>
+            <button type="button" class="mobile-menu-trigger" aria-expanded="false">
+                <span class="visually-hidden">Menu</span>
+                <span class="mobile-menu-trigger-icon">
+                    <span></span>
+                </span>
+            </button>
+            <div class="main-menu">
+                <ul>
+                    <li class="has-submenu">
+                        <button class="menu-link" aria-haspopup="true" aria-expanded="false" type="button">
+                            <span>Markets</span>
+                            <span class="icon icon-chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul data-menu-name="markets">
+                            <li class="back-link-wrapper"><button type="button" class="back-link">Back</button></li>
+                                        <li class="separator category-separator no-border"><span>Futures on:</span></li>
+                                        <li><a  href="{{url('all-market')}}" data-page="AllInstruments" data-analytics="menuClick">All Markets</a></li>
+                                        <li><a  href="{{url('crypto')}}" data-page="CryptoCurrencies" data-analytics="menuClick">Crypto</a></li>
+                                        <li><a  href="{{url('agriculture')}}" data-page="Agriculture" data-analytics="menuClick">Agriculture</a></li>
+                                        <li><a  href="{{url('metals')}}" data-page="Metals" data-analytics="menuClick">Metals</a></li>
+                                        <li><a  href="{{url('forex')}}" data-page="Forex" data-analytics="menuClick">Forex</a></li>
+                                        <li><a  href="{{url('interest')}}" data-page="InterestRates" data-analytics="menuClick">Interest Rates</a></li>
+                                        <li><a  href="{{url('energy')}}" data-page="Energy" data-analytics="menuClick">Energy</a></li>
+                                        <li><a  href="{{url('equity')}}" data-page="EquityIndices" data-analytics="menuClick">Equity Index</a></li>
+                        </ul>
+                    </li>
+                                        <li class="has-submenu">
+                        <button class="menu-link" aria-haspopup="true" aria-expanded="false" type="button">
+                            <span>Company</span>
+                            <span class="icon icon-chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul data-menu-name="company">
+                            <li class="back-link-wrapper"><button type="button" class="back-link">Back</button></li>
+                                        <li><a  href="{{url('about')}}" data-page="AboutUs" data-analytics="menuClick">About Us</a></li>
+                                        <li><a  href="{{url('investor')}}" target="_blank"rel="noopener noreferrer"data-analytics="menuClick">Investor Relations</a></li>
+                                        <li><a  href="#" data-page="FuturesFinancialServices" data-analytics="menuClick">Financial Services</a></li>
+                                        <li><a  href="https://cdn-main.plus500.com/Regulatory/CFTC/default/default/Futures/1716971168/PrivacyPolicy.pdf" target="_blank"rel="noopener noreferrer"doc-href="https://cdn-main.plus500.com/Regulatory/CFTC/default/default/Futures/1716971168/PrivacyPolicy.pdf"data-analytics="menuClick">Cookies & Privacy</a></li>
+                                        <li><a  href="{{url('fees')}}" data-page="FuturesFinancialServices" data-analytics="menuClick">Fees & Charges</a></li>
+                                        <li class="separator"><span>Sponsorships</span></li>
+                                        <li><a  href="{{url('bulls')}}" data-page="Bulls" data-analytics="menuClick">Chicago Bulls</a></li>
+                                        <li><a  href="{{url('legiawarsaw')}}" data-page="LegiaWarsaw" data-analytics="menuClick">Legia Warsaw</a></li>
+                                        <li><a  href="{{url('youngboys')}}" data-page="YoungBoys" data-analytics="menuClick">BSC Young Boys</a></li>
+                        </ul>
+                        
+                    </li>
+                    <li data-menu-name="learn" class="link-learn no-hover-link">
+                        <a data-analytics="menuClick" class="menu-link" href="{{url('academy')}}" title="Learn to trade Futures with Plus500US&#39; Trading Academy">
+                            Learn
+                        </a>
+                    </li>
+                    <li data-menu-name="support" class="link-support no-hover-link">
+                        <a data-analytics="menuClick" class="menu-link" href="{{url('support')}}">
+                            Support
+                        </a>
+                    </li>
+                    <li data-menu-name="margins" class="link-margin no-hover-link">
+                        <a data-analytics="menuClick" class="menu-link" href="{{url('margins')}}">
+                            Margins
+                        </a>
+                    </li>
+                    <li class="link-login no-hover-link">
+                        <a class="menu-link" href="{{route('login')}}"> 
+                            Login 
+                        </a>
+                    </li>
+                    	{{-- <li class="has-submenu">
+                             <button class="menu-link dropdown-toggle-languages" aria-haspopup="true" aria-expanded="false" type="button">
+                                <span>en</span>
+                                <span class="icon icon-chevron" aria-hidden="true"></span>
+                            </button>
+                    		<ul class="dropdown-menu-languages " aria-labelledby="navbarDropdownLanguages" data-menu-name="languages">
+                                <li class="back-link-wrapper">
+                                    <button type="button" class="back-link"></button>
+                                </li>
+                    				<li><a data-analytics="menuClick" href="/es/?refurl=https%3a%2f%2fwww.google.com%2f&amp;innerTags=cfdwv+_cc_+uswsv"  rel="nofollow">Espa&#241;ol</a></li>
+                    		</ul>
+                    	</li> --}}
+                </ul>
+            </div>
+            <div class="start-trading-link start-trading-link-box">
+                    <a data-analytics="CTA_real" class="button blue-gradient start-trading-link" href="{{route('register')}}" data-start-trading>Start Trading</a>
+            </div>
         </div>
     </div>
-</section>
- 
-<section class="trading-list-section general-section">
-    <div class="container-xxl">
-        <div class="row item-list">
-                    <div class="col-sm-12 col-md-6 item-box">
-                        <div class="item">
-                                <h2 class="title-section item-title">Advanced Trading Tools</h2>
-                            <div class="free-content">Use our trading tools such as Stop Loss, Stop Limit and Guaranteed Stop to limit losses and lock in profits. Get FREE real-time forex quotes and set indicators to easily analyse charts.</div>
-                                <a data-analytics="buttonClick" href="../help/riskmanagement.html" class="button blue-gradient">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 item-box">
-                        <div class="item">
-                                <h2 class="title-section item-title">Easy Account Opening</h2>
-                            <div class="free-content">Apply for an account in a few minutes, practice trading with our FREE unlimited Demo Account until you're ready to move to the next level.</div>
-                        </div>
-                    </div>
-            <div class="col-sm-12 item-box">
-                <a href="../instruments.html#Forex" class="item item-link"><i class="icon icon-file-presentation" aria-hidden="true"></i><span>List of Forex - click here</span></a>
-                        <a href="https://cdn-main.plus500.com/Regulatory/FCA/default/default/1725787842/Kid.pdf" class="item item-link" target="_blank"><i class="icon icon-file-pdf" aria-hidden="true"></i><span>Key Information Document</span></a>
-                                </div>
-        </div>
-    </div>
-</section><section class="why-us-section-wrap">
-    <section class="why-us-section general-section gs-anim-target" data-section-name="whys-us">
-        <div class="container-xxl">
-            <div class="row">
-                <div class="col blue-card-parent">
-                    <figure aria-hidden="true" class="plus-bg plus-bg-medium blue-gr"></figure>
-                    <div class="blue-card-bg shadow-card flip full-height"></div>
-                    <h2 class="title-section white text-center"><strong>Why Plus500?</strong></h2>
+</header>
+<div class="sentinel"></div>
+<main>
+    
 
-                    <div class="row align-center items-icon-group side-icon">
-                        <div class="col-lg-6 column item-box">
-                            <article class="item">
-                                <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="support" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/icons/icon-secure.svg" /></figure>
-                                <div class="item-content">
-                                    <h3 class="item-title">Protected & secure</h3>
-                                    <div class="item-desc">Your data is safe and your funds are kept in segregated bank accounts, in accordance with regulatory requirements.</div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-lg-6 column item-box">
-                            <article class="item">
-                                <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="regulated" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/icons/icon-support.svg" /></figure>
-                                <div class="item-content">
-                                    <h3 class="item-title">Professional support</h3>
-                                    <div class="item-desc">Get around-the-clock dedicated customer service in multiple languages.</div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-lg-6 column item-box">
-                            <article class="item">
-                                <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="secure" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/icons/icon-regulated.svg#fca" /></figure>
-                                <div class="item-content">
-                                    <h3 class="item-title">Regulated</h3>
-                                    <div class="item-desc">Licensed and regulated by a variety of global leading regulators. <a href="../tradingacademy/faq/regulators/throughwhichsubsdoyouoperate.html">Learn more</a>.</div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-lg-6 column item-box">
-                            <article class="item">
-                                <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="reliable" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/icons/icon-reliable.svg#fca" /></figure>
-                                <div class="item-content">
-                                    <h3 class="item-title">Recognised</h3>
-                                    <div class="item-desc">Plus500 Ltd is a FTSE 250 company listed on the London Stock Exchange’s Main Market for Listed Companies.</div>
-                                </div>
-                            </article>
+
+
+<div class="instrument instrument-page forex">
+    <figure aria-hidden="true" class="plus-bg plus-bg-small blue-gr"></figure>
+    <figure aria-hidden="true" class="plus-bg plus-bg-medium blue-gr"></figure>
+    <figure aria-hidden="true" class="plus-bg plus-bg-large blue-white-gr"></figure>
+    <section class="main-banner hero-banner inner-banner gradient-banner gs-anim-target forex" data-section-name="hero-section">
+        <div class="main-banner-wrap container-lg">
+            <div class="main-banner-content hero-content">
+                <div class="col-lg-10">
+                    <h1 class="main-banner-title main-title-font">
+                        Trade Forex Futures <strong>with Plus500</strong>
+                    </h1>
+                    <div class="main-banner-desc">Trade Futures on the most popular Forex Pairs like EUR/USD, GBP/USD, and more. Forex futures trading allows you access to the world of forex trading while keeping the advantages offered by more liquid, smaller positions. </div>
+                    <div class="main-banner-buttons-box">
+                        <div class="main-banner-buttons button-group">
+                            
+<div class="cta-wrap">
+            <a data-analytics="CTA_real" data-start-trading data-cta-name="start-trading-real-futures" class="button blue-gradient" href="https://futures.plus500.com/trade?hl=en&amp;refurl=https%3a%2f%2fwww.google.com%2f&amp;refts=2024-11-02T01%3a35%3a55.4948156+00%3a00&amp;innerTags=_cc_+cfdwv+uswsv+ecmp_ct+&amp;IsRealMode=True&amp;ms=True">Start Trading Now</a>
+        <a data-analytics="CTA_demo" data-cta-name="start-trading-demo-futures" class="button white-bg hollow link-demo" href="https://futures.plus500.com/trade?hl=en&amp;refurl=https%3a%2f%2fwww.google.com%2f&amp;refts=2024-11-02T01%3a35%3a55.4948156+00%3a00&amp;innerTags=_cc_+cfdwv+uswsv+ecmp_ct+&amp;IsRealMode=False&amp;ms=True">Try Free Demo</a>
+</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-</section><section class="instruments-seo-section">
-    <div class="container-xxl">
+    <section class="container-xxl instrument-widget general-section">
         <div class="row justify-content-center">
-                    <div class="col-lg-8 item">
-                            <h2 class="title-section item-title"><strong>What is Forex trading?</strong></h2>
-                        <div class="d-flex justify-content-center item-content">
-                            <div class="free-content">Trading Forex or ‘FX’ CFDs involves the buying, selling, and exchanging of Forex Contracts for Difference based on the currencies’ fluctuating currency exchange rates. Forex (Foreign Exchange) is a global market where traders aim to profit from rate changes by predicting how one currency will perform against another. This market operates from Sunday evening until Friday evening and relies on analyzing factors that affect currency values to make informed trading decisions.</div>
+            <div class="col-lg-9 col-xxl-8 pb-5">
+                    <div class="instrument-table">
+                        <input type="checkbox" id="tableExpand" class="expand" />
+                        <table>
+                            <thead>
+                                <tr class="row-header">
+                                    <th id="instInfoSymbol">Symbol</th>
+                                    <th id="instInfoName">Futures Contract</th>
+                                    <th id="instInfoDayMargin" colspan="2">Day Margin</th>
+                                </tr>
+                            </thead>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>6AZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>Australian Dollar</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$400</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/6az4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>6BZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>British Pound</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$500</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/6bz4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>6CZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>Canadian Dollar</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$400</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/6cz4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>6SZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>Swiss Franc</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$400</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/6sz4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>6NZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>New Zealand Dollar</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$250</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/6nz4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>6EZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>Euro FX</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$300</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/6ez4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>E7Z4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>E-mini Euro FX</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$150</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/e7z4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>M6AZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>Micro AUD/USD</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$40</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/m6az4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>M6BZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>Micro GBP/USD</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$50</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/m6bz4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>M6EZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>Micro EUR/USD</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$50</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/m6ez4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>MCDZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>Micro CAD/USD</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$40</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/mcdz4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>6JZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>Japanese Yen</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$825</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/6jz4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>6LZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>Brazilian Real</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$235</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/6lz4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>6ZZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>South African Rand</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$385</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/6zz4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                                <tr class="row-data">
+                                    <td headers="instInfoSymbol" class="symbol">
+                                        <span>6MZ4</span>
+                                    </td>
+                                    <td headers="instInfoName" class="name">
+                                        <span>Mexican Peso</span>
+                                    </td>
+                                    <td headers="instInfoDayMargin" class="price">
+                                        <span>$385</span>
+                                    </td>
+                                    <td class="trade">
+                                            <a href="https://futures.plus500.com/trade-instruments/6mz4?refts=2024-11-07T22:58:41.0840459Z&amp;innerTags=_cc_" class="button table-btn hollow">Trade</a>
+                                    </td>
+                                </tr>
+                            <tr class="row-footer">
+                                <td headers="instInfoSymbol instInfoName instInfoDayMargin instInfoAction" colspan="4">
+                                    <label class="icon-arrow-down4 expand-btn" for="tableExpand">
+                                        <span class="visually-hidden">Close/Open</span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-5 col-lg-4 pt-md-4">
+                <div class="instrument-table-content text-center">
+                    <div class="free-content">Trade Futures on Forex Pairs <span><br>With as little as $100 you can get to trading!</span></div>
+                       <a data-analytics="CTA_demo" class="button blue-gradient" href="https://app.plus500.com/trade?hl=en&amp;refurl=https%3a%2f%2fwww.google.com%2f&amp;refts=2024-11-02T01%3a35%3a55.4948156+00%3a00&amp;innerTags=_cc_+cfdwv+uswsv+ecmp_ct+&amp;product=CFD&amp;ms=True">Explore the app!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container-xxl instrument-content-section text-center general-section">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <h2 class="title-section">Introduction to Forex Futures</h2>
+                <div class="free-content">
+                    Forex Futures are derivative contracts in which a buyer and seller trade foreign exchange currency pairs such as EUR/USD at a fixed price, amount, and time in the future. Trading Forex Futures allows you to get access to the Forex market while potentially benefiting from smaller, highly-liquid positions in the future. Compared to traditional Spot Forex, whereby the currency pairs are traded on the spot, in a Forex Futures contract, for example, you might buy a certain number of EUR/USD Futures contracts to lock in an exchange rate, and then, if the contract expires you must buy the USD at a hopefully higher value, thus potentially benefiting from it. However, you need to keep in mind that even if its value drops, you will still be obligated to buy it at that predetermined time.
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container-xxl instrument-card general-section gs-anim-target">
+        <figure aria-hidden="true" class="plus-bg plus-bg-medium"></figure>
+        <figure aria-hidden="true" class="plus-bg plus-bg-large"></figure>
+        <div class="blue-card-parent">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 instrument-wrap">
+                    <div class="blue-card-bg shadow-card full-height not-rotate"></div>
+                    <div class="blue-card-content container-wrap row justify-content-center">
+                        <div class="col-lg-10 col-xl-9 instrument-content">
+                            <figure class="instrument-title-icon">
+                                <img loading="lazy" alt="Academy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/svg/icon-academy.svg"/>
+                            </figure>
+                            <h2 class="title-section white instrument-title">
+                                Trade Forex Futures Like a Boss
+                            </h2>
+                            <div class="free-content">
+                                Browse our free educational videos and articles to stay in the loop on the Forex Futures market. Learn the ins and outs of trading Futures on Forex with our Academy!
+                            </div>
+                            <a data-analytics="buttonClick" class="button white-bg dark" href="/academy">Start Learning</a>
                         </div>
                     </div>
-                    <div class="col-xl-11 col-xxl-10">
-                            <section class="how-trade-section general-section blue-card-section">
-                                <div class="container-xxl">
-                                    <div class="row">
-                                        <div class="col blue-card-parent">
-                                            <figure aria-hidden="true" class="plus-bg plus-bg-large blue-gr"></figure>
-                                            <div class="blue-card-bg shadow-card flip"></div>
-                                            <div class="row align-center items-icon-group side-icon">
-                                                <div class="col-lg-11 item-box">
-                                                    <article class="item">
-                                                        <figure aria-hidden="true" class="item-icon"><img aria-hidden="true" loading="lazy" alt="" src="https://cdn-main.plus500.com/1.0.0.120279/Resources/Images/icons/icon-how-trade.svg" /></figure>
-                                                        <div class="item-content">
-                                                                <h2 class="title-section"><strong>How do I trade Forex?</strong></h2>
-                                                            <div class="item-desc free-content"><strong>Start trading Forex in 5 simple steps:</strong>
-<ol>
-<li> Choose your Forex trading method</li>
-<li> Learn about the Forex market</li> 
-<li> Open and verify your Plus500 account</li>
-<li> Plan your Forex trading strategy</li>
-<li> Start trading!</li>
-</ol></div>
-                                                        </div>
-                                                    </article>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
-    <section class="articles-list-section general-section">
+    </section>
+        <section class="articles-list-section general-section">
         <div class="container-xxl">
             <div class="row justify-content-center">
                 <div class="col col-lg-10">
                     <h2 class="title-section">
-                        <strong>Explore Forex</strong>
+                        <strong></strong>
                     </h2>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col col-lg-10 articles-list-container">
                     <ul class="articles-list">
-                                        <li class="articles-list-item">
-                                            <a class="articles-list-link icon-class" href="forex/what-is-forex_1.html">
-                                                <h3 class="articles-list-title">What Is Forex?</h3>
-                                            </a>
-                                        </li>
-                                        <li class="articles-list-item">
-                                            <a class="articles-list-link icon-class" href="forex/popular-forex-terms-you-should-know_2.html">
-                                                <h3 class="articles-list-title">Popular Forex Terms You Should Know</h3>
-                                            </a>
-                                        </li>
-                                        <li class="articles-list-item">
-                                            <a class="articles-list-link icon-class" href="forex/forex-cfds-explained_3.html">
-                                                <h3 class="articles-list-title">Forex CFDs Explained</h3>
-                                            </a>
-                                        </li>
-                                        <li class="articles-list-item">
-                                            <a class="articles-list-link icon-class" href="forex/basic-forex-trading-strategies-and-indicators_4.html">
-                                                <h3 class="articles-list-title">Basic Forex Trading Strategies and Indicators</h3>
-                                            </a>
-                                        </li>
-                                        <li class="articles-list-item">
-                                            <a class="articles-list-link icon-class" href="forex/what-events-impact-forex-trading_5.html">
-                                                <h3 class="articles-list-title">What Events Impact Forex Trading?</h3>
-                                            </a>
-                                        </li>
-                                        <li class="articles-list-item">
-                                            <a class="articles-list-link icon-class" href="forex/most-popular-forex-pairs_6.html">
-                                                <h3 class="articles-list-title">Most Popular Forex Pairs</h3>
-                                            </a>
-                                        </li>
-                                        <li class="articles-list-item">
-                                            <a class="articles-list-link icon-class" href="forex/forex-trading-alerts_7.html">
-                                                <h3 class="articles-list-title">Forex Trading Alerts</h3>
-                                            </a>
-                                        </li>
+                                <li class="articles-list-item">
+                                    <a class="articles-list-link icon-class" href="/markets/forex/what-is-forex-trading~1">
+                                        <h3 class="articles-list-title">What Is Forex Trading and How Does It Work?</h3>
+                                    </a>
+                                </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-        
 
-
-<section class="container-xxl market-insights-section general-section"> 
-     <div class="row justify-content-center mb-3">
-        <div class="col-12 text-center">
-            <h2 class="title-section"><strong>Related News & Market Insights</strong></h2>
-        </div>
-    </div>
-    <div class="row row row-cols-xxl-3 g-3 g-md-4 carousel-row"> 
-                    <div class="carousel-item">
-                        <a class="card-link" href="../newsandmarketinsights/euro-declines-ecb-set-for-rate-cut.html"  data-inner="euro-declines-ecb-set-for-rate-cut">
-                            <div class="card h-100">
-                                <div class="ratio ratio-16x9 card-img card-img-bg">
-                                    <img loading="lazy" src="../../../images.ctfassets.net/rbl6nw8n2c6i/4eUJbxyzLK9BRydsq4r2D7/6121989d13f0b42c3f700037623d6dcf/--15-10.png" alt="Euro Declines as ECB Set for Rate Cut">
-                                    <div class="meta">
-                                        <div class="author">Stavros Tousios</div>
-                                        <div class="date">Oct 15 2024</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">Euro Declines as ECB Set for Rate Cut</h3>
-                                    <div class="card-text">As the ECB readies its next interest rate decision, the euro faces pressure against major currencies, such as the dollar and pound, amidst current economic challenges in Europe. Analysts weigh in on the future for the euro and pound as they expect the path to normalisation to evolve around inflation and growth dynamics.</div>
-                                </div>
-                                <div class="card-footer text-end">
-                                    <div class="card-link-text"><span>Read More</span><i aria-hidden="true" class="icon icon-chevron-right"></i></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a class="card-link" href="../newsandmarketinsights/september-2024-rate-decisions-fed-boe-boj.html"  data-inner="September-2024-Rate-Decisions-FED-BOE-BOJ">
-                            <div class="card h-100">
-                                <div class="ratio ratio-16x9 card-img card-img-bg">
-                                    <img loading="lazy" src="../../../images.ctfassets.net/rbl6nw8n2c6i/saHWzYhaquiobd5hwzLNt/602a7456b11727d85b405a350cf39c94/September_article__1_.jpg" alt="September 2024 Rate Decisions: FED, BOE &amp; BOJ">
-                                    <div class="meta">
-                                        <div class="author">Plus500</div>
-                                        <div class="date">Sep 16 2024</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">September 2024 Rate Decisions: FED, BOE &amp; BOJ</h3>
-                                    <div class="card-text">Read about September 2024 central bank decisions from the Fed, BoJ, and BoE, and explore what to expect from these key meetings in this article. </div>
-                                </div>
-                                <div class="card-footer text-end">
-                                    <div class="card-link-text"><span>Read More</span><i aria-hidden="true" class="icon icon-chevron-right"></i></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a class="card-link" href="../newsandmarketinsights/2024-us-elections-trading-guide.html"  data-inner="2024-us-elections-trading-guide">
-                            <div class="card h-100">
-                                <div class="ratio ratio-16x9 card-img card-img-bg">
-                                    <img loading="lazy" src="../../../images.ctfassets.net/rbl6nw8n2c6i/2bAF2lGZJBOoJkS9RNZztX/6374dd6d3a9eee40a58a6510717d399a/---10-09.png" alt="Trading &amp; Investing During the 2024 US Elections">
-                                    <div class="meta">
-                                        <div class="author">Plus500</div>
-                                        <div class="date">Sep 12 2024</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">Trading &amp; Investing During the 2024 US Elections</h3>
-                                    <div class="card-text">The US 2024 elections between candidate Trump and Harris are drawing closer to their 5 November 2024 deadline. This political effect can shift the markets and generate volatility. Learn more about this and how to trade during the elections in this article. </div>
-                                </div>
-                                <div class="card-footer text-end">
-                                    <div class="card-link-text"><span>Read More</span><i aria-hidden="true" class="icon icon-chevron-right"></i></div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+    <section class="why-us-section gs-whys-us-section gs-anim-target" data-section-name="whys-us">
+    <div class="why-us-items container-xxl">
+        <div class="columns blue-card-parent">
+            <figure aria-hidden="true" class="plus-bg plus-bg-large blue-gr"></figure>
+            <div class="blue-card-bg shadow-card flip full-height"></div>
+            <h2 class="title-section center">Why Us?</h2>
+            <div class="row align-center items-icon-group side-icon">
+                <div class="col-lg-6 item-box">
+                    <article class="item">
+                        <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/icons/icon-support.svg" /></figure>
+                        <div class="item-content">
+                            <h3 class="item-title">Professional Support</h3>
+                            <div class="item-desc">24/7 customer support at your disposal.</div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-6 item-box">
+                    <article class="item">
+                        <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/icons/icon-reliable.svg" /></figure>
+                        <div class="item-content">
+                            <h3 class="item-title">Reputable</h3>
+                            <div class="item-desc">With over four decades of experience in the field, our firm is a full member of the CME Group and the National Futures Association.</div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-6 item-box">
+                    <article class="item">
+                        <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/icons/icon-secure.svg" /></figure>
+                        <div class="item-content">
+                            <h3 class="item-title">Protected &amp; Secure</h3>
+                            <div class="item-desc">We follow regulatory requirements to the letter, keeping your data safe and your funds in segregated accounts.</div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-6 item-box">
+                    <article class="item">
+                        <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/icons/icon-regulated.svg" /></figure>
+                        <div class="item-content">
+                            <h3 class="item-title">Reliable</h3>
+                            <div class="item-desc">Plus500 Ltd is listed on the London Stock Exchange’s Main Market for Listed Companies &amp; included in the FTSE 250.</div>
+                        </div>
+                    </article>
+                </div>
             </div>
-    <div class="row">
-        <div class="col text-center">
-            <a data-analytics="buttonClick" class="btn button blue-gradient" id="all-news-link" href="../newsandmarketinsights.html">More News</a>
         </div>
     </div>
 </section>
-
-<script>
-    function onPostClicked(el, clickSource){
-       var slug = el.getAttribute("data-inner");
-       sendAnalyticsEvent("MarketInsightsSection", clickSource, slug)
-    }
-    
-    window.addEventListener('load', function () {
-        var elements = document.querySelectorAll(".post-title-link");
-        for (var i=0 ; i < elements.length; i++) {
-            elements[i].addEventListener('click', function (){ onPostClicked(this, "title") });
-        }
-        elements = document.querySelectorAll(".read-more-link");
-        for (var j=0 ; j < elements.length; j++) {
-            elements[j].addEventListener('click', function (){ onPostClicked(this, "readMore") });
-        }
-        
-        document.querySelector("#all-news-link").addEventListener('click', function () {
-            sendAnalyticsEvent("MarketInsightsSection", "allNews")
-        })
-    });
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "FAQPage",
+  "mainEntity": [ {"type":"Question","name":"How are Forex futures settled?","acceptedAnswer":{"type":"Answer","text":"<p>Forex Futures are settled either by cash settlement or physical delivery of the currency in question. At Plus500, the settlement is done by cash only.</p>"}}, {"type":"Question","name":"How do FX futures work?","acceptedAnswer":{"type":"Answer","text":"<p>With FX Futures trading, a buyer and seller agree to exchange one currency for another at a predetermined price and date.</p>"}}, {"type":"Question","name":"How much do you need to start trading forex?","acceptedAnswer":{"type":"Answer","text":"<p>You can start trading micro Forex Futures with Plus500 with a minimum deposit of $100. </p>"}} ]
+}
 </script>
-        <section class="banner-section blue-section">
-    <figure aria-hidden="true" class="plus-bg plus-bg-medium blue-turquoise-gr"></figure>
-    <figure aria-hidden="true" class="plus-bg plus-bg-large blue-fill"></figure>
-    <figure aria-hidden="true" class="plus-bg plus-bg-large white"></figure>
-    <div class="container-xxl start-trading-container">
-        <figure aria-hidden="true" class="plus-bg plus-bg-small white"></figure>
-        <div class="row justify-content-center justify-content-md-start justify-content-lg-center align-items-center">
-            <div class="col-md-10">
-                <div class="data">
-                    <h2 class="title-section"><span>Dive into extensive learning with our</span> <strong>Trading Academy</strong></h2>
-                    <a class="button white-bg hollow" href="../tradingacademy.html">Learn About Trading</a>
-                </div>
+<section class="faq faq-section container-lg">
+    <h2 class="title-section center">
+        <strong>Trading Forex FAQs</strong>
+    </h2>
+    <div class="row justify-content-center">
+        <div class="col-lg-10 ">
+            <div class="faq-accordion accordion" id="accordionFaq">
+                    <div class="accordion-item">
+                        <div class="accordion-header" id="heading_HowAreFuturesSettled">
+                            <h3 class="accordion-title">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#HowAreFuturesSettled" aria-expanded="false" aria-controls="HowAreFuturesSettled">
+                                    How are Forex futures settled?
+                                </button>
+                            </h3>
+                        </div>
+                        <div id="HowAreFuturesSettled" class="accordion-content accordion-collapse collapse" aria-labelledby="heading_HowAreFuturesSettled" data-bs-parent="#accordionFaq">
+                            <div class="accordion-body">
+                            <p>Forex Futures are settled either by cash settlement or physical delivery of the currency in question. At Plus500, the settlement is done by cash only.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header" id="heading_HowDoFuturesWork">
+                            <h3 class="accordion-title">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#HowDoFuturesWork" aria-expanded="false" aria-controls="HowDoFuturesWork">
+                                    How do FX futures work?
+                                </button>
+                            </h3>
+                        </div>
+                        <div id="HowDoFuturesWork" class="accordion-content accordion-collapse collapse" aria-labelledby="heading_HowDoFuturesWork" data-bs-parent="#accordionFaq">
+                            <div class="accordion-body">
+                            <p>With FX Futures trading, a buyer and seller agree to exchange one currency for another at a predetermined price and date.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header" id="heading_HowMuch">
+                            <h3 class="accordion-title">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#HowMuch" aria-expanded="false" aria-controls="HowMuch">
+                                    How much do you need to start trading forex?
+                                </button>
+                            </h3>
+                        </div>
+                        <div id="HowMuch" class="accordion-content accordion-collapse collapse" aria-labelledby="heading_HowMuch" data-bs-parent="#accordionFaq">
+                            <div class="accordion-body">
+                            <p>You can start trading micro Forex Futures with Plus500 with a minimum deposit of $100. </p>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
 </section>
- 
 
-
+    <section class="call-to-actions button-group" data-section-name="call-to-action-section">
         
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org/",
-          "@type": "FAQPage",
-          "mainEntity": [ {"type":"Question","name":"What Does Forex Trading Mean and What Are Forex CFDs?","acceptedAnswer":{"type":"Answer","text":"<p>\nForex trading (also commonly known as Foreign Exchange, currency or FX trading) is a global market for trading one country’s currency in exchange for another country's currency. It serves as the backbone of international trade and investment: imports and exports of goods and services; financial transactions by governments, economic institutions or individuals; global tourism and travel – all these require the use of capital in the form of swapping one currency for a certain amount of another currency.\n</p>\n<cut></cut>\n\n<p>\nWhen trading Forex CFDs, you are essentially speculating on the price changes in their exchange rate. For example, in the <a href=\"/en/instruments/eurusd\">EUR/USD</a> pair the value of one Euro (EUR) is determined in comparison to the US dollar (USD), and in the <a href=\"/en/instruments/gbpjpy\">GBP/JPY</a> pair the value of one British pound sterling (GBP) is quoted against the Japanese yen (JPY). \n</p>\n\n<p>\nIf you think the exchange rate will <span class=\"ital-text\">rise</span> you can open a <strong>‘Buy’</strong> position. Conversely, if you think the exchange rate will <span class=\"ital-text\">fall</span> you can open a <strong>‘Sell’</strong> position.\n</p>\n\n<p>\nTo learn more about Forex trading, read our article on \"<a href=\"/en/trading/forex/what-is-forex~1\">What Is Forex</a>\" and to see a full list of currency pairs offered by Plus500, <a href=\"/en/instruments\">click here</a>.</p>\n\n\n"}}, {"type":"Question","name":"What economic factors may affect Forex rates?","acceptedAnswer":{"type":"Answer","text":"<p>\nForex rates are impacted by an array of political and economic factors relating to the difference in value of a currency or economic region in comparison to another country's currency, such as the US dollar (USD) versus the Offshore Chinese yuan (CNH) – these are the currencies of the two largest economies in the world. \n</p> \n<cut></cut>   \n\n<p>\nAmong the factors that might influence Forex rates are the terms of trade, political relations and overall economic performance between the two countries or economic regions. This also includes their economic stability (for example GDP growth rate), interest and inflation rates, production of goods and services, and balance of payments.  \n</p>  \n\n<p> \nTo learn more, check out our article on \"<a href=\"/en/trading/forex/what-events-impact-forex-trading~5\">What Events Impact Forex Trading</a>\" and use our <a href=\"/en/economiccalendar\">Economic Calendar</a> to find real-time data on a wide range of events and releases that affect the Forex market.</p>"}}, {"type":"Question","name":"How is trading Forex different from trading the stock market?","acceptedAnswer":{"type":"Answer","text":"<p>\r\nThe 4 main differences between trading Forex and shares are: </p>  \r\n\r\n<ul> <li><strong>Trading volume</strong> – the Forex market has a larger trading volume than the stock market.</li>  \r\n\r\n<li><strong>Instrument diversity</strong> – there are thousands of stocks to choose from, as opposed to several dozen currency pairs.</li>  \r\n\r\n<li><strong>Market volatility</strong> – stock prices can fluctuate wildly from one day to the next, and their fluctuations are generally sharper than the ones found in Forex markets.</li>  \r\n\r\n<li><strong>Leverage ratios</strong> – the available leverage for Forex CFDs on the Plus500 platform is 1:30, while the leverage for shares CFDs is 1:5.</li>  \r\n</ul>  \r\n\r\n<cut></cut>  \r\n<p>\r\nPlease note that when trading Forex or shares CFDs you do not actually own the underlying instrument, but are rather trading on their anticipated price change. </p>   "}}, {"type":"Question","name":"What are the risks involved in Forex trading?","acceptedAnswer":{"type":"Answer","text":"<p>\nForeign Exchange trading has a number of risks that you should be aware of before opening a position. These include:\n</p>\n<cut></cut> \n\n<ul>\n<li><strong>Risks related to leverage</strong> – in volatile market conditions, leveraged trading can result in greater losses (as well as greater capital gains).</li>\n\n<li><strong>Risks related to the issuing country</strong> – the political and economic stability of a country can affect its currency strength. In general, currencies from major economies have greater liquidity and generally lower volatility than those of developing countries.</li>\n\n<li><strong>Risks related to interest rates</strong> – countries’ interest rate policy has a major effect on their exchange rates. When a country raises or lowers interest rates, its currency will usually rise or fall as a result.</li>\n</ul>\n\n<p>\nWe offer <a href=\"/en/help/riskmanagement\">risk management tools</a> that can help you minimise your trading risks. \n</p>\n\n<p>\nIf you're ready to start trading Forex with Plus500, <a href=\"https://app.plus500.com/trade?hl=en&innerTags=_cc_+uswsv&product=CFD&ms=True\">click here</a>.\n</p>\n"}} ]
-        }
-        </script>
-        <section class="faq faq-section container-lg">
-            <h2 class="title-section text-center"><strong>Forex FAQ</strong></h2>
-            <div class="row justify-content-center">
-                <div class="col-md-12 col-lg-10">
-                    <div id="accordionFaq" class="faq-accordion accordion" data-accordion data-allow-all-closed="true">
-                            <div class="accordion-item">
-                                <div class="accordion-header">
-                                    <h3 class="accordion-title">
-                                        <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#faq_accordion_1" aria-expanded="true" aria-controls="faq_accordion_1">What Does Forex Trading Mean and What Are Forex CFDs?</button>
-                                    </h3>
-                                </div>
-                                <div id="faq_accordion_1" class="accordion-content accordion-collapse collapse show" aria-labelledby="faq_accordion_heading_1" data-bs-parent="#accordionFaq">
-                                    <div class="accordion-body"><p>
-Forex trading (also commonly known as Foreign Exchange, currency or FX trading) is a global market for trading one country’s currency in exchange for another country's currency. It serves as the backbone of international trade and investment: imports and exports of goods and services; financial transactions by governments, economic institutions or individuals; global tourism and travel – all these require the use of capital in the form of swapping one currency for a certain amount of another currency.
-</p>
-<cut></cut>
-
-<p>
-When trading Forex CFDs, you are essentially speculating on the price changes in their exchange rate. For example, in the <a href="../instruments/eurusd.html">EUR/USD</a> pair the value of one Euro (EUR) is determined in comparison to the US dollar (USD), and in the <a href="../instruments/gbpjpy.html">GBP/JPY</a> pair the value of one British pound sterling (GBP) is quoted against the Japanese yen (JPY). 
-</p>
-
-<p>
-If you think the exchange rate will <span class="ital-text">rise</span> you can open a <strong>‘Buy’</strong> position. Conversely, if you think the exchange rate will <span class="ital-text">fall</span> you can open a <strong>‘Sell’</strong> position.
-</p>
-
-<p>
-To learn more about Forex trading, read our article on "<a href="forex/what-is-forex_1.html">What Is Forex</a>" and to see a full list of currency pairs offered by Plus500, <a href="../instruments.html">click here</a>.</p>
-
-
+<div class="cta-wrap">
+            <a data-analytics="CTA_real" data-start-trading data-cta-name="start-trading-real-futures" class="button blue-gradient" href="https://futures.plus500.com/trade?hl=en&amp;refurl=https%3a%2f%2fwww.google.com%2f&amp;refts=2024-11-02T01%3a35%3a55.4948156+00%3a00&amp;innerTags=_cc_+cfdwv+uswsv+ecmp_ct+&amp;IsRealMode=True&amp;ms=True">Start Trading Now</a>
+        <a data-analytics="CTA_demo" data-cta-name="start-trading-demo-futures" class="button white-bg hollow link-demo" href="https://futures.plus500.com/trade?hl=en&amp;refurl=https%3a%2f%2fwww.google.com%2f&amp;refts=2024-11-02T01%3a35%3a55.4948156+00%3a00&amp;innerTags=_cc_+cfdwv+uswsv+ecmp_ct+&amp;IsRealMode=False&amp;ms=True">Try Free Demo</a>
 </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header">
-                                    <h3 class="accordion-title">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_accordion_2" aria-expanded="false" aria-controls="faq_accordion_2">What economic factors may affect Forex rates?</button>
-                                    </h3>
-                                </div>
-                                <div id="faq_accordion_2" class="accordion-content accordion-collapse collapse " aria-labelledby="faq_accordion_heading_2" data-bs-parent="#accordionFaq">
-                                    <div class="accordion-body"><p>
-Forex rates are impacted by an array of political and economic factors relating to the difference in value of a currency or economic region in comparison to another country's currency, such as the US dollar (USD) versus the Offshore Chinese yuan (CNH) – these are the currencies of the two largest economies in the world. 
-</p> 
-<cut></cut>   
-
-<p>
-Among the factors that might influence Forex rates are the terms of trade, political relations and overall economic performance between the two countries or economic regions. This also includes their economic stability (for example GDP growth rate), interest and inflation rates, production of goods and services, and balance of payments.  
-</p>  
-
-<p> 
-To learn more, check out our article on "<a href="forex/what-events-impact-forex-trading_5.html">What Events Impact Forex Trading</a>" and use our <a href="../economiccalendar.html">Economic Calendar</a> to find real-time data on a wide range of events and releases that affect the Forex market.</p></div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header">
-                                    <h3 class="accordion-title">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_accordion_3" aria-expanded="false" aria-controls="faq_accordion_3">How is trading Forex different from trading the stock market?</button>
-                                    </h3>
-                                </div>
-                                <div id="faq_accordion_3" class="accordion-content accordion-collapse collapse " aria-labelledby="faq_accordion_heading_3" data-bs-parent="#accordionFaq">
-                                    <div class="accordion-body"><p>
-The 4 main differences between trading Forex and shares are: </p>  
-
-<ul> <li><strong>Trading volume</strong> – the Forex market has a larger trading volume than the stock market.</li>  
-
-<li><strong>Instrument diversity</strong> – there are thousands of stocks to choose from, as opposed to several dozen currency pairs.</li>  
-
-<li><strong>Market volatility</strong> – stock prices can fluctuate wildly from one day to the next, and their fluctuations are generally sharper than the ones found in Forex markets.</li>  
-
-<li><strong>Leverage ratios</strong> – the available leverage for Forex CFDs on the Plus500 platform is 1:30, while the leverage for shares CFDs is 1:5.</li>  
-</ul>  
-
-<cut></cut>  
-<p>
-Please note that when trading Forex or shares CFDs you do not actually own the underlying instrument, but are rather trading on their anticipated price change. </p>   </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header">
-                                    <h3 class="accordion-title">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_accordion_4" aria-expanded="false" aria-controls="faq_accordion_4">What are the risks involved in Forex trading?</button>
-                                    </h3>
-                                </div>
-                                <div id="faq_accordion_4" class="accordion-content accordion-collapse collapse " aria-labelledby="faq_accordion_heading_4" data-bs-parent="#accordionFaq">
-                                    <div class="accordion-body"><p>
-Foreign Exchange trading has a number of risks that you should be aware of before opening a position. These include:
-</p>
-<cut></cut> 
-
-<ul>
-<li><strong>Risks related to leverage</strong> – in volatile market conditions, leveraged trading can result in greater losses (as well as greater capital gains).</li>
-
-<li><strong>Risks related to the issuing country</strong> – the political and economic stability of a country can affect its currency strength. In general, currencies from major economies have greater liquidity and generally lower volatility than those of developing countries.</li>
-
-<li><strong>Risks related to interest rates</strong> – countries’ interest rate policy has a major effect on their exchange rates. When a country raises or lowers interest rates, its currency will usually rise or fall as a result.</li>
-</ul>
-
-<p>
-We offer <a href="../help/riskmanagement.html">risk management tools</a> that can help you minimise your trading risks. 
-</p>
-
-<p>
-If you're ready to start trading Forex with Plus500, <a href="https://app.plus500.com/trade?hl=en&amp;innerTags=_cc_+uswsv&amp;product=CFD&amp;ms=True">click here</a>.
-</p>
+    </section>
 </div>
-                                </div>
-                            </div>
-                    </div>
+
+</main>
+
+<footer class="main-footer">
+    <div class="container">
+        <div class="row align-center">
+                <div class="col-sm-10 col-lg-3 col-xl-2 offset-xl-1">
+                    <ul class="menu links-menu">
+                            <li><a  href="/accessibilitystatement" data-page="AccessibilityStatement" >Accessibility Statement</a></li>
+                            <li><a  href="https://cdn-main.plus500.com/Regulatory/CFTC/default/default/Futures/1716971168/PrivacyPolicy.pdf" target="_blank"rel="noopener noreferrer"doc-href="https://cdn-main.plus500.com/Regulatory/CFTC/default/default/Futures/1716971168/PrivacyPolicy.pdf">Privacy Policy</a></li>
+                            <li><a  href="https://cdn-main.plus500.com/Regulatory/CFTC/default/default/Futures/1717507436/CCFirmDisclosure.pdf" target="_blank"rel="noopener noreferrer"doc-href="https://cdn-main.plus500.com/Regulatory/CFTC/default/default/Futures/1717507436/CCFirmDisclosure.pdf">Firm Disclosure</a></li>
+                            <li><a  href="https://cdn-main.plus500.com/Regulatory/CFTC/default/default/Futures/1715260410/RiskDisclosureStatement.pdf" target="_blank"rel="noopener noreferrer"doc-href="https://cdn-main.plus500.com/Regulatory/CFTC/default/default/Futures/1715260410/RiskDisclosureStatement.pdf">Risk Disclosure Statement</a></li>
+                            <li><a  href="/support/termsandagreements" data-page="TermsAndAgreements" >Terms & Agreements</a></li>
+                                                    <li>
+                                <a href="/support/cookiepolicy">Cookie Policy</a>
+                            </li>
+                    </ul>
+                </div>
+            <div class="col-sm-12 col-lg-6 main-column">
+                <div class="footer-item footer-text">
+                    <p>
+IMPORTANT: Trading in futures and options carries substantial risk of loss and is not suitable for every investor. The valuation of futures and options contracts may fluctuate rapidly and unpredictably, and, as a result, clients may lose more than their original investments. In no event should the content of this website be construed as an express or implied promise or guarantee by or from Plus500US Financial Services LLC that you will profit or that losses can or will be limited in any manner whatsoever. Market volatility, trade volume, and system availability may delay account access and trade executions. Past results are no indication of future performance. Information provided in this correspondence is intended solely for informational purposes and is obtained from sources believed to be reliable. Information is in no way guaranteed. The trading of futures is available through Plus500US Financial Services LLC d/b/a Plus500, a Futures Commission Merchant registered with the US Commodity Futures Trading Commission and a member of the National Futures Association (NFA ID number 0001398). Plus500US Financial Services LLC is a wholly-owned subsidiary of Plus500US Inc. Trading privileges subject to review and approval. Not all applicants will qualify. Information collected on account applications will be used to verify an applicant’s identity, as required under Federal law.
+</p>
+                </div>
+                <div class="footer-item secured">
+                    <img width="24" height="24" loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/futures/svg/secure-lock.svg" alt="" class=""/>
+                    <p>Secured by SSL.&nbsp;Copyright &copy; Plus500. All rights reserved.</p>
                 </div>
             </div>
-        </section>
-    
-            <section class="start-trading-bottom-zone" data-section-name="call-to-action-section">
-                <div class="start-trading-buttons">
-    <div class="cta-wrap"> 
-            <a data-analytics="CTA_real" data-start-trading data-cta-name="start-trading-real-cfd" class="button blue-gradient" href="https://app.plus500.com/trade?hl=en&amp;innerTags=_cc_+uswsv&amp;product=CFD&amp;IsRealMode=True&amp;ms=True" target="_blank">Start Trading Now</a>
-                    <a data-analytics="CTA_demo" data-cta-name="start-trading-demo-cfd" class="button white-bg hollow link-demo" href="https://app.plus500.com/trade?hl=en&amp;innerTags=_cc_+uswsv&amp;product=CFD&amp;IsRealMode=False&amp;ms=True" target="_blank">Try Free Demo</a>
+            <div class="col-sm-12 col-lg-3">
+                <div class="social-networks">
+                    <span>Follow Us On</span>
+                    <ul class="menu social-menu">
+        <li>
+            <a href="https://www.facebook.com/Plus500" title="Facebook" target="_blank" rel="noopener noreferrer">
+                <img width="24" height="24" loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/svg/social-networks/social-facebook-icon.svg" alt="" class="social-icon-facebook"/>
+                <span class="visually-hidden">Facebook</span>
+            </a>
+        </li>            
+        <li>
+            <a href="https://www.twitter.com/plus500" title="Twitter" target="_blank" rel="noopener noreferrer">
+                <img width="24" height="24" loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/svg/social-networks/social-twitter-icon.svg" alt="" class="social-icon-twitter"/>
+                <span class="visually-hidden">Twitter</span>
+            </a>
+        </li>            
+        <li>
+            <a href="https://www.instagram.com/plus500/" title="Instagram" target="_blank" rel="noopener noreferrer">
+                <img width="24" height="24" loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/svg/social-networks/social-instagram-icon.svg" alt="" class="social-icon-instagram"/>
+                <span class="visually-hidden">Instagram</span>
+            </a>
+        </li>            
+        <li>
+            <a href="http://www.linkedin.com/company/plus500-official-page" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <img width="24" height="24" loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/svg/social-networks/social-linkedin-icon.svg" alt="" class="social-icon-linkedin"/>
+                <span class="visually-hidden">LinkedIn</span>
+            </a>
+        </li>            
+        <li>
+            <a href="https://www.youtube.com/user/Plus500Site" title="YouTube" target="_blank" rel="noopener noreferrer">
+                <img width="24" height="24" loading="lazy" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/svg/social-networks/social-youtube-icon.svg" alt="" class="social-icon-youtube"/>
+                <span class="visually-hidden">YouTube</span>
+            </a>
+        </li>            
+
+</ul>
+                </div>
+                    <div class="application-stores">
+                        <a data-analytics="CTA_store" id="link-play-store" rel="nofollow" class="store-link link-play-store" href="https://app.appsflyer.com/com.plus500.futures?af_click_lookback=30d&amp;innerTags=_cc_+cfdwv+uswsv+ecmp_ct+&amp;webVisitId=9e7d969a-7086-4d53-9d65-6fa91bf084f9" style="background-image: url(https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png);" title="Play Store" target="_blank"></a>
+                        <a data-analytics="CTA_store" id="link-app-store" rel="nofollow" class="store-link link-app-store" href="https://app.appsflyer.com/id6443583569?af_click_lookback=30d&amp;innerTags=_cc_+cfdwv+uswsv+ecmp_ct+&amp;webVisitId=9e7d969a-7086-4d53-9d65-6fa91bf084f9" style="background-image: url(https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-gb);" title="App Store" target="_blank"></a>
+                    </div>
+            </div>
+        </div>
     </div>
+</footer>
+<div class="sticky-footer-wrapper">
+<a data-analytics="buttonClick" class="side-support-link support-link fade" href="/support" title="24/7 Support">
+    <span class="icon-users"></span>
+    <span class="text">24/7 Support</span>
+</a>    <section class="sticky-cookie-wrapper d-none" role="region">
+    <div class="container-xxl cookie-banner-wrapper">
+        <div class="cookie-banner-content">
+            <figure class="image-wrapper" aria-hidden="true">
+                <img loading="lazy" data-src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/svg/cookie-popup-image.svg" src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Images/svg/cookie-popup-image.svg" alt="" class="lazyload " alt="" />
+            </figure>
+            <p>Plus500 uses cookies to improve your browsing experience. Click "Accept" to consent to all cookies or manage preferences on our cookie policy page.</p>
+        </div>
+        <div class="actions-wrapper">
+                <a href="/support/cookiepolicy" class="button white-bg hollow" data-analytics="cookies" dialogType="banner" clickType="policy">Cookie Policy</a>
+            <button type="button" id="cookieBannerAcceptButton" data-analytics="cookies" dialogType="banner" clickType="accept" class="button blue-gradient accept-cookies">Accept <span class="visually-hidden show-for-sr">cookie policy</span></button>
+        </div>
     </div>
-            </section>
-    </section>
-    
+</section>
+
+</div>
 
 
-    </main>
+    <script src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Scripts/futures.layout.bundle.min.js"></script>
+
+    <script src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Scripts/futures/resize-hero.min.js" async ></script>
+    <script src="https://cdn-main.plus500.com/1.0.0.120805/Resources/Scripts/gsap.bundle.min.js"></script>
 
     <script>
-        var reportCtaClickUrl = '../api/ReportData.html';
+    window.addEventListener("load", () => {
+        const mainMenu = document.querySelector(".main-menu > ul");
+        const mainMenuItems = Array.from(mainMenu.children);
+        let isMenuOpen = false;
+        let isMenuExpanded = false;
+        let subMenu;
+        let menuButtonElement;
+        function calcMenuHeight() {
+            let itemsHeight = 0;
+            mainMenuItems.forEach(item => {
+               itemsHeight += item.offsetHeight; 
+            });
+            subMenu = mainMenu.querySelector(".submenu");
+            mainMenu.dataset.height = subMenu ? subMenu.offsetHeight : itemsHeight;
+            return mainMenu.dataset.height;
+        }
+        document.querySelector(".mobile-menu-trigger").addEventListener("click", (e) => {
+            isMenuExpanded = !isMenuExpanded; 
+            e.currentTarget.classList.toggle("is-open");
+            e.currentTarget.ariaExpanded = isMenuExpanded; 
+            mainMenu.classList.toggle("open");
+            isMenuOpen = mainMenu.classList.contains("open");
+            mainMenu.dataset.height = calcMenuHeight();
+            mainMenu.style.height = isMenuOpen ? mainMenu.dataset.height + "px" : 0;
+        });
+        mainMenu.addEventListener("click", (e) => {
+            const target = e.target;
+            if (target.matches(".menu-link")){
+                const nextElement = target.nextElementSibling;
+                const menuList = target.closest("ul");
+                if (!menuList.classList.contains("open")) return;
+                nextElement.classList.add("submenu");
+                mainMenu.dataset.height = menuList.offsetHeight;
+                mainMenu.style.height = nextElement.offsetHeight + "px";
+                menuButtonElement = target;
+                menuButtonElement.ariaExpanded = true;
+            }
+            if (target.matches(".back-link")) {
+                e.target.closest(".submenu").classList.remove("submenu");
+                mainMenu.style.height = calcMenuHeight() + "px";
+                menuButtonElement.ariaExpanded = false;
+            }
+        });
+        document.querySelectorAll(".main-menu a[data-page]").forEach(el => {
+            el.addEventListener('click', () => {
+               let pageName = el.dataset.page;
+               let menuCategory = el.closest("ul").dataset.menuName;
+               sendAnalyticsEvent("HeaderMenuClick", menuCategory, pageName);
+            });
+        });
+        if (document.body.classList.contains("blue-header")) {
+            window.addEventListener("scroll", (e) => {
+                if (e.currentTarget.scrollY > 0){
+                    document.body.classList.remove("blue-header");
+                } else {
+                    document.body.classList.add("blue-header");
+                }
+            }, { passive: true})
+        }
+    });
     </script>
 
-   
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {        
+        const cookieBanner = document.querySelector(".sticky-cookie-wrapper");
+        if (localStorage.getItem("_cookies_usage_")){
+            cookieBanner.remove();
+        } else {
+            cookieBanner.classList.remove("d-none");
+        }
+        cookieBanner.querySelector("#cookieBannerAcceptButton").addEventListener('click', () => {
+            UserCookiesManager.onCookiesAccept("banner")
+            cookieBanner.classList.add("cookie-out");
+            cookieBanner.addEventListener("transitionend", () => {
+                if (typeof resizeHeroSection === "function") { resizeHeroSection(); }
+                cookieBanner.remove();
+            });
+        });
+        if (!UserCookiesManager.isAcceptedCookies()) {
+        }
+    });
+    </script>
 
-@include('home.footer')
+        <script>
+            window.addEventListener('load',() => {
+                loadJS("https://cdn-main.plus500.com/1.0.0.120805/Resources/Scripts/support-button-on-scroll.min.js", document.body);
+            });
+        </script>
+
+
+
+<script>
+    window.addEventListener("load", function() {
+        loadJS("https://cdn-main.plus500.com/1.0.0.120805/Resources/Scripts/google-analytics-cookies-param-to-appsflyer-links.min.js", document.body, function() {
+            if (typeof initGAAppsFlyerLinks === 'function') {
+                initGAAppsFlyerLinks(
+                    "_ga",
+                    '_ga_QCWHY70E85'
+                );
+            }
+        }, true);
+    });
+</script>
+
+</body>
+</html>
