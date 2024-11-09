@@ -62,6 +62,7 @@ class DepositController extends Controller
 
     public function handlePayment(Request $request)
     {
+        $userId = Auth::id();
         // Validate the incoming request data
         $validator = Validator::make($request->all(), [
             'amount' => 'required|numeric|min:0',
@@ -76,7 +77,7 @@ class DepositController extends Controller
 
         // Retrieve form input
         $depositType = $request->input('deposit_type');
-        $amount = $request->input('amount');
+        $data['amount'] = $request->input('amount');
         $paymentMode = $request->input('payment_mode');
 
         // Initialize filePath variable
@@ -88,28 +89,36 @@ class DepositController extends Controller
             $filePath = $file->store('payment_proofs', 'public'); // Store the file in the 'payment_proofs' directory
         }
 
-        // Ensure the user is authenticated
-        if (Auth::check()) {
-            // Create the deposit record in the database
-            Deposit::create([
-                'user_id' => Auth::id(),
-                'deposit_type' => $paymentMode,
-                'amount' => $amount,
-                'payment_mode' => $paymentMode,
-                'status' => 'pending', // Set the initial status to pending
-                'proof' => $filePath,  // Save the file path if uploaded
-            ]);
+        // // Ensure the user is authenticated
+        // if (Auth::check()) {
+        //     // Create the deposit record in the database
+        //     Deposit::create([
+        //         'user_id' => Auth::id(),
+        //         'deposit_type' => $paymentMode,
+        //         'amount' => $amount,
+        //         'payment_mode' => $paymentMode,
+        //         'status' => 'pending', // Set the initial status to pending
+        //         'proof' => $filePath,  // Save the file path if uploaded
+        //     ]);
 
 
 
-            // Redirect to the deposits page with a success message
-            return redirect()->route('user.pay.page')->with([
-                'status' => 'Payment submitted successfully!',
-                'amount' => $amount
-            ]);
-        }
+        //     // Redirect to the deposits page with a success message
+        //     return redirect()->route('user.pay.page')->with([
+        //         'status' => 'Payment submitted successfully!',
+        //         'amount' => $amount
+        //     ]);
+        // }
+        // Sum of investments
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->sum('usd_value');
+
+        $data['payment'] =  PaymentSetting::get();
 
         // If user is not authenticated, redirect back with an error
-        return redirect()->back()->with('error', 'You need to be logged in to submit a payment.');
+        return view('user.deposit.pay', $data)->with([
+            'status' => 'Payment submitted successfully!',
+
+        ]);
     }
 }

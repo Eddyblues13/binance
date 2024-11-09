@@ -19,6 +19,7 @@ use App\Models\Transaction;
 use Illuminate\Http\Request;
 // use App\Models\InvestmentPlan;
 use App\Models\AccountBalance;
+use App\Models\PaymentSetting;
 use Illuminate\Support\Carbon;
 use App\Models\WebsiteTemplate;
 use Illuminate\Support\Facades\DB;
@@ -968,5 +969,11 @@ class AdminController extends Controller
         ]);
 
         return back()->with('success', 'Transaction completed in ' . $userCurrency);
+    }
+
+    public function editPayment($id)
+    {
+        $payment =  PaymentSetting::where('id', $id)->get();
+        return view('admin.edit_payment', compact('payment')); // Adjust view name as necessary
     }
 }

@@ -229,7 +229,7 @@
                                                     <tr>
                                                         <th>Logo</th>
                                                         <th>Cryptocurrency</th>
-                                                        <th>Deposit Option</th>
+                                                        <th>Wallet Address></th>
                                                         <th>Actions</th> <!-- Added Actions column -->
                                                     </tr>
                                                 </thead>
@@ -237,13 +237,14 @@
                                                     @foreach ($payment as $crypto)
                                                     <tr>
                                                         <td>
-                                                            <img src="{{ asset('dist/images/cryptos/' . $crypto->name) }}"
-                                                                alt="{{ $crypto->name }} logo" class="crypto-img">
+                                                            <img src="{{ asset('dist/images/cryptos/' . $crypto->image) }}"
+                                                                alt="{{ $crypto->name }} logo" class="crypto-img"
+                                                                height="20" width="20">
                                                         </td>
                                                         <td>{{ $crypto->name }}</td>
                                                         <td>
                                                             <!-- You may want to display deposit options here -->
-                                                            {{ $crypto->deposit_option ?? 'N/A' }}
+                                                            {{ $crypto->address ?? 'N/A' }}
                                                         </td>
                                                         <td>
                                                             <!-- Edit button -->

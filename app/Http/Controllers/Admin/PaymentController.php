@@ -44,8 +44,10 @@ class PaymentController extends Controller
     // Show the form for editing the specified resource
     public function edit(PaymentSetting $PaymentSetting)
     {
-        return view('PaymentSettings.edit', compact('PaymentSetting')); // Adjust view name as necessary
+        $payment =  PaymentSetting::where('id', $PaymentSetting)->first();
+        return view('admin.edit_payment', compact('payment')); // Adjust view name as necessary
     }
+
 
     // Update the specified resource in storage
     public function update(Request $request, PaymentSetting $PaymentSetting)

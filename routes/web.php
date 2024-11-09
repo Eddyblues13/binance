@@ -156,6 +156,17 @@ Route::get('/equity', function () {
 });
 
 
+Route::get('/testing', function () {
+    return view('testing');
+});
+
+// web.php
+Route::post('/save-currency', [BinanceController::class, 'store'])->name('save.currency');
+// web.php
+Route::post('/save-language', [BinanceController::class, 'store'])->name('save.language');
+
+
+
 
 
 Route::get('/market-update', function () {
@@ -200,7 +211,7 @@ Route::post('/logout', [App\Http\Controllers\HomeController::class, 'logout'])->
 
 
 
-Route::get('/deposit', [App\Http\Controllers\DashboardController::class, 'deposit'])->name('deposit');
+//Route::get('/deposit', [App\Http\Controllers\DashboardController::class, 'deposit'])->name('deposit');
 
 
 
@@ -349,7 +360,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/toggle-notification/{id}', [AdminController::class, 'toggleNotification'])->name('toggle.notification');
         Route::get('/toggle-2fa/{id}', [AdminController::class, 'toggle2FA'])->name('toggle.2fa');
 
-        Route::get('/admin/payment-settings', [PaymentController::class, 'paymentSettings'])->name('payment.settings');
+        Route::get('/payment-settings', [PaymentController::class, 'paymentSettings'])->name('payment.settings');
         Route::resource('cryptos', PaymentController::class);
     });
 });
