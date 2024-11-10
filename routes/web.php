@@ -343,14 +343,14 @@ Route::prefix('admin')->group(function () {
 
 
 
-
+        Route::get('/manage-user-deposit', [DepositController::class, 'manageUserDepositsPage'])->name('manage.user.deposit.page');
 
         Route::get('/manage-deposit', [DepositController::class, 'manageDepositsPage'])->name('manage.deposits.page');
-        Route::get('view-deposit/{id}', [DepositController::class, 'viewDeposit'])->name('view.deposit');;
+        Route::get('view-deposit/{id}', [DepositController::class, 'viewDeposit'])->name('view.deposit');
         Route::get('process-deposit/{id}', [DepositController::class, 'processDeposit'])->name('process.deposit');
         Route::get('delete-deposit/{id}', [DepositController::class, 'deleteDeposit'])->name('delete.deposit');
 
-
+        Route::get('/manage-user-withdrawal', [WithdrawalController::class, 'manageUserWithdrawalsPage'])->name('manage.user.withdrawals.page');
         Route::get('/manage-withdrawal', [WithdrawalController::class, 'manageWithdrawalsPage'])->name('manage.withdrawals.page');
         Route::get('/view-withdrawal/{user_id}/{withdrawal_id}', [WithdrawalController::class, 'viewWithdrawal'])->name('view.withdrawal');;
         Route::get('process-withdrawal/{id}', [WithdrawalController::class, 'processWithdrawal'])->name('process.withdrawal');

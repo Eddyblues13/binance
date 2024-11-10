@@ -64,25 +64,27 @@
                             </div>
                             <div class="p-3 mt-4 border rounded row text-light">
                                 <div class="col-md-3">
-                                    <h5 class="text-bold">Total Balance</h5>
-                                    {{-- <p>${{number_format($total_sum, 2, '.', ',')}}</p> --}}
+                                    <h5 class="text-bold">Estimate Balance in BTC</h5>
+                                    <p>{{ number_format($crypto_amount, 8, '.', ',') }}</p>
+
                                 </div>
                                 <div class="col-md-3">
-                                    <h5>Total Profit</h5>
-                                    {{-- <p>${{number_format($profit_sum, 2, '.', ',')}}</p> --}}
+                                    <h5>Estimate Balance in USD</h5>
+                                    <p>${{ number_format($usd_value, 2, '.', ',') }}</p>
+
                                 </div>
-                                <div class="col-md-3">
+                                {{-- <div class="col-md-3">
                                     <h5>Total Investment</h5>
                                     {{-- <p>${{number_format($investment_sum, 2, '.', ',')}}</p> --}}
-                                </div>
+                                {{-- </div>  --}}
                                 <div class="col-md-3">
                                     <h5>Total Deposit</h5>
                                     <p>${{number_format($approved_deposits_sum, 2, '.', ',')}}</p>
                                 </div>
-                                <div class="col-md-3">
+                                {{-- <div class="col-md-3">
                                     <h5>Total Referral Bonus</h5>
                                     {{-- <p>${{number_format($referral_sum, 2, '.', ',')}}</p> --}}
-                                </div>
+                                {{-- </div>  --}}
                                 <div class="col-md-3">
                                     <h5>Total Withdrawal</h5>
                                     <p>${{number_format($approved_withdrawals_sum, 2, '.', ',')}}</p>
@@ -119,19 +121,27 @@
                                     @endif
                                 </div>
                                 <div class="col-md-3">
-                                    <h5>Inv. Plans</h5>
+                                    <h5>Withdrawal History</h5>
 
-                                    <a class="btn btn-sm btn-primary d-inline" href="">View
-                                        Plans</a>
+                                    <a class="btn btn-sm btn-primary d-inline" href="{{route('manage.user.withdrawals.page')}}">View
+                                        Withdrawal History</a>
 
                                 </div>
+
                                 <div class="col-md-3">
-                                    <h5>KYC</h5>
+                                    <h5>Deposit History</h5>
+
+                                    <a class="btn btn-sm btn-success d-inline" href="{{route('manage.user.deposit.page')}}">View
+                                        Deposit History</a>
+
+                                </div>
+                                {{-- <div class="col-md-3">
+                                    <h5>KYC</h5> --}}
                                     {{-- @if($kyc_status=="0")
                                     <span class="badge badge-danger">Not Verified Yet</span>
                                     @elseif($kyc_status=="1")
                                     <span class="badge badge-success">Verified</span>@endif --}}
-                                </div>
+                                {{-- </div> --}}
                                 <div class="col-md-3">
                                     <h5>Trade Mode</h5>
                                     <span class="badge badge-success">On</span>
@@ -144,7 +154,7 @@
                             </div>
                             <div class="p-3 border row text-light">
                                 <div class="col-md-4 border-right">
-                                    <h5>Fullname</h5>
+                                    <h5>Full Name</h5>
                                 </div>
                                 <div class="col-md-8">
                                     <h5>{{$user->name}}</h5>
@@ -168,7 +178,7 @@
                             </div>
                             <div class="p-3 border row text-light">
                                 <div class="col-md-4 border-right">
-                                    <h5>Nationality</h5>
+                                    <h5>Country</h5>
                                 </div>
                                 <div class="col-md-8">
                                     <h5>{{$user->country}}</h5>

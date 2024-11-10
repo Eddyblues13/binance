@@ -221,7 +221,7 @@
                             <div class="info">
                                 <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                                     <span>
-                                        Admin Test
+                                        Admin
                                         <span class="user-level"> Admin</span>
 
                                     </span>
@@ -236,7 +236,7 @@
                                     <p>Dashboard</p>
                                 </a>
                             </li>
-                            <li class="nav-item ">
+                            {{-- <li class="nav-item ">
                                 <a href="{{route('manage.investment.plan')}}">
                                     <i class="fas fa-cubes " aria-hidden="true"></i>
                                     <p>Manage Investment Plans</p>
@@ -248,7 +248,7 @@
                                     <i class="fas fa-cubes " aria-hidden="true"></i>
                                     <p>Manage KYC</p>
                                 </a>
-                            </li>
+                            </li> --}}
                             {{--
                             <li class="nav-item ">
                                 <a href="">
@@ -288,11 +288,11 @@
                                 </a>
                                 <div class="collapse" id="adm">
                                     <ul class="nav nav-collapse">
-                                        <li>
+                                        {{-- <li>
                                             <a href="">
                                                 <span class="sub-item">Add Manager</span>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                         <li>
                                             <a href="">
                                                 <span class="sub-item">Manage Administrator(s)</span>
@@ -315,17 +315,17 @@
                                                 <span class="sub-item">App Settings</span>
                                             </a>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a href="">
                                                 <span class="sub-item">Referral Settings</span>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                         <li>
                                             <a href="{{route('payment.settings')}}">
                                                 <span class="sub-item">Payment Settings</span>
                                             </a>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a href="">
                                                 <span class="sub-item">Exchange Settings</span>
                                             </a>
@@ -334,8 +334,8 @@
                                             <a href="">
                                                 <span class="sub-item">Subscription Settings</span>
                                             </a>
-                                        </li>
-                                        <li>
+                                        </li> --}}
+                                        {{-- <li>
                                             <a href="">
                                                 <span class="sub-item">Frontend Settings</span>
                                             </a>
@@ -349,7 +349,7 @@
                                             <a href="">
                                                 <span class="sub-item">IP Address</span>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </li>

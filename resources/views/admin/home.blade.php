@@ -175,7 +175,7 @@
                                 </div>
                                 <div class="col-8 col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">Investment Plans</p>
+                                        <p class="card-category"></p>
                                         <h4 class="card-title text-light"></h4>
                                     </div>
                                 </div>

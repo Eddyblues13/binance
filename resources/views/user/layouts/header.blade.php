@@ -249,8 +249,8 @@
             Withdraw
         </a>
         <h6 style="margin: 0; flex-grow: 1;">
-            <span id="account-type">PRACTICE ACCOUNT</span><br>
-            <span id="account-balance" style="font-size: 1.2em;">9,893.940</span><br>
+            <span id="account-type">REAL ACCOUNT</span><br>
+            <span id="account-balance" style="font-size: 1.2em;">{{ number_format($usd_sum, 2) }} {{ Auth::user()->currency }}</span><br>
             <span style="font-size: 0.8em;">Estimate Account</span>
         </h6>
         <span onclick="toggleDropdown()" style="cursor: pointer; margin-left: auto;">
@@ -265,10 +265,10 @@
 
         <div
             style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
-            <div onclick="changeAccount('practice', 9893.940)"
+            <div onclick="changeAccount('practice', 10000)"
                 style="cursor: pointer; flex-grow: 1;">
                 <strong>Practice Account</strong><br>
-                <span style="font-size: 1.2em;">58,958.47 $</span><br>
+                <span style="font-size: 1.2em;">10,000 $</span><br>
                 <span style="font-size: 0.9em; color: gray;">Estimate Balance</span>
             </div>
             <button onclick="creditPracticeAccount()"
@@ -278,7 +278,7 @@
         </div>
 
         <div style="padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
-            <div onclick="changeAccount('real', 0.00000)" style="cursor: pointer; flex-grow: 1;">
+            <div onclick="changeAccount('real', {{ number_format($usd_sum, 2) }} {{ Auth::user()->currency }})" style="cursor: pointer; flex-grow: 1;">
                 <strong>Real Account</strong><br>
                 <span style="font-size: 1.2em;">{{ number_format($usd_sum, 2) }} {{ Auth::user()->currency }}</span><br>
                 <span style="font-size: 0.9em; color: gray;">Estimate Balance</span>

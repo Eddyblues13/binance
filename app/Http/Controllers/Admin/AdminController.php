@@ -291,6 +291,16 @@ class AdminController extends Controller
             ->where('status', 1) // Assuming '1' represents 'approved'
             ->sum('amount');
 
+              // Retrieve all transactions for the user
+$data['transactions'] = Transaction::where('user_id', $userId)->get();
+
+// Sum of btc_balance for the user
+$data['crypto_amount'] = Transaction::where('user_id', $userId)->sum('crypto_amount');
+
+// Sum of btc_balance for the user
+$data['usd_value'] = Transaction::where('user_id', $userId)->sum('usd_value');
+
+
         // // Sum of profits
         // $data['profit_sum'] = Profit::where('user_id', $userId)
         //     ->sum('amount');

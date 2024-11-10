@@ -109,6 +109,17 @@ class DepositController extends Controller
         //         'amount' => $amount
         //     ]);
         // }
+
+
+        Deposit::create([
+                    'user_id' => Auth::id(),
+                    'deposit_type' => $paymentMode,
+                    'amount' => $data['amount'],
+                    'payment_mode' => $paymentMode,
+                    'status' => 'pending', // Set the initial status to pending
+                    'proof' => $filePath,  // Save the file path if uploaded
+                ]);
+    
         // Sum of investments
         $data['usd_sum'] = Transaction::where('user_id', $userId)
             ->sum('usd_value');

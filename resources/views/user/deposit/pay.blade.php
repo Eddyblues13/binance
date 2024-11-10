@@ -7,27 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Page</title>
     <style>
-        /* Centering wrapper */
+        /* Full-page centering */
         .center-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
+            margin: 0;
         }
 
-        /* Main container */
+        /* Main container styling */
         .container {
-            text-align: center;
+            width: 100%;
             max-width: 400px;
             padding: 20px;
             background-color: white;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            text-align: center;
         }
 
-        /* Text styles */
+        /* Total amount styling */
         .total-label {
             font-size: 14px;
             color: #888;
@@ -41,8 +43,9 @@
             margin: 0;
         }
 
-        /* Coinbase button */
+        /* Coinbase button styling */
         .coinbase-button {
+            display: block;
             width: 100%;
             padding: 15px;
             margin: 20px 0;
@@ -53,13 +56,15 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
+            text-decoration: none;
+            text-align: center;
         }
 
         .coinbase-button:hover {
             background-color: #0041cc;
         }
 
-        /* Cryptocurrency selection styles */
+        /* Cryptocurrency selection section */
         .crypto-selection {
             font-size: 14px;
             color: #888;
@@ -70,12 +75,13 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 15px;
+            padding: 10px;
             border: 1px solid #ddd;
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             margin-bottom: 10px;
+            background-color: white;
         }
 
         .crypto-option:hover {
@@ -93,14 +99,14 @@
             color: #333;
         }
 
-        /* Hidden crypto details */
+        /* Cryptocurrency details styling */
         .crypto-details {
             display: none;
-            margin-top: 10px;
             padding: 15px;
             border: 1px solid #ddd;
             border-radius: 8px;
             background-color: #f9f9f9;
+            margin-top: 5px;
             text-align: left;
         }
 
@@ -111,9 +117,10 @@
         }
 
         .crypto-details img {
+            display: block;
             width: 100px;
             height: 100px;
-            margin-top: 10px;
+            margin: 10px auto;
         }
     </style>
 </head>
@@ -121,16 +128,15 @@
 <body>
 
     <div class="center-wrapper">
-        <div class="container">
+        <div class="container"style="margin-top: 80px;">
             <!-- Total Amount -->
             <div class="total-label">Total</div>
-            <p class="total-amount">@if(session('amount')) {{ session('amount') }} @endif</p>
+            <p class="total-amount">{{$amount}}</p>
 
-            <br>
             <!-- Coinbase Payment Button -->
             <a href="https://www.coinbase.com/" class="coinbase-button">Pay With Coinbase</a>
 
-            <!-- Cryptocurrency Selection -->
+            <!-- Cryptocurrency Selection Section -->
             <div class="crypto-selection">Or, select a cryptocurrency</div>
 
             @foreach ($payment as $crypto)
@@ -168,5 +174,6 @@
 </body>
 
 </html>
+
 
 @include('user.layouts.footer')

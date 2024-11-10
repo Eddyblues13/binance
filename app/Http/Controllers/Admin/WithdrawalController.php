@@ -20,6 +20,19 @@ class WithdrawalController extends Controller
         return view('admin.manage_Withdrawal', $data);
     }
 
+
+
+    public function manageUserWithdrawalsPage()
+    {
+
+        $data['withdrawals'] = User::join('withdrawals', 'users.id', '=', 'Withdrawals.user_id')
+            ->get(['users.email', 'users.name', 'withdrawals.*']);
+
+        return view('admin.manage_user_withdrawal', $data);
+    }
+
+
+
     // Process (approve) a pending Withdrawal
     public function processWithdrawal($id)
     {

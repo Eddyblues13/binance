@@ -21,6 +21,19 @@ class DepositController extends Controller
         return view('admin.manage_deposit', $data);
     }
 
+
+    public function manageUserDepositsPage()
+    {
+
+        $data['deposits'] = User::join('deposits', 'users.id', '=', 'deposits.user_id')
+            ->get(['users.email', 'users.name', 'deposits.*']);
+
+
+
+        return view('admin.manage_user_deposit', $data);
+    }
+
+
     // Process (approve) a pending deposit
     public function processDeposit($id)
     {

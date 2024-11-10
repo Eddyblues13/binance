@@ -17,7 +17,7 @@
 				<div class="col-12">
 					<a href="#" data-toggle="modal" data-target="#sendmailModal" class="btn btn-primary btn-lg"
 						style="margin:10px;">Message all</a>
-					<a href="{{route('manage.kyc.page')}}" class="btn btn-warning btn-lg">KYC</a>
+					{{-- <a href="{{route('manage.kyc.page')}}" class="btn btn-warning btn-lg">KYC</a> --}}
 
 					<a href="{{route('add.user')}}" data-toggle="modal" data-target="#adduser"
 						class="float-right btn btn-primary"> <i class='fas fa-plus-circle'></i> Add User</a>
