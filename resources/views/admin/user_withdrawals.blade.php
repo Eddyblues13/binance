@@ -3,7 +3,7 @@
     <div class="content bg-light">
         <div class="page-inner">
             @if(session('success'))
-            <div class="alert alert-success mb-2">{{ session('success') }}</div>
+            <div class="alert alert-success mb-2">{{ session('message') }}</div>
             @endif
             <div class="mt-2 mb-4">
                 <h1 class="title1 text-dark">User Withdrawal History</h1>
@@ -20,7 +20,6 @@
                             <th>Amount</th>
                             <th>Status</th>
                             <th>Date</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,22 +32,6 @@
                             <td>{{ number_format($withdrawal->amount, 2) }}</td>
                             <td>{{ ucfirst($withdrawal->status) }}</td>
                             <td>{{ $withdrawal->created_at->format('Y-m-d') }}</td>
-                            <td>
-                                @if ($withdrawal->status == 'pending')
-                                <form action="{{ route('admin.withdrawals.approve', $withdrawal->id) }}" method="POST"
-                                    style="display:inline;">
-                                    @csrf
-                                    <button type="submit" class="btn btn-success btn-sm">Approve</button>
-                                </form>
-                                <form action="{{ route('admin.withdrawals.reject', $withdrawal->id) }}" method="POST"
-                                    style="display:inline;">
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger btn-sm">Reject</button>
-                                </form>
-                                @else
-                                <span class="text-muted">{{ ucfirst($withdrawal->status) }}</span>
-                                @endif
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>

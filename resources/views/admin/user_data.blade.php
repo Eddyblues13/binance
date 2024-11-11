@@ -76,7 +76,8 @@
                                 {{-- <div class="col-md-3">
                                     <h5>Total Investment</h5>
                                     {{-- <p>${{number_format($investment_sum, 2, '.', ',')}}</p> --}}
-                                {{-- </div>  --}}
+                                    {{--
+                                </div> --}}
                                 <div class="col-md-3">
                                     <h5>Total Deposit</h5>
                                     <p>${{number_format($approved_deposits_sum, 2, '.', ',')}}</p>
@@ -84,7 +85,8 @@
                                 {{-- <div class="col-md-3">
                                     <h5>Total Referral Bonus</h5>
                                     {{-- <p>${{number_format($referral_sum, 2, '.', ',')}}</p> --}}
-                                {{-- </div>  --}}
+                                    {{--
+                                </div> --}}
                                 <div class="col-md-3">
                                     <h5>Total Withdrawal</h5>
                                     <p>${{number_format($approved_withdrawals_sum, 2, '.', ',')}}</p>
@@ -123,7 +125,8 @@
                                 <div class="col-md-3">
                                     <h5>Withdrawal History</h5>
 
-                                    <a class="btn btn-sm btn-primary d-inline" href="{{route('manage.user.withdrawals.page')}}">View
+                                    <a class="btn btn-sm btn-primary d-inline"
+                                        href="{{ route('admin.user.withdrawals', $user->id) }}">View
                                         Withdrawal History</a>
 
                                 </div>
@@ -131,7 +134,8 @@
                                 <div class="col-md-3">
                                     <h5>Deposit History</h5>
 
-                                    <a class="btn btn-sm btn-success d-inline" href="{{route('manage.user.deposit.page')}}">View
+                                    <a class="btn btn-sm btn-success d-inline"
+                                        href="{{route('manage.user.deposit.page')}}">View
                                         Deposit History</a>
 
                                 </div>
@@ -141,7 +145,8 @@
                                     <span class="badge badge-danger">Not Verified Yet</span>
                                     @elseif($kyc_status=="1")
                                     <span class="badge badge-success">Verified</span>@endif --}}
-                                {{-- </div> --}}
+                                    {{--
+                                </div> --}}
                                 <div class="col-md-3">
                                     <h5>Trade Mode</h5>
                                     <span class="badge badge-success">On</span>

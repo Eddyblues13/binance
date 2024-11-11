@@ -291,14 +291,14 @@ class AdminController extends Controller
             ->where('status', 1) // Assuming '1' represents 'approved'
             ->sum('amount');
 
-              // Retrieve all transactions for the user
-$data['transactions'] = Transaction::where('user_id', $userId)->get();
+        // Retrieve all transactions for the user
+        $data['transactions'] = Transaction::where('user_id', $userId)->get();
 
-// Sum of btc_balance for the user
-$data['crypto_amount'] = Transaction::where('user_id', $userId)->sum('crypto_amount');
+        // Sum of btc_balance for the user
+        $data['crypto_amount'] = Transaction::where('user_id', $userId)->sum('crypto_amount');
 
-// Sum of btc_balance for the user
-$data['usd_value'] = Transaction::where('user_id', $userId)->sum('usd_value');
+        // Sum of btc_balance for the user
+        $data['usd_value'] = Transaction::where('user_id', $userId)->sum('usd_value');
 
 
         // // Sum of profits
@@ -985,5 +985,54 @@ $data['usd_value'] = Transaction::where('user_id', $userId)->sum('usd_value');
     {
         $payment =  PaymentSetting::where('id', $id)->get();
         return view('admin.edit_payment', compact('payment')); // Adjust view name as necessary
+    }
+
+
+
+    public function showUserWithdrawals($userId)
+    {
+        $withdrawals = Withdrawal::where('user_id', $userId)->get();
+        return view('admin.user_withdrawals', compact('withdrawals'));
+    }
+
+    public function approveWithdrawal($id)
+    {
+        $withdrawal = Withdrawal::findOrFail($id);
+        $withdrawal->status = 'approved';
+        $withdrawal->save();
+
+        return redirect()->back()->with('success', 'Withdrawal approved successfully.');
+    }
+
+    public function rejectWithdrawal($id)
+    {
+        $withdrawal = Withdrawal::findOrFail($id);
+        $withdrawal->status = 'rejected';
+        $withdrawal->save();
+
+        return redirect()->back()->with('success', 'Withdrawal rejected successfully.');
+    }
+
+    public function showUserDeposits($userId)
+    {
+        $deposits = Deposit::where('user_id', $userId)->paginate(10);
+        return view('admin.user_deposits', compact('deposits'));
+    }
+    public function approve($id)
+    {
+        $deposit = Deposit::findOrFail($id);
+        $deposit->status = 'approved';
+        $deposit->save();
+
+        return redirect()->back()->with('success', 'Deposit approved successfully.');
+    }
+
+    public function reject($id)
+    {
+        $deposit = Deposit::findOrFail($id);
+        $deposit->status = 'rejected';
+        $deposit->save();
+
+        return redirect()->back()->with('success', 'Deposit rejected successfully.');
     }
 }

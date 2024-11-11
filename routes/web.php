@@ -227,7 +227,7 @@ Route::prefix('user')->middleware('auth')->group(function () {
 
     Route::get('/withdrawals/create', [App\Http\Controllers\User\WithdrawalController::class, 'create'])->name('user.withdrawals.create');
     Route::post('/make-withdrawal', [App\Http\Controllers\User\WithdrawalController::class, 'makeWithdrawal'])->name('make.withdrawal');
-    Route::post('/withdrawals/confirm',[App\Http\Controllers\User\WithdrawalController::class, 'confirm'])->name('withdrawals.confirm');
+    Route::post('/withdrawals/confirm', [App\Http\Controllers\User\WithdrawalController::class, 'confirm'])->name('withdrawals.confirm');
     Route::get('/withdrawals/withdrawal-wallet', [App\Http\Controllers\User\WithdrawalController::class, 'wallet'])->name('user.withdraw.wallet');
 });
 
@@ -244,6 +244,18 @@ Route::prefix('admin')->group(function () {
 
     // Protecting admin routes using the 'admin' middleware
     Route::middleware(['admin'])->group(function () { // Admin Profile Routes
+
+        Route::get('/user/{userId}/withdrawals', [AdminController::class, 'showUserWithdrawals'])
+            ->name('admin.user.withdrawals');
+        Route::post('/admin/withdrawals/{id}/approve', [AdminController::class, 'approveWithdrawal'])
+            ->name('admin.withdrawals.approve');
+        Route::post('/admin/withdrawals/{id}/reject', [AdminController::class, 'rejectWithdrawal'])
+            ->name('admin.withdrawals.reject');
+        Route::get('/users/{user}/deposits', [AdminController::class, 'showUserDeposits'])->name('admin.deposits.history');
+        Route::post('/deposits/{deposit}/approve', [AdminController::class, 'approve'])->name('admin.deposits.approve');
+        Route::post('/deposits/{deposit}/reject', [AdminController::class, 'reject'])->name('admin.deposits.reject');
+
+
         Route::get('/profile', [AdminController::class, 'editProfile'])->name('admin.profile');
         Route::post('/profile/update', [AdminController::class, 'updateProfile'])->name('admin.profile.update');
         Route::post('/profile/password', [AdminController::class, 'updatePassword'])->name('admin.profile.password.update');
