@@ -17,7 +17,7 @@ class WithdrawalController extends Controller
         $data['withdrawals'] = User::join('withdrawals', 'users.id', '=', 'Withdrawals.user_id')
             ->get(['users.email', 'users.name', 'withdrawals.*']);
 
-        return view('admin.manage_Withdrawal', $data);
+        return view('admin.manage_withdrawal', $data);
     }
 
 

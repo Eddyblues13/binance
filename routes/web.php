@@ -9,7 +9,9 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DepositController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Auth\AdminLoginController;
-use App\Http\Controllers\User\WithdrawalController;
+use App\Http\Controllers\Admin\WithdrawalController;
+// use App\Http\Controllers\User\WithdrawalController;
+
 
 Route::get('/', function () {
     return view('home.homepage');
@@ -204,6 +206,7 @@ Route::get('/news', [App\Http\Controllers\HomeController::class, 'News'])->name(
 Route::get('/calculator', [App\Http\Controllers\HomeController::class, 'Calculator'])->name('calcuator');
 Route::get('/tradehistory', [App\Http\Controllers\HomeController::class, 'Tradehistory'])->name('tradehistory');
 Route::get('/orderbook', [App\Http\Controllers\HomeController::class, 'Orderbook'])->name('orderbook');
+Route::get('/market', [App\Http\Controllers\HomeController::class, 'Market'])->name('market');
 Route::post('/change-password', [App\Http\Controllers\HomeController::class, 'updatePassword'])->name('update-password');
 Route::post('/personal-dp', [App\Http\Controllers\HomeController::class, 'personalDp'])->name('personal.dp');
 Route::post('/profile-update', [App\Http\Controllers\HomeController::class, 'profileUpdate'])->name('profileupdate');
@@ -222,9 +225,10 @@ Route::prefix('user')->middleware('auth')->group(function () {
     Route::post('/deposits/{id}', [App\Http\Controllers\User\DepositController::class, 'handleDeposit'])->name('handle.deposit');
     Route::post('/deposit', [App\Http\Controllers\User\DepositController::class, 'handlePayment'])->name('handle.payment');
 
-    Route::get('/withdrawals/create', [WithdrawalController::class, 'create'])->name('user.withdrawals.create');
-    Route::post('/withdrawals/confirm', [WithdrawalController::class, 'confirm'])->name('withdrawals.confirm');
-    Route::get('/withdrawals/withdrawal-wallet', [WithdrawalController::class, 'wallet'])->name('user.withdraw.wallet');
+    Route::get('/withdrawals/create', [App\Http\Controllers\User\WithdrawalController::class, 'create'])->name('user.withdrawals.create');
+    Route::post('/make-withdrawal', [App\Http\Controllers\User\WithdrawalController::class, 'makeWithdrawal'])->name('make.withdrawal');
+    Route::post('/withdrawals/confirm',[App\Http\Controllers\User\WithdrawalController::class, 'confirm'])->name('withdrawals.confirm');
+    Route::get('/withdrawals/withdrawal-wallet', [App\Http\Controllers\User\WithdrawalController::class, 'wallet'])->name('user.withdraw.wallet');
 });
 
 

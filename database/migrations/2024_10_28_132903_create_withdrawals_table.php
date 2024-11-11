@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('withdrawals', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->string('method');  // Stores the selected cryptocurrency
             $table->string('crypto');  // Stores the selected cryptocurrency
             $table->string('wallet');  // Stores the wallet address
             $table->decimal('amount', 15, 2);  // Withdrawal amount

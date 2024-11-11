@@ -12,6 +12,14 @@ class Withdrawal extends Model
     // Define the fields that are mass assignable
     protected $fillable = [
         'user_id',
+        'method',
+        'bank_name',
+        'account_name',
+        'account_number',
+        'branch_name',
+        'ifsc_code',
+        'bank_address',
+        'routing_number',
         'crypto',
         'wallet',
         'amount',
