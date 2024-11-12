@@ -26,6 +26,72 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
+    public function testing()
+    {
+        $userId = Auth::id();
+
+        // Sum of investments
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->sum('usd_value');
+
+        // Get the user model
+        $user = Auth::user(); // Retrieve the authenticated user
+
+        // Get the user's currency
+        $userCurrency = $user->currency; // E.g., 'EUR', 'GBP', etc.
+        $usdValue = $data['usd_sum']; // The value in USD
+
+        // Convert the USD value to the user's currency
+        // $convertedValue = $this->convertToUserCurrency($usdValue, $userCurrency);
+
+        $usdValue = 100; // Example amount in USD
+        $currency = 'EUR'; // Target currency, e.g., EUR
+
+        // Call the conversion function
+        //$convertedValue = $this->convertToUserCurrency($usdValue, $currency);
+
+        // Add the converted value to the data array
+        //$data['converted_value'] = $convertedValue;
+
+
+
+        return view('testing', $data);
+    }
+
+
+    public function welcome()
+    {
+        $userId = Auth::id();
+
+        // Sum of investments
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->sum('usd_value');
+
+        // Get the user model
+        $user = Auth::user(); // Retrieve the authenticated user
+
+        // Get the user's currency
+        $userCurrency = $user->currency; // E.g., 'EUR', 'GBP', etc.
+        $usdValue = $data['usd_sum']; // The value in USD
+
+        // Convert the USD value to the user's currency
+        // $convertedValue = $this->convertToUserCurrency($usdValue, $userCurrency);
+
+        $usdValue = 100; // Example amount in USD
+        $currency = 'EUR'; // Target currency, e.g., EUR
+
+        // Call the conversion function
+        //$convertedValue = $this->convertToUserCurrency($usdValue, $currency);
+
+        // Add the converted value to the data array
+        //$data['converted_value'] = $convertedValue;
+
+
+
+        return view('user.welcome', $data);
+    }
+
+
 
     public function index()
     {
@@ -54,7 +120,7 @@ class HomeController extends Controller
         // Add the converted value to the data array
         //$data['converted_value'] = $convertedValue;
 
-        
+
 
         return view('user.home', $data);
     }
@@ -193,8 +259,8 @@ class HomeController extends Controller
         $userId = Auth::id();
 
         $data['usd_sum'] = Transaction::where('user_id', $userId)
-        ->sum('usd_value');
-        return view('user.profile',$data);
+            ->sum('usd_value');
+        return view('user.profile', $data);
     }
 
     public function News()
@@ -202,8 +268,8 @@ class HomeController extends Controller
         $userId = Auth::id();
 
         $data['usd_sum'] = Transaction::where('user_id', $userId)
-        ->sum('usd_value');
-        return view('user.news',$data);
+            ->sum('usd_value');
+        return view('user.news', $data);
     }
 
     public function Calculator()
@@ -211,8 +277,8 @@ class HomeController extends Controller
         $userId = Auth::id();
 
         $data['usd_sum'] = Transaction::where('user_id', $userId)
-        ->sum('usd_value');
-        return view('user.calculator',$data);
+            ->sum('usd_value');
+        return view('user.calculator', $data);
     }
 
     public function Market()
@@ -220,14 +286,17 @@ class HomeController extends Controller
         $userId = Auth::id();
 
         $data['usd_sum'] = Transaction::where('user_id', $userId)
-        ->sum('usd_value');
-        return view('user.market',$data);
+            ->sum('usd_value');
+        return view('user.market', $data);
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        Auth::guard('user')->logout();
-        return redirect('/');
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login')->with('status', 'You have been logged out successfully.');
     }
 
     public function Tradehistory()
@@ -235,8 +304,8 @@ class HomeController extends Controller
         $userId = Auth::id();
 
         $data['usd_sum'] = Transaction::where('user_id', $userId)
-        ->sum('usd_value');
-        return view('user.tradehistory',$data);
+            ->sum('usd_value');
+        return view('user.tradehistory', $data);
     }
 
 
@@ -245,8 +314,8 @@ class HomeController extends Controller
         $userId = Auth::id();
 
         $data['usd_sum'] = Transaction::where('user_id', $userId)
-        ->sum('usd_value');
-        return view('user.orderbook',$data);
+            ->sum('usd_value');
+        return view('user.orderbook', $data);
     }
 
 
@@ -345,5 +414,42 @@ class HomeController extends Controller
 
         $user->update();
         return back()->with('status', 'Profile Updated');
+    }
+
+
+
+    public function saveCurrency(Request $request)
+    {
+        // Validate the request data to ensure currency is provided
+        $request->validate([
+            'currency' => 'required|string'
+        ]);
+
+        // Get the authenticated user
+        $user = Auth::user();
+
+        // Save the selected currency to the user's profile in the database
+        $user->currency = $request->currency;
+        $user->save();
+
+        // Respond with JSON indicating success
+        return response()->json(['success' => true]);
+    }
+
+    // Save the selected country to session
+    public function saveCountry(Request $request)
+    {
+        $request->validate([
+            'country' => 'required|string'
+        ]);
+        // Get the authenticated user
+        $user = Auth::user();
+
+        // Save the selected currency to the user's profile in the database
+        $user->country = $request->country;
+        $user->save();
+
+        // Respond with JSON indicating success
+        return response()->json(['success' => true]);
     }
 }

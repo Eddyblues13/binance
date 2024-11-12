@@ -158,9 +158,9 @@ Route::get('/equity', function () {
 });
 
 
-Route::get('/testing', function () {
-    return view('testing');
-});
+// Route::get('/testing', function () {
+//     return view('testing');
+// });
 
 // web.php
 Route::post('/save-currency', [BinanceController::class, 'store'])->name('save.currency');
@@ -199,7 +199,10 @@ Route::get('/trading', [DashboardController::class, 'showTrading']);
 Route::get('/calculator', [DashboardController::class, 'showCalculator']);
 
 Auth::routes();
-
+Route::get('/testing', [App\Http\Controllers\HomeController::class, 'testing'])->name('testing');
+Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
+Route::post('/save-currency', [App\Http\Controllers\HomeController::class, 'saveCurrency'])->name('saveCurrency');
+Route::post('/saveCountry', [App\Http\Controllers\HomeController::class, 'saveCountry'])->name('saveCountry');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'Profile'])->name('profile');
 Route::get('/news', [App\Http\Controllers\HomeController::class, 'News'])->name('news');
