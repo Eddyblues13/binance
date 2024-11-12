@@ -1,16 +1,25 @@
 @include('admin.header')
 <div class="main-panel">
-    <div class="content bg-light">
-        <div class="page-inner">
-            @if(session('success'))
-            <div class="alert alert-success mb-2">{{ session('success') }}</div>
-            @endif
-            <div class="mt-2 mb-4">
-                <h1 class="title1 text-dark">User Withdrawal History</h1>
-            </div>
-
-            <div class="table-responsive">
-                <table class="table table-hover text-dark">
+	<div class="content bg-dark ">
+		<div class="page-inner">
+			@if(session('success'))
+			<div class="alert alert-success mb-2">{{session('success')}}</div>
+			@endif
+			<div class="mt-2 mb-4">
+				<h1 class="title1 text-light">Withdrawal History</h1>
+			</div>
+			<div>
+			</div>
+			<div>
+			</div>
+			<div class="mb-5 row">
+				<div class="col-12">
+					{{-- <small class="text-light">if you can't see the image, try switching your uploaded location to
+						another option from your admin settings page.</small> --}}
+				</div>
+				<div class="col-12 card shadow p-4 bg-dark">
+					<div class="table-responsive" data-example-id="hoverable-table">
+						<table id="ShipTable" class="table table-hover text-light">
                     <thead>
                         <tr>
                             <th>Transaction ID</th>
@@ -53,8 +62,11 @@
                         @endforeach
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
-</div>
+                
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 @include('admin.footer')

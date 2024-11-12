@@ -1016,7 +1016,7 @@ class AdminController extends Controller
     public function showUserDeposits($userId)
     {
         $deposits = Deposit::where('user_id', $userId)->paginate(10);
-        return view('admin.user_deposits', compact('deposits'));
+        return view('admin.user_deposit', compact('deposits'));
     }
     public function approve($id)
     {

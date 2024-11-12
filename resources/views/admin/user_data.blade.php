@@ -135,7 +135,7 @@
                                     <h5>Deposit History</h5>
 
                                     <a class="btn btn-sm btn-success d-inline"
-                                        href="{{route('manage.user.deposit.page')}}">View
+                                        href="{{ route('admin.deposits.history', $user->id) }}">View
                                         Deposit History</a>
 
                                 </div>
