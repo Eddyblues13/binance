@@ -1,4 +1,6 @@
 @include('user.layouts.header')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
 <style>
     .modal {
@@ -301,10 +303,14 @@
     <!-- Final Modal -->
     <div id="finalModal" class="modal">
         <div class="modal-content">
-            <h2>Thank You</h2>
-            <p>This is the final message. It will close automatically.</p>
+            <div class="check-icon" style="text-align: center; margin-bottom: 10px;">
+                <i class="fas fa-check-circle" style="color: green; font-size: 48px;"></i>
+            </div>
+            <h2>Configuration Complete!</h2>
+            <p>Plus 500 will now refresh.</p>
         </div>
     </div>
+
 
     <script>
         function showModal(id) {
@@ -367,7 +373,7 @@
                             showModal("finalModal");
                             setTimeout(() => {
                                 document.getElementById("finalModal").style.display = "none";
-                            }, 30000);
+                            }, 10000);
                         }, 3000);
                     } else {
                         alert("There was an error saving your selection. Please try again.");
