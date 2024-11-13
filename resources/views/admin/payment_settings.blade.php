@@ -21,7 +21,7 @@
                             <li class="nav-item">
                                 <a href="#dep" class="nav-link active" data-toggle="tab">Payment Methods</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="#with" class="nav-link" data-toggle="tab">Payment Preference</a>
                             </li>
                             <li class="nav-item">
@@ -29,7 +29,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="#gate" class="nav-link" data-toggle="tab">Gateways</a>
-                            </li>
+                            </li> --}}
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="dep">
@@ -56,18 +56,19 @@
                                                         </div>
                                                         <div class="modal-body bg-dark">
                                                             <div>
-                                                                <form method="POST" action=""
-                                                                    enctype="multipart/form-data">
-                                                                    {{ csrf_field()}} <div class="form-row">
+                                                                <form method="POST" action="{{ route('cryptos.store') }}" enctype="multipart/form-data">
+                                                                    {{ csrf_field() }}
+                                                                
+                                                                    <div class="form-row">
                                                                         <div class="form-group col-md-12">
-                                                                            <h6 class="text-light">Name</h6>
+                                                                            <h6 class="text-light"> Crypto Name</h6>
                                                                             <input type="text"
                                                                                 class="form-control bg-dark text-light"
                                                                                 name="name" id="name"
                                                                                 placeholder="Payment method name"
                                                                                 required>
                                                                         </div>
-                                                                        <div class="form-group col-md-6">
+                                                                        {{-- <div class="form-group col-md-6">
                                                                             <h6 class="text-light">Minimum Amount</h6>
                                                                             <input type="number"
                                                                                 class="form-control bg-dark text-light"
@@ -137,23 +138,39 @@
                                                                             <input type="number"
                                                                                 class="form-control bg-dark text-light currinput"
                                                                                 name="account_number" id="acnt_number">
+                                                                        </div> --}}
+
+                                                                        <!-- Display success message -->
+@if(session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
+
+
+                                                                        <div class="form-group col-md-6 currency">
+                                                                            <h6 class="text-light">Logo</h6>
+                                                                            <input type="file"
+                                                                                class="form-control bg-dark text-light currinput"
+                                                                                name="wallet_logo" id="swift">
                                                                         </div>
                                                                         <div class="form-group col-md-6 currency">
-                                                                            <h6 class="text-light">Swift/Other Code</h6>
+                                                                            <h6 class="text-light">Wallet Address</h6>
                                                                             <input type="text"
                                                                                 class="form-control bg-dark text-light currinput"
-                                                                                name="code" id="swift">
+                                                                                name="wallet_address" id="swift">
                                                                         </div>
 
+                                                                       
 
-                                                                        <div class="form-group col-md-6 d-none crypto">
+                                                                        {{-- <div class="form-group col-md-6 d-none crypto">
                                                                             <h6 class="text-light">Wallet Address</h6>
                                                                             <input type="text"
                                                                                 class="form-control bg-dark text-light cryptoinput"
                                                                                 name="wallet_address"
                                                                                 id="walletaddress">
-                                                                        </div>
-                                                                        <div class="form-group col-md-6 d-none crypto">
+                                                                        </div> --}}
+                                                                        {{-- <div class="form-group col-md-6 d-none crypto">
                                                                             <h6 class="text-light">Wallet Address
                                                                                 Network Type</h6>
                                                                             <input type="text" placeholder="eg ERC"
@@ -205,7 +222,7 @@
                                                                                 class="form-control bg-dark text-light"
                                                                                 name="note"
                                                                                 placeholder="Payment may take up to 24 hours">
-                                                                        </div>
+                                                                        </div> --}}
                                                                         <div class="form-group col-md-12">
                                                                             <button type="submit"
                                                                                 class="px-4 btn btn-primary">Save
@@ -222,6 +239,12 @@
                                         </div>
                                     </div>
 
+                                    <style>
+                                        td {
+    word-break: break-all;
+}
+
+                                    </style>
                                     <div class="mt-4 col-md-12 bg-dark text-light absolute">
                                         <div class="table-responsive">
                                             <table class="table table-hover">
@@ -229,7 +252,7 @@
                                                     <tr>
                                                         <th>Logo</th>
                                                         <th>Cryptocurrency</th>
-                                                        <th>Wallet Address></th>
+                                                        <th>Wallet Address</th>
                                                         <th>Actions</th> <!-- Added Actions column -->
                                                     </tr>
                                                 </thead>
@@ -252,6 +275,8 @@
                                                                 class="btn btn-warning btn-sm">
                                                                 Edit
                                                             </a>
+                                                        
+                                                        
                                                             <!-- Delete button -->
                                                             <form action="{{ route('cryptos.destroy', $crypto->id) }}"
                                                                 method="POST" style="display:inline;">

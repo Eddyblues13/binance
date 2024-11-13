@@ -20,29 +20,29 @@
             </div>
             <div class="mb-5 row">
                 <div class="col-md-8 offset-md-2">
-                    <form method="POST" action="" enctype="multipart/form-data">
-                        {{ csrf_field()}}
+                    <form method="POST" action="{{ route('cryptos.update', $crypto->id) }}" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        {{ method_field('PUT') }}
+                        
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <h6 class="text-light">Name</h6>
                                 <input type="text" class="form-control bg-dark text-light" name="name"
-                                    placeholder="Payment method name" value="" readonly>
+                                       placeholder="Payment method name" value="{{ $crypto->name }}">
                             </div>
-
-
-                            <div class="form-group col-md-6 d-none crypto">
-                                <h6 class="text-light">Wallet Address</h6>
-                                <input type="text" value="{{}}" class="form-control bg-dark text-light cryptoinput"
-                                    name="wallet_address" id="walletaddress">
+                    
+                            <div class="form-group col-md-12">
+                                <h6 class="text-light">Address</h6>
+                                <input type="text" class="form-control bg-dark text-light" name="address"
+                                       placeholder="Wallet Address" value="{{ $crypto->address }}">
                             </div>
-
-
+                    
                             <div class="form-group col-md-12">
                                 <button type="submit" class="px-4 btn btn-primary">Save Changes</button>
                             </div>
                         </div>
-
                     </form>
+                    
                 </div>
             </div>
         </div>

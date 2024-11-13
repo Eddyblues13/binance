@@ -280,7 +280,7 @@
                             </li>
 
 
-                            <li class="nav-item  ">
+                            {{-- <li class="nav-item  ">
                                 <a data-toggle="collapse" href="#adm">
                                     <i class="fa fa-user"></i>
                                     <p>Administrator(s)</p>
@@ -293,14 +293,14 @@
                                                 <span class="sub-item">Add Manager</span>
                                             </a>
                                         </li> --}}
-                                        <li>
+                                        {{-- <li>
                                             <a href="">
                                                 <span class="sub-item">Manage Administrator(s)</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
+                            </li> --}}
 
                             <li class="nav-item          ">
                                 <a data-toggle="collapse" href="#settings">

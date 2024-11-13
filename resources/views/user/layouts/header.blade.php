@@ -353,9 +353,9 @@
                                         <img src="/images/logo.jpg" alt=""
                                             class="d-flex mr-3 img-fluid rounded-circle w-50">
                                         <div class="media-body">
-                                            <h6>Welcome Back!</h6>
-                                            <hr>
-                                            <p class="mb-0 text-success">yo</p>
+                                            <h6>Welcome Back {{ Auth::user()->name }}!</h6>
+                                            {{-- <hr>
+                                            <p class="mb-0 text-success"> </p> --}}
                                         </div>
                                     </div>
                                 </a>

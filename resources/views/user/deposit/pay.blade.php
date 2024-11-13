@@ -131,7 +131,7 @@
         <div class="container"style="margin-top: 80px;">
             <!-- Total Amount -->
             <div class="total-label">Total</div>
-            <p class="total-amount">{{$amount}}</p>
+            <p class="total-amount">{{ Auth::user()->currency}}{{$amount}}</p>
 
             <!-- Coinbase Payment Button -->
             <a href="https://www.coinbase.com/" class="coinbase-button">Pay With Coinbase</a>

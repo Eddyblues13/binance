@@ -81,12 +81,101 @@
 
 <body>
     <!-- First Modal -->
-    <div id="firstModal" class="modal">
-        <div class="modal-content">
-            <h2>Welcome</h2>
-            <p>This is an introductory message.</p>
-        </div>
+  <!-- Modal Structure -->
+<div id="firstModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Welcome to Plus500</h2>
+        <p>Please complete your account setup to get started.</p>
+        <button onclick="continueSetup()">Continue</button>
     </div>
+</div>
+
+<!-- Styles -->
+<style>
+  /* Modal Background */
+  .modal {
+      display: block; /* Change to 'none' to hide initially */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  /* Modal Content */
+  .modal-content {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.5s;
+  }
+
+  /* Close Button */
+  .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+  }
+
+  /* Modal Heading */
+  .modal-content h2 {
+      color: #1d3557;
+      margin-bottom: 10px;
+  }
+
+  /* Modal Text */
+  .modal-content p {
+      color: #555;
+      margin-bottom: 20px;
+  }
+
+  /* Continue Button */
+  .modal-content button {
+      background-color: #1d3557;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+
+  .modal-content button:hover {
+      background-color: #457b9d;
+  }
+
+  /* Fade In Animation */
+  @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+</style>
+
+<!-- JavaScript for Modal -->
+<script>
+  function closeModal() {
+      document.getElementById("firstModal").style.display = "none";
+  }
+
+  function continueSetup() {
+      closeModal();
+      // Add any additional setup actions here
+  }
+</script>
+
 
     <!-- Country Selection Modal -->
     <div id="countryModal" class="modal">
@@ -267,38 +356,156 @@
         </div>
     </div>
 
-    <!-- Currency Selection Modal -->
-    <div id="currencyModal" class="modal">
-        <div class="modal-content">
-            <h2>Select a Currency</h2>
-            <form id="currencyForm" method="POST" action="{{ route('saveCurrency') }}">
-                @csrf
-                <div class="currency">
-                    <input type="radio" id="currencyUSD" name="currency" value="USD">
-                    <label for="currencyUSD">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/USDollar.svg" alt="USD">
-                        <span>USD</span>
-                    </label>
-                </div>
-                <div class="currency">
-                    <input type="radio" id="currencyEUR" name="currency" value="EUR">
-                    <label for="currencyEUR">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Euro_symbol.svg" alt="EUR">
-                        <span>EUR</span>
-                    </label>
-                </div>
-                <div class="currency">
-                    <input type="radio" id="currencyGBP" name="currency" value="GBP">
-                    <label for="currencyGBP">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Pound_Sterling_symbol.svg"
-                            alt="GBP">
-                        <span>GBP</span>
-                    </label>
-                </div>
-                <!-- Add more currencies as needed -->
-            </form>
-        </div>
+   <!-- Currency Selection Modal -->
+<div id="currencyModal" class="modal">
+    <div class="modal-content">
+        <h2>Select a Currency</h2>
+        <form id="currencyForm" method="POST" action="{{ route('saveCurrency') }}">
+            @csrf
+            <div class="currency">
+                <input type="radio" id="currencyUSD" name="currency" value="USD">
+                <label for="currencyUSD">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/USDollar.svg" alt="USD">
+                    <span>USD</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyEUR" name="currency" value="EUR">
+                <label for="currencyEUR">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Euro_symbol.svg" alt="EUR">
+                    <span>EUR</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyGBP" name="currency" value="GBP">
+                <label for="currencyGBP">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Pound_Sterling_symbol.svg" alt="GBP">
+                    <span>GBP</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyJPY" name="currency" value="JPY">
+                <label for="currencyJPY">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Yen_symbol.svg" alt="JPY">
+                    <span>JPY</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyAUD" name="currency" value="AUD">
+                <label for="currencyAUD">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Australian_Dollar_symbol.svg" alt="AUD">
+                    <span>AUD</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyCAD" name="currency" value="CAD">
+                <label for="currencyCAD">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Canadian_Dollar_symbol.svg" alt="CAD">
+                    <span>CAD</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyCHF" name="currency" value="CHF">
+                <label for="currencyCHF">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Swiss_Franc_symbol.svg" alt="CHF">
+                    <span>CHF</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyCNY" name="currency" value="CNY">
+                <label for="currencyCNY">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/RMB_symbol.svg" alt="CNY">
+                    <span>CNY</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyINR" name="currency" value="INR">
+                <label for="currencyINR">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Indian_Rupee_symbol.svg" alt="INR">
+                    <span>INR</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyBRL" name="currency" value="BRL">
+                <label for="currencyBRL">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Brazilian_real_symbol.svg" alt="BRL">
+                    <span>BRL</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyZAR" name="currency" value="ZAR">
+                <label for="currencyZAR">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/South_African_Rand_symbol.svg" alt="ZAR">
+                    <span>ZAR</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyMXN" name="currency" value="MXN">
+                <label for="currencyMXN">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/MXN_symbol.svg" alt="MXN">
+                    <span>MXN</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencySGD" name="currency" value="SGD">
+                <label for="currencySGD">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/SGD_symbol.svg" alt="SGD">
+                    <span>SGD</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyHKD" name="currency" value="HKD">
+                <label for="currencyHKD">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/HKD_symbol.svg" alt="HKD">
+                    <span>HKD</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyKRW" name="currency" value="KRW">
+                <label for="currencyKRW">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/KRW_symbol.svg" alt="KRW">
+                    <span>KRW</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyRUB" name="currency" value="RUB">
+                <label for="currencyRUB">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/RUB_symbol.svg" alt="RUB">
+                    <span>RUB</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyTRY" name="currency" value="TRY">
+                <label for="currencyTRY">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Turkish_Lira_symbol.svg" alt="TRY">
+                    <span>TRY</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyIDR" name="currency" value="IDR">
+                <label for="currencyIDR">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Indonesian_Rupiah_symbol.svg" alt="IDR">
+                    <span>IDR</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyMYR" name="currency" value="MYR">
+                <label for="currencyMYR">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Malaysian_Ringgit_symbol.svg" alt="MYR">
+                    <span>MYR</span>
+                </label>
+            </div>
+            <div class="currency">
+                <input type="radio" id="currencyTHB" name="currency" value="THB">
+                <label for="currencyTHB">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Thai_Baht_symbol.svg" alt="THB">
+                    <span>THB</span>
+                </label>
+            </div>
+            <!-- Add more currencies as needed -->
+        </form>
     </div>
+</div>
 
     <!-- Final Modal -->
     <div id="finalModal" class="modal">

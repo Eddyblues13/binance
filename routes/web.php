@@ -188,7 +188,7 @@ Route::get('/market-update', function () {
 
 Route::get('/binance', [BinanceController::class, 'showLiveTradingView']);
 
-Route::get('/dashboard', [TradeController::class, 'index'])->name('dashboard');
+// Route::get('/dashboard', [TradeController::class, 'index'])->name('dashboard');
 Route::get('/home', [DashboardController::class, 'showDashboard']);
 Route::get('/test', [DashboardController::class, 'showTest']);
 Route::get('/profile', [DashboardController::class, 'showProfile']);
@@ -203,6 +203,7 @@ Route::get('/testing', [App\Http\Controllers\HomeController::class, 'testing'])-
 Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 Route::post('/save-currency', [App\Http\Controllers\HomeController::class, 'saveCurrency'])->name('saveCurrency');
 Route::post('/saveCountry', [App\Http\Controllers\HomeController::class, 'saveCountry'])->name('saveCountry');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'Profile'])->name('profile');
 Route::get('/news', [App\Http\Controllers\HomeController::class, 'News'])->name('news');
@@ -381,5 +382,7 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/payment-settings', [PaymentController::class, 'paymentSettings'])->name('payment.settings');
         Route::resource('cryptos', PaymentController::class);
+        Route::put('/payment-settings/{PaymentSetting}', [PaymentSettingController::class, 'update'])->name('PaymentSettings.update');
+        
     });
 });

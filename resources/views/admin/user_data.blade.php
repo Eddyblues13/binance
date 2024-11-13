@@ -29,8 +29,8 @@
                                                 Actions
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-lg-right">
-                                                <a class="dropdown-item" href="">Login Activity</a>
-                                                <a class="dropdown-item" href="#">Block</a>
+                                                {{-- <a class="dropdown-item" href="">Login Activity</a> --}}
+                                                {{-- <a class="dropdown-item" href="#">Block</a> --}}
                                                 <a class="dropdown-item" href="">Turn off trade</a>
 
                                                 <a href="#" data-toggle="modal" data-target="#topupModal"
@@ -45,8 +45,8 @@
                                                 <a class="dropdown-item" href="#" data-toggle="modal"
                                                     data-target="#accountSuspension">Account Suspension</a>
 
-                                                <a href="#" data-toggle="modal" data-target="#accountverificationModal"
-                                                    class="dropdown-item">Account Verification</a>
+                                                {{-- <a href="#" data-toggle="modal" data-target="#accountverificationModal"
+                                                    class="dropdown-item">Account Verification</a> --}}
 
                                                 <a href="#" data-toggle="modal" data-target="#edituser"
                                                     class="dropdown-item">Edit</a>
