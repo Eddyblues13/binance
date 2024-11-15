@@ -1,4 +1,4 @@
-@include('user.layouts.header')
+{{-- @include('user.layouts.header') --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
@@ -507,89 +507,93 @@
     </div>
 </div>
 
-    <!-- Final Modal -->
-    <div id="finalModal" class="modal">
-        <div class="modal-content">
-            <div class="check-icon" style="text-align: center; margin-bottom: 10px;">
-                <i class="fas fa-check-circle" style="color: green; font-size: 48px;"></i>
-            </div>
-            <h2>Configuration Complete!</h2>
-            <p>Plus 500 will now refresh.</p>
+   <!-- Final Modal -->
+<div id="finalModal" class="modal">
+    <div class="modal-content">
+        <div class="check-icon" style="text-align: center; margin-bottom: 10px;">
+            <i class="fas fa-check-circle" style="color: green; font-size: 48px;"></i>
         </div>
+        <h2>Configuration Complete!</h2>
+        <p>Plus 500 will now refresh.</p>
     </div>
+</div>
 
+<script>
+    function showModal(id) {
+        document.querySelectorAll('.modal').forEach(modal => modal.style.display = "none");
+        document.getElementById(id).style.display = "block";
+    }
 
-    <script>
-        function showModal(id) {
-            document.querySelectorAll('.modal').forEach(modal => modal.style.display = "none");
-            document.getElementById(id).style.display = "block";
-        }
+    document.addEventListener("DOMContentLoaded", function () {
+        // Show first modal on page load
+        showModal("firstModal");
 
-        document.addEventListener("DOMContentLoaded", function () {
-            // Show first modal on page load
-            showModal("firstModal");
+        // After 5 seconds, show the country selection modal
+        setTimeout(() => {
+            showModal("countryModal");
+        }, 5000);
+    });
 
-            // After 5 seconds, show the country selection modal
-            setTimeout(() => {
-                showModal("countryModal");
-            }, 5000);
-        });
+    document.querySelectorAll('input[name="country"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const formData = new FormData(document.getElementById('countryForm'));
 
-        document.querySelectorAll('input[name="country"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                const formData = new FormData(document.getElementById('countryForm'));
-
-                fetch("{{ route('saveCountry') }}", {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                    },
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        setTimeout(() => {
-                            showModal("currencyModal");
-                        }, 1000);
-                    } else {
-                        alert("There was an error saving your selection. Please try again.");
-                    }
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                });
+            fetch("{{ route('saveCountry') }}", {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    setTimeout(() => {
+                        showModal("currencyModal");
+                    }, 1000);
+                } else {
+                    alert("There was an error saving your selection. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
             });
         });
+    });
 
-        document.querySelectorAll('input[name="currency"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                const formData = new FormData(document.getElementById('currencyForm'));
+    document.querySelectorAll('input[name="currency"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const formData = new FormData(document.getElementById('currencyForm'));
 
-                fetch("{{ route('saveCurrency') }}", {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                    },
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
+            fetch("{{ route('saveCurrency') }}", {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    setTimeout(() => {
+                        showModal("finalModal");
                         setTimeout(() => {
-                            showModal("finalModal");
+                            document.getElementById("finalModal").style.display = "none";
+                            // Redirect to the home page after the final modal closes
                             setTimeout(() => {
-                                document.getElementById("finalModal").style.display = "none";
-                            }, 10000);
-                        }, 3000);
-                    } else {
-                        alert("There was an error saving your selection. Please try again.");
-                    }
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                });
+                                window.location.href = "{{route('home') }}";
+                            }, 3000); // Delay before redirecting
+                        }, 10000);
+                    }, 3000);
+                } else {
+                    alert("There was an error saving your selection. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
             });
         });
-    </script>
-    @include('user.layouts.footer')
+    });
+</script>
+{{-- 
+    @include('user.layouts.footer') --}}
