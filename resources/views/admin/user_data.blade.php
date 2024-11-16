@@ -15,9 +15,29 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 ">
-                                    <h1 class="d-inline text-primary">{{ ucwords($user->name) }}</h1>
-                                    <br />
-                                    <h6 class="d-inline text-primary">{{$user->email}}</h6>
+                                    <div class="col-md-12">
+                                        <h5>USER INFORMATION</h5>
+                                    </div>
+                                    <div class="user-info">
+                                        <h1 class="d-inline text-primary">
+                                            <strong>Name:</strong> {{ ucwords($user->name) }}
+                                        </h1>
+                                        <br />
+                                        <h6 class="text-primary">
+                                            <strong>Email:</strong> {{$user->email}}
+                                        </h6>
+                                        <h6 class="text-primary">
+                                            <strong>Phone:</strong> {{$user->phone}}
+                                        </h6>
+                                        <h6 class="text-primary">
+                                            <strong>Country:</strong> {{$user->country}}
+                                        </h6>
+
+                                        <h6 class="text-primary">
+                                            <strong>Registered:</strong>  {{ \Carbon\Carbon::parse($user->created_at)->format('D, M j, Y g:i A') }}
+                                        </h6>
+                                       
+                                    </div>                                    
                                     <span></span>
                                     <div class="d-inline">
                                         <div class="float-right btn-group">
@@ -62,6 +82,10 @@
                                     </div>
                                 </div>
                             </div>
+
+                            @if(session('success'))
+                            <div class="alert alert-success mb-2">{{session('success')}}</div>
+                            @endif
                             <div class="p-3 mt-4 border rounded row text-light">
                                 <div class="col-md-3">
                                     <h5 class="text-bold">Estimate Balance in BTC</h5>
@@ -152,53 +176,55 @@
                                     <span class="badge badge-success">On</span>
                                 </div>
                             </div>
-                            <div class="mt-3 row text-light">
-                                <div class="col-md-12">
-                                    <h5>USER INFORMATION</h5>
-                                </div>
+                           
+                            <div class="mt-2 mb-4">
+                                <h1 class="title1 text-light">Trade History</h1>
                             </div>
-                            <div class="p-3 border row text-light">
-                                <div class="col-md-4 border-right">
-                                    <h5>Full Name</h5>
-                                </div>
-                                <div class="col-md-8">
-                                    <h5>{{$user->name}}</h5>
-                                </div>
+                            <div>
                             </div>
-                            <div class="p-3 border row text-light">
-                                <div class="col-md-4 border-right">
-                                    <h5>Email Address</h5>
-                                </div>
-                                <div class="col-md-8">
-                                    <h5>{{$user->email}}</h5>
-                                </div>
+                            <div>
                             </div>
-                            <div class="p-3 border row text-light">
-                                <div class="col-md-4 border-right">
-                                    <h5>Mobile Number</h5>
+                            <div class="mb-5 row">
+                                <div class="col-12">
+                                    {{-- <small class="text-light">if you can't see the image, try switching your uploaded location to
+                                        another option from your admin settings page.</small> --}}
                                 </div>
-                                <div class="col-md-8">
-                                    <h5>{{$user->phone}}</h5>
-                                </div>
-                            </div>
-                            <div class="p-3 border row text-light">
-                                <div class="col-md-4 border-right">
-                                    <h5>Country</h5>
-                                </div>
-                                <div class="col-md-8">
-                                    <h5>{{$user->country}}</h5>
-                                </div>
-                            </div>
+                                <div class="col-12 card shadow p-4 bg-dark">
+                                    <div class="table-responsive" data-example-id="hoverable-table">
+                                        <table id="ShipTable" class="table table-hover text-light">
+                                            <thead>
+                                                <tr>
+                                                  
+                                                    <th>Date</th>
+                                                    <th>Crypto Type</th>
+                                                  
+                                                    <th>Amount in crypto</th>
+                                                   
+                                                    <th>Usd value</th>
 
-                            <div class="p-3 border row text-light">
-                                <div class="col-md-4 border-right">
-                                    <h5>Registered</h5>
-                                </div>
-                                <div class="col-md-8">
-                                    <h5>{{ \Carbon\Carbon::parse($user->created_at)->format('D, M j, Y g:i A') }}</h5>
+                                                    <th>Transaction Type</th>
+                                                  
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($transactions as $transaction)
+                                                <tr>
+                                                    {{-- <td>{{ $deposit->deposit_type }}</td> --}}
+                                                    <td>{{ $transaction->created_at }}</td>
+                                                    <td>{{ $transaction->currency_type }}</td>
+                                                    <td>{{ $transaction->crypto_amount }}</td>
+                                                    <td>{{ $transaction->usd_value }}</td>
+                                                    <td>{{ $transaction->transaction_type }}</td>
+                                                    
+                                                    
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

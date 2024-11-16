@@ -294,12 +294,16 @@ class AdminController extends Controller
         // Retrieve all transactions for the user
         $data['transactions'] = Transaction::where('user_id', $userId)->get();
 
-        // Sum of btc_balance for the user
-        $data['crypto_amount'] = Transaction::where('user_id', $userId)->sum('crypto_amount');
+      // Calculate the net crypto amount (for Bitcoin in this case)
+$data['crypto_amount'] = Transaction::where('user_id', $userId)
+->where('currency_type', 'bitcoin') // Filter by Bitcoin currency type
+->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN crypto_amount ELSE -crypto_amount END) as net_crypto_amount')
+->value('net_crypto_amount') ?? 0; // Default to 0 if null
 
-        // Sum of btc_balance for the user
-        $data['usd_value'] = Transaction::where('user_id', $userId)->sum('usd_value');
-
+// Calculate the net USD value for all transactions
+$data['usd_value'] = Transaction::where('user_id', $userId)
+->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_value')
+->value('net_usd_value') ?? 0; // Default to 0 if null
 
         // // Sum of profits
         // $data['profit_sum'] = Profit::where('user_id', $userId)

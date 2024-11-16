@@ -64,8 +64,11 @@ class HomeController extends Controller
         $userId = Auth::id();
 
         // Sum of investments
-        $data['usd_sum'] = Transaction::where('user_id', $userId)
-            ->sum('usd_value');
+       // Net sum of USD investments
+       $data['usd_sum'] = Transaction::where('user_id', $userId)
+       ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+       ->value('net_usd_sum') ?? 0; // Default to 0 if null
+
 
         // Get the user model
         $user = Auth::user(); // Retrieve the authenticated user
@@ -97,9 +100,11 @@ class HomeController extends Controller
     {
         $userId = Auth::id();
 
-        // Sum of investments
-        $data['usd_sum'] = Transaction::where('user_id', $userId)
-            ->sum('usd_value');
+        // Net sum of USD investments
+            $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+            ->value('net_usd_sum') ?? 0; // Default to 0 if null
+
 
         // Get the user model
         $user = Auth::user(); // Retrieve the authenticated user
@@ -258,8 +263,11 @@ class HomeController extends Controller
     {
         $userId = Auth::id();
 
-        $data['usd_sum'] = Transaction::where('user_id', $userId)
-            ->sum('usd_value');
+       // Net sum of USD investments
+       $data['usd_sum'] = Transaction::where('user_id', $userId)
+       ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+       ->value('net_usd_sum') ?? 0; // Default to 0 if null
+
         return view('user.profile', $data);
     }
 
@@ -267,8 +275,11 @@ class HomeController extends Controller
     {
         $userId = Auth::id();
 
-        $data['usd_sum'] = Transaction::where('user_id', $userId)
-            ->sum('usd_value');
+       // Net sum of USD investments
+       $data['usd_sum'] = Transaction::where('user_id', $userId)
+       ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+       ->value('net_usd_sum') ?? 0; // Default to 0 if null
+
         return view('user.news', $data);
     }
 
@@ -276,17 +287,22 @@ class HomeController extends Controller
     {
         $userId = Auth::id();
 
-        $data['usd_sum'] = Transaction::where('user_id', $userId)
-            ->sum('usd_value');
+       // Net sum of USD investments
+       $data['usd_sum'] = Transaction::where('user_id', $userId)
+       ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+       ->value('net_usd_sum') ?? 0; // Default to 0 if null
+
         return view('user.calculator', $data);
     }
 
     public function Market()
     {
         $userId = Auth::id();
+// Net sum of USD investments
+            $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+            ->value('net_usd_sum') ?? 0; // Default to 0 if null
 
-        $data['usd_sum'] = Transaction::where('user_id', $userId)
-            ->sum('usd_value');
         return view('user.market', $data);
     }
 
@@ -303,8 +319,15 @@ class HomeController extends Controller
     {
         $userId = Auth::id();
 
-        $data['usd_sum'] = Transaction::where('user_id', $userId)
-            ->sum('usd_value');
+       // Net sum of USD investments
+       $data['usd_sum'] = Transaction::where('user_id', $userId)
+       ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+       ->value('net_usd_sum') ?? 0; // Default to 0 if null
+
+       $data['transactions'] = Transaction::where('user_id', Auth::user()->id)
+                                    ->orderBy('created_at', 'desc')
+                                    ->get();
+
         return view('user.tradehistory', $data);
     }
 
@@ -313,8 +336,11 @@ class HomeController extends Controller
     {
         $userId = Auth::id();
 
+        // Net sum of USD investments
         $data['usd_sum'] = Transaction::where('user_id', $userId)
-            ->sum('usd_value');
+        ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+        ->value('net_usd_sum') ?? 0; // Default to 0 if null
+
         return view('user.orderbook', $data);
     }
 
@@ -361,8 +387,6 @@ class HomeController extends Controller
 
     //       return redirect('photo')->with('status', 'Profile Picture Updated!');
     //   }
-
-
 
 
 

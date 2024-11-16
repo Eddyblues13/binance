@@ -1,4 +1,217 @@
-{{-- @include('user.layouts.header') --}}
+<!DOCTYPE html>
+<html lang="en">
+<!-- START: Head-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plus500 | User Dashboard</title>
+    <link rel="shortcut icon" href="{{asset('dist/images/favicon.jpg')}}" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- START: Template CSS-->
+    <link rel="stylesheet" href="{{ asset('dist/vendors/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/vendors/jquery-ui/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/vendors/jquery-ui/jquery-ui.theme.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/vendors/simple-line-icons/css/simple-line-icons.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <!-- END Template CSS-->
+
+    <!-- START: Page CSS-->
+    <link rel="stylesheet" href="{{ asset('dist/vendors/morris/morris.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/vendors/weather-icons/css/pe-icon-set-weather.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/vendors/chartjs/Chart.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/vendors/starrr/starrr.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/vendors/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/vendors/ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/vendors/cryptofont/cryptofont.css') }}">
+    <!-- END: Page CSS-->
+
+    <!-- START: Custom CSS-->
+    <link rel="stylesheet" href="{{ asset('dist/css/main.css') }}">
+    <!-- END: Custom CSS-->
+
+    <script>
+        jQuery(document).ready(function($) {
+            $(".toggle").click(function() {
+                $(".toggle").toggleClass("active");
+                $("body").toggleClass("night");
+                $.cookie("toggle", $(".toggle").hasClass('active'));
+            });
+
+            if ($.cookie("toggle") == "true") {
+                $(".toggle").addClass("active");
+                $("body").addClass("night");
+            }
+        });
+    </script>
+    <!-- END: Custom CSS-->
+</head>
+<!-- END Head-->
+<!-- START: Body-->
+<!-- START: Body-->
+
+
+
+<style>
+  /* Basic styling for the dashboard */
+  #dashboard-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Logo styling */
+  #logo-container img {
+    max-width: 150px;
+    height: auto;
+  }
+
+  /* Orientation overlay for phone view only */
+  #orientation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: #ffffff;
+    display: none; /* Default to hidden */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 9999;
+  }
+</style>
+</head>
+<body>
+
+<!-- Dashboard Content -->
+
+
+<!-- Orientation Warning Overlay (for phone portrait view only) -->
+<div id="orientation-overlay">
+  <div id="logo-container">
+    <img src="{{asset('/logo.png')}}" alt="Your Logo"> <!-- Replace 'logo.png' with your logo path -->
+  </div>
+  <p>Please turn your device to landscape mode for the best experience.</p>
+</div>
+
+<script>
+  // Function to toggle orientation overlay based on device orientation and screen width
+  function checkOrientation() {
+    const overlay = document.getElementById('orientation-overlay');
+    const dashboardContent = document.getElementById('dashboard-content');
+    const isPortrait = window.innerHeight > window.innerWidth;
+    const isPhoneView = window.innerWidth <= 768; // Adjust width threshold for phone view if needed
+
+    // Show overlay only in portrait mode and on phone view
+    if (isPortrait && isPhoneView) {
+      overlay.style.display = 'flex';
+      dashboardContent.style.display = 'none'; // Hide the main dashboard content
+    } else {
+      overlay.style.display = 'none';
+      dashboardContent.style.display = 'flex'; // Show the main dashboard content in landscape mode
+    }
+  }
+
+  // Check orientation on load and on resize
+  window.addEventListener('load', checkOrientation);
+  window.addEventListener('resize', checkOrientation);
+</script>
+
+<body id="main-container" class="default">
+    <!-- START: Pre Loader-->
+<!-- START: Pre Loader -->
+<div class="se-pre-con">
+    <div class="sk-folding-cube sk-folding-cube-orange">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+    </div>
+</div>
+<!-- END: Pre Loader -->
+<style>body {
+    overflow: hidden; /* Prevent scrolling while loading */
+}
+
+.se-pre-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Background color behind the loader */
+    z-index: 9999; /* Ensure it's on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Orange folding cube preloader */
+.sk-folding-cube {
+    width: 80px; /* Size for a bold look */
+    height: 80px;
+    position: relative;
+    transform: rotateZ(45deg);
+    animation: spin 2s linear infinite; /* Smooth spin for the entire cube */
+}
+
+.sk-folding-cube-orange .sk-cube {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    background-color: #f39c12; /* Orange color */
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Diamond shape */
+    transform-origin: 100% 100%;
+    animation: sk-folding-cube 1.5s infinite ease-in-out;
+}
+
+.sk-cube1 { transform: rotateZ(0deg); animation-delay: 0s; }
+.sk-cube2 { transform: rotateZ(90deg); animation-delay: 0.3s; }
+.sk-cube3 { transform: rotateZ(180deg); animation-delay: 0.6s; }
+.sk-cube4 { transform: rotateZ(270deg); animation-delay: 0.9s; }
+
+/* Keyframes for folding cube animation */
+@keyframes sk-folding-cube {
+    0%, 10% {
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%, 75% {
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%, 100% {
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+/* Smooth spin for the entire cube */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+
+<script>
+    // Wait for window load to hide the pre-loader and enable scrolling
+    window.onload = function() {
+        // Hide the pre-loader
+        document.querySelector('.se-pre-con').style.display = 'none';
+
+        // Enable scrolling by removing overflow:hidden
+        document.body.style.overflow = 'auto';
+    };
+</script> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
@@ -356,6 +569,65 @@
         </div>
     </div>
 
+
+
+<!-- OTP Verification Modal -->
+<div id="otpModal" class="modal">
+    <div class="modal-content">
+        <h2 class="modal-title">OTP Verification</h2>
+        <p class="modal-description">Please enter the One-Time Password (OTP) sent to your registered email address to verify your identity.</p>
+        <form id="otpForm">
+            @csrf
+            <div class="form-group">
+                <label for="otpCode">OTP Code</label>
+                <input 
+                    type="text" 
+                    id="otpCode" 
+                    name="otp" 
+                    placeholder="Enter OTP" 
+                    class="form-input" 
+                    required 
+                    maxlength="6" 
+                    autocomplete="off">
+            </div>
+            <button type="button" class="btn-verify" onclick="submitOTP()">Verify OTP</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+<!-- KYC Verification Modal -->
+<div id="kycModal" class="modal">
+    <div class="modal-content">
+        <h2 class="modal-title">KYC Verification</h2>
+        <p class="modal-description">Upload a government-issued document for verification.</p>
+        <form id="kycForm" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+                <label for="documentType">Select Document Type</label>
+                <select id="documentType" name="documentType" class="form-input" onchange="toggleOtherField()">
+                    <option value="" disabled selected>Choose document type</option>
+                    <option value="passport">Passport</option>
+                    <option value="idCard">ID Card</option>
+                    <option value="driverLicense">Driver's License</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group" id="otherField" style="display: none;">
+                <label for="otherDocument">Specify Other Document</label>
+                <input type="text" id="otherDocument" name="otherDocument" placeholder="Specify document type" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="kycDocument">Upload Document</label>
+                <input type="file" id="kycDocument" name="kycDocument" class="form-input" required>
+            </div>
+            <button type="button" class="btn-verify" onclick="submitKYC()">Submit</button>
+        </form>
+    </div>
+</div>
+
    <!-- Currency Selection Modal -->
 <div id="currencyModal" class="modal">
     <div class="modal-content">
@@ -365,141 +637,158 @@
             <div class="currency">
                 <input type="radio" id="currencyUSD" name="currency" value="USD">
                 <label for="currencyUSD">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/USDollar.svg" alt="USD">
+                    <img src="{{ asset('images/dollar.png') }}" alt="USD">
                     <span>USD</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyEUR" name="currency" value="EUR">
                 <label for="currencyEUR">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Euro_symbol.svg" alt="EUR">
+                    <img src="{{ asset('images/euro.png') }}" alt="EUR">
                     <span>EUR</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyGBP" name="currency" value="GBP">
                 <label for="currencyGBP">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Pound_Sterling_symbol.svg" alt="GBP">
+                    <img src="{{ asset('images/gbp.png') }}" alt="GBP">
                     <span>GBP</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyJPY" name="currency" value="JPY">
                 <label for="currencyJPY">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Yen_symbol.svg" alt="JPY">
+                    <img src="{{ asset('images/yen.png') }}" alt="JPY">
                     <span>JPY</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyAUD" name="currency" value="AUD">
                 <label for="currencyAUD">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Australian_Dollar_symbol.svg" alt="AUD">
+                    <img src="{{ asset('images/aud.png') }}" alt="AUD">
                     <span>AUD</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyCAD" name="currency" value="CAD">
                 <label for="currencyCAD">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Canadian_Dollar_symbol.svg" alt="CAD">
+                    <img src="{{ asset('images/canadian-dollar.png') }}" alt="CAD">
                     <span>CAD</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyCHF" name="currency" value="CHF">
                 <label for="currencyCHF">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Swiss_Franc_symbol.svg" alt="CHF">
+                    <img src="{{ asset('images/swiss-franc.png') }}" alt="CHF">
                     <span>CHF</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyCNY" name="currency" value="CNY">
                 <label for="currencyCNY">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/RMB_symbol.svg" alt="CNY">
+                    <img src="{{ asset('images/cny.png') }}" alt="CNY">
                     <span>CNY</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyINR" name="currency" value="INR">
                 <label for="currencyINR">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Indian_Rupee_symbol.svg" alt="INR">
+                    
+                    <img src="{{ asset('images/rupee-indian.png') }}" alt="INR">
                     <span>INR</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyBRL" name="currency" value="BRL">
                 <label for="currencyBRL">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Brazilian_real_symbol.svg" alt="BRL">
+                    <img src="{{ asset('images/brazilian-real.png') }}" alt="BRL">
                     <span>BRL</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyZAR" name="currency" value="ZAR">
                 <label for="currencyZAR">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/South_African_Rand_symbol.svg" alt="ZAR">
+                    <img src="{{ asset('images/rand.png') }}" alt="ZAR">
                     <span>ZAR</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyMXN" name="currency" value="MXN">
                 <label for="currencyMXN">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/MXN_symbol.svg" alt="MXN">
+                    <img src="{{ asset('images/mxn.png') }}" alt="MXN">
                     <span>MXN</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencySGD" name="currency" value="SGD">
                 <label for="currencySGD">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/SGD_symbol.svg" alt="SGD">
+                    <img src="{{ asset('images/sgd.png') }}" alt="SGD">
                     <span>SGD</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyHKD" name="currency" value="HKD">
                 <label for="currencyHKD">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/HKD_symbol.svg" alt="HKD">
+                    <img src="{{ asset('images/hkd.png') }}" alt="HKD">
                     <span>HKD</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyKRW" name="currency" value="KRW">
                 <label for="currencyKRW">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/KRW_symbol.svg" alt="KRW">
+                    <img src="{{ asset('images/krw.png') }}" alt="KRW">
                     <span>KRW</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyRUB" name="currency" value="RUB">
                 <label for="currencyRUB">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/RUB_symbol.svg" alt="RUB">
+                    <img src="{{ asset('images/rub.png') }}" alt="RUB">
                     <span>RUB</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyTRY" name="currency" value="TRY">
                 <label for="currencyTRY">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Turkish_Lira_symbol.svg" alt="TRY">
+                    <img src="{{ asset('images/try.png') }}" alt="TRY">
                     <span>TRY</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyIDR" name="currency" value="IDR">
                 <label for="currencyIDR">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Indonesian_Rupiah_symbol.svg" alt="IDR">
+                    <img src="{{ asset('images/idr.png') }}" alt="IDR">
                     <span>IDR</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyMYR" name="currency" value="MYR">
                 <label for="currencyMYR">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Malaysian_Ringgit_symbol.svg" alt="MYR">
+                    <img src="{{ asset('images/myr.png') }}" alt="MYR">
                     <span>MYR</span>
                 </label>
             </div>
             <div class="currency">
                 <input type="radio" id="currencyTHB" name="currency" value="THB">
                 <label for="currencyTHB">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Thai_Baht_symbol.svg" alt="THB">
+                    <img src="{{ asset('images/thb.png') }}" alt="THB">
                     <span>THB</span>
+                </label>
+            </div>
+
+            <div class="currency">
+                <input type="radio" id="currencyNGN" name="currency" value="NGN">
+                <label for="currencyNGN">
+                    <img src="{{ asset('images/naira.png') }}" alt="NGN">
+                    <span>NGN</span>
+                </label>
+            </div>
+
+            <div class="currency">
+                <input type="radio" id="currencyPULA" name="currency" value="PULA">
+                <label for="currencyPULA">
+                    <img src="{{ asset('images/pula.png') }}" alt="PULA">
+                    <span>PULA</span>
                 </label>
             </div>
             <!-- Add more currencies as needed -->
@@ -517,7 +806,7 @@
         <p>Plus 500 will now refresh.</p>
     </div>
 </div>
-
+{{-- 
 <script>
     function showModal(id) {
         document.querySelectorAll('.modal').forEach(modal => modal.style.display = "none");
@@ -549,7 +838,7 @@
             .then(data => {
                 if (data.success) {
                     setTimeout(() => {
-                        showModal("currencyModal");
+                        showModal("otpModal");
                     }, 1000);
                 } else {
                     alert("There was an error saving your selection. Please try again.");
@@ -594,6 +883,326 @@
             });
         });
     });
+</script> --}}
+
+<script>
+    function showModal(id) {
+        document.querySelectorAll('.modal').forEach(modal => modal.style.display = "none");
+        document.getElementById(id).style.display = "block";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Show the first modal on page load
+        showModal("firstModal");
+
+        // After 5 seconds, show the country selection modal
+        setTimeout(() => {
+            showModal("countryModal");
+        }, 5000);
+    });
+
+    // Country selection and save logic
+    document.querySelectorAll('input[name="country"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const formData = new FormData(document.getElementById('countryForm'));
+
+            fetch("{{ route('saveCountry') }}", {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show the OTP modal
+                    showModal("otpModal");
+                } else {
+                    alert("There was an error saving your selection. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        });
+    });
+
+    // OTP input and validation
+    document.getElementById('otpSubmit').addEventListener('click', function() {
+        const otp = document.getElementById('otpInput').value;
+
+        if (!otp) {
+            alert("Please enter the OTP.");
+            return;
+        }
+
+        // Simulate OTP verification
+        fetch("{{ route('verifyOTP') }}", {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify({ otp: otp })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Show the KYC modal
+                showModal("kycModal");
+            } else {
+                alert("Invalid OTP. Please try again.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    });
+
+    // KYC input and validation
+    document.getElementById('kycSubmit').addEventListener('click', function() {
+        const formData = new FormData(document.getElementById('kycForm'));
+
+        // Validate KYC fields (example: checking if they are filled)
+        if (!formData.get('kycField')) {  // Replace 'kycField' with your actual field name
+            alert("Please complete the KYC form.");
+            return;
+        }
+
+        fetch("{{ route('uploadKYC') }}", {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Show the Currency modal
+                showModal("currencyModal");
+            } else {
+                alert("There was an error saving your KYC details. Please try again.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    });
+
+    // Currency selection and save logic
+    document.querySelectorAll('input[name="currency"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const formData = new FormData(document.getElementById('currencyForm'));
+
+            fetch("{{ route('saveCurrency') }}", {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show the final modal
+                    showModal("finalModal");
+                    setTimeout(() => {
+                        document.getElementById("finalModal").style.display = "none";
+                        // Redirect to the home page
+                        window.location.href = "{{route('home') }}";
+                    }, 3000); // 3 seconds delay before redirect
+                } else {
+                    alert("There was an error saving your selection. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        });
+    });
 </script>
-{{-- 
-    @include('user.layouts.footer') --}}
+
+
+
+
+<style>
+    /* Modal styles */
+    .modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 9999;
+    }
+    
+    .modal-content {
+        background: #fff;
+        padding: 20px;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    
+    .modal-description {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    
+    label {
+        font-size: 0.9rem;
+        color: #444;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .form-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+    
+    .form-input:focus {
+        border-color: #007bff;
+    }
+    
+    .btn-verify {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .btn-verify:hover {
+        background-color: #0056b3;
+    }
+    </style>
+<style>
+    .site-footer {
+        background-color: #f8f9fa;
+        padding: 20px;
+        position: fixed;
+        display: flex;
+        width: 100%;
+        bottom: 0;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid #ddd;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        /* Spread items out */
+        align-items: center;
+        width: 100%;
+        /* Ensures full width */
+        max-width: 1200px;
+    }
+
+    .toggle-section,
+    .auto-trade-section {
+        display: flex;
+        align-items: center;
+    }
+
+    .toggle-section strong {
+        margin-left: 10px;
+    }
+
+    .auto-trade-section font {
+        margin-left: 5px;
+    }
+</style>
+
+<script>
+    // Toggle visibility of the 'other' document type field
+    function toggleOtherField() {
+        const documentType = document.getElementById('documentType').value;
+        const otherField = document.getElementById('otherField');
+        if (documentType === 'other') {
+            otherField.style.display = 'block';
+        } else {
+            otherField.style.display = 'none';
+        }
+    }
+</script>
+<!--End of Tawk.to Script-->
+<!-- START: Footer-->
+<footer class="site-footer">
+    {{-- <div class="footer-container">
+        <div class="toggle-section">
+            <div class="toggle"></div>
+        </div>
+        <!--<div class="auto-trade-section">-->
+        <!--    <font color="#000">Auto-Trade:</font>-->
+        <!--    <font color="green"> on</font>-->
+        <!--</div>-->
+    </div> --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</footer>
+
+<!-- END: Footer-->
+
+
+<!-- START: Template JS-->
+<script src="{{ asset('dist/vendors/jquery/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('dist/vendors/jquery-ui/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('dist/vendors/moment/moment.js') }}"></script>
+<script src="{{ asset('dist/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('dist/vendors/slimscroll/jquery.slimscroll.min.js') }}"></script>
+<script src="{{ asset('dist/vendors/flag-select/js/jquery.flagstrap.min.js') }}"></script>
+<!-- END: Template JS-->
+
+<!-- START: APP JS-->
+<script src="{{ asset('dist/js/app.js') }}"></script>
+<!-- END: APP JS-->
+
+<!-- START: Page Vendor JS-->
+<script src="{{ asset('dist/vendors/amcharts/core.js') }}"></script>
+<script src="{{ asset('dist/vendors/amcharts/charts.js') }}"></script>
+<script src="{{ asset('dist/vendors/amcharts/animated.js') }}"></script>
+<script src="{{ asset('dist/vendors/amcharts/amchartsdark.js') }}"></script>
+<script src="{{ asset('dist/vendors/amcharts/plugins/timeline.js') }}"></script>
+<script src="{{ asset('dist/vendors/amcharts/plugins/bullets.js') }}"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- START: Page Script JS-->
+<script src="{{ asset('dist/js/amcharts.script.js') }}"></script>
+<!-- END: Page Script JS-->
+
+
+</body>
+<!-- END: Body-->
+
+</html>

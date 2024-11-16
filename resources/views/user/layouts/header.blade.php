@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Plus500 | User Dashboard</title>
-    <link rel="shortcut icon" href="{{asset('dist/images/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{asset('dist/images/favicon.jpg')}}" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <!-- START: Template CSS-->
@@ -98,7 +98,7 @@
 <!-- Orientation Warning Overlay (for phone portrait view only) -->
 <div id="orientation-overlay">
   <div id="logo-container">
-    <img src="https://test.mlfunit.com/logo.png" alt="Your Logo"> <!-- Replace 'logo.png' with your logo path -->
+    <img src="{{asset('/logo.png')}}" alt="Your Logo"> <!-- Replace 'logo.png' with your logo path -->
   </div>
   <p>Please turn your device to landscape mode for the best experience.</p>
 </div>
@@ -393,9 +393,14 @@
                             <div class="dropdown-divider"></div>
 
                             <a href=""
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                class="dropdown-item px-2 text-danger align-self-center d-flex">
-                                <span class="icon-logout mr-2 h6  mb-0"></span>Sign Out</a>
+   onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+   class="dropdown-item px-2 text-danger align-self-center d-flex">
+   <span class="icon-logout mr-2 h6 mb-0"></span>Sign Out
+</a>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
 
 
                     </li>
@@ -437,7 +442,7 @@
         <li class="dropdown active"><a href="{{url('home')}}"><i class="fas fa-home"></i> BOARD</a></li>
         <li class="dropdown"><a href="{{url('orderbook')}}"><i class="fas fa-wallet"></i> ORDER BOOK</a></li>
         <li class="dropdown"><a href="{{url('market')}}"><i class="fas fa-shopping-basket"></i> MARKET</a></li>
-        <li class="dropdown"><a href="{{url('tradehistory')}}"><i class="fas fa-th"></i> PORTFOLIO</a></li>
+        <li class="dropdown"><a href="{{url('tradehistory')}}"><i class="fas fa-th"></i> HISTORY</a></li>
         <li class="dropdown"><a href="{{url('calculator')}}"><i class="fas fa-calculator"></i> CALC</a></li>
         <li class="dropdown"><a href="{{url('news')}}"><i class="fas fa-newspaper"></i> NEWS</a></li>
 

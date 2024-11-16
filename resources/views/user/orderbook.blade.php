@@ -18,7 +18,7 @@
         <!-- START: Card Data-->
 
 
-        <div class="col-12  col-lg-12 col-xl-12 mt-3">
+        {{-- <div class="col-12  col-lg-12 col-xl-12 mt-3">
             <div class="card">
                 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
@@ -49,9 +49,36 @@
         });
     </script>
 </div>
-<!-- TradingView Widget END -->
+<!-- TradingView Widget END --> --}}
 
-
+    <!-- TradingView Widget BEGIN -->
+                  <div class="tradingview-widget-container">
+                       <div id="tradingview_e705a"></div>
+                       <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                       <script type="text/javascript">
+                            new TradingView.widget({
+                                 "width": 1200,
+                                 "height": 610,
+                                 "symbol": "FX:EURUSD",
+                                 "interval": "1",
+                                 "timezone": "Europe/London",
+                                 "theme": "light",
+                                 "style": "1",
+                                 "locale": "en",
+                                 "toolbar_bg": "#f1f3f6",
+                                 "enable_publishing": false,
+                                 "hide_side_toolbar": false,
+                                 "allow_symbol_change": true,
+                                 "details": true,
+                                 "studies": [
+                                      "AwesomeOscillator@tv-basicstudies",
+                                      "MACD@tv-basicstudies"
+                                 ],
+                                 "container_id": "tradingview_e705a"
+                            });
+                       </script>
+                  </div>
+                  <!-- TradingView Widget END -->
                
 
 
