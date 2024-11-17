@@ -16,7 +16,7 @@ class RegisterController extends Controller
     |--------------------------------------------------------------------------
     |
     | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
+    | validation and creation. By default, this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
     */
@@ -63,10 +63,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        // Create the user instance
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        // Generate and save the verification code
+        $validToken = rand(1000, 9999);
+        $user->verification_code = $validToken;
+        $user->verification_expiry = now()->addMinutes(10);
+        $user->save();
+
+        return $user;
     }
 }

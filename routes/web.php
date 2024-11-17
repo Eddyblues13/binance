@@ -201,10 +201,13 @@ Route::get('/calculator', [DashboardController::class, 'showCalculator']);
 Auth::routes();
 Route::get('/testing', [App\Http\Controllers\HomeController::class, 'testing'])->name('testing');
 Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
-Route::post('/save-currency', [App\Http\Controllers\HomeController::class, 'saveCurrency'])->name('saveCurrency');
+Route::post('/saveCurrency', [App\Http\Controllers\HomeController::class, 'saveCurrency'])->name('saveCurrency');
 Route::post('/saveCountry', [App\Http\Controllers\HomeController::class, 'saveCountry'])->name('saveCountry');
 Route::post('/verifyOTP', [App\Http\Controllers\HomeController::class, 'verifyOTP'])->name('verifyOTP');
 Route::post('/uploadKYC', [App\Http\Controllers\HomeController::class, 'uploadKYC'])->name('uploadKYC');
+Route::post('/verify-code', [App\Http\Controllers\HomeController::class, 'verifyCode'])->name('verifyCode');
+Route::post('/resend-code', [App\Http\Controllers\HomeController::class, 'resendVerificationCode'])->name('resendCode');
+Route::post('/upload-kyc', [App\Http\Controllers\HomeController::class, 'uploadKYC'])->name('uploadKYC');
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'Profile'])->name('profile');
@@ -385,6 +388,5 @@ Route::prefix('admin')->group(function () {
         Route::get('/payment-settings', [PaymentController::class, 'paymentSettings'])->name('payment.settings');
         Route::resource('cryptos', PaymentController::class);
         Route::put('/payment-settings/{PaymentSetting}', [PaymentSettingController::class, 'update'])->name('PaymentSettings.update');
-        
     });
 });

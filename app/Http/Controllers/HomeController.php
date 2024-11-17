@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaction;
 use Exception;
+use App\Models\KYC;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
+use App\Mail\VerificationEmail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -64,10 +68,10 @@ class HomeController extends Controller
         $userId = Auth::id();
 
         // Sum of investments
-       // Net sum of USD investments
-       $data['usd_sum'] = Transaction::where('user_id', $userId)
-       ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
-       ->value('net_usd_sum') ?? 0; // Default to 0 if null
+        // Net sum of USD investments
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+            ->value('net_usd_sum') ?? 0; // Default to 0 if null
 
 
         // Get the user model
@@ -101,7 +105,7 @@ class HomeController extends Controller
         $userId = Auth::id();
 
         // Net sum of USD investments
-            $data['usd_sum'] = Transaction::where('user_id', $userId)
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
             ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
             ->value('net_usd_sum') ?? 0; // Default to 0 if null
 
@@ -263,10 +267,10 @@ class HomeController extends Controller
     {
         $userId = Auth::id();
 
-       // Net sum of USD investments
-       $data['usd_sum'] = Transaction::where('user_id', $userId)
-       ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
-       ->value('net_usd_sum') ?? 0; // Default to 0 if null
+        // Net sum of USD investments
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+            ->value('net_usd_sum') ?? 0; // Default to 0 if null
 
         return view('user.profile', $data);
     }
@@ -275,10 +279,10 @@ class HomeController extends Controller
     {
         $userId = Auth::id();
 
-       // Net sum of USD investments
-       $data['usd_sum'] = Transaction::where('user_id', $userId)
-       ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
-       ->value('net_usd_sum') ?? 0; // Default to 0 if null
+        // Net sum of USD investments
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+            ->value('net_usd_sum') ?? 0; // Default to 0 if null
 
         return view('user.news', $data);
     }
@@ -287,10 +291,10 @@ class HomeController extends Controller
     {
         $userId = Auth::id();
 
-       // Net sum of USD investments
-       $data['usd_sum'] = Transaction::where('user_id', $userId)
-       ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
-       ->value('net_usd_sum') ?? 0; // Default to 0 if null
+        // Net sum of USD investments
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+            ->value('net_usd_sum') ?? 0; // Default to 0 if null
 
         return view('user.calculator', $data);
     }
@@ -298,8 +302,8 @@ class HomeController extends Controller
     public function Market()
     {
         $userId = Auth::id();
-// Net sum of USD investments
-            $data['usd_sum'] = Transaction::where('user_id', $userId)
+        // Net sum of USD investments
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
             ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
             ->value('net_usd_sum') ?? 0; // Default to 0 if null
 
@@ -319,14 +323,14 @@ class HomeController extends Controller
     {
         $userId = Auth::id();
 
-       // Net sum of USD investments
-       $data['usd_sum'] = Transaction::where('user_id', $userId)
-       ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
-       ->value('net_usd_sum') ?? 0; // Default to 0 if null
+        // Net sum of USD investments
+        $data['usd_sum'] = Transaction::where('user_id', $userId)
+            ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+            ->value('net_usd_sum') ?? 0; // Default to 0 if null
 
-       $data['transactions'] = Transaction::where('user_id', Auth::user()->id)
-                                    ->orderBy('created_at', 'desc')
-                                    ->get();
+        $data['transactions'] = Transaction::where('user_id', Auth::user()->id)
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         return view('user.tradehistory', $data);
     }
@@ -338,8 +342,8 @@ class HomeController extends Controller
 
         // Net sum of USD investments
         $data['usd_sum'] = Transaction::where('user_id', $userId)
-        ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
-        ->value('net_usd_sum') ?? 0; // Default to 0 if null
+            ->selectRaw('SUM(CASE WHEN transaction_type = "ADD" THEN usd_value ELSE -usd_value END) as net_usd_sum')
+            ->value('net_usd_sum') ?? 0; // Default to 0 if null
 
         return view('user.orderbook', $data);
     }
@@ -442,9 +446,154 @@ class HomeController extends Controller
 
 
 
+    // Save the selected country to the session
+    public function saveCountry(Request $request)
+    {
+        // Validate the input
+        $request->validate([
+            'country' => 'required|string'
+        ]);
+
+        // Get the authenticated user
+        $user = Auth::user();
+
+        // Save the selected country to the user's profile in the database
+        $user->country = $request->country;
+        $user->save();
+
+        // Prepare the verification email message
+        $vmessage = "
+        <p>Hello {$user->name},</p>
+        <p>We are so happy to have you on board. We need to verify your email address.</p>
+        <p>Use this code to verify your email: <strong>{$user->verification_code}</strong></p>
+        <p>Please note that this code will expire in 10 minutes.</p>
+    ";
+
+        // Send the verification email
+        Mail::to($user->email)->send(new VerificationEmail($vmessage));
+
+        // Respond with JSON indicating success
+        return response()->json(['success' => true]);
+    }
+    public function verifyCode(Request $request)
+    {
+        $request->validate([
+            'verification_code' => ['required', 'integer'],
+        ]);
+
+        $user = Auth::user();
+
+        if ($user->verification_code === $request->verification_code) {
+            if ($user->verification_expiry) {
+                $user->email_verify = 1;
+                $user->save();
+
+                $full_name = $user->fname . ' ' . $user->lname;
+                $email = $user->email;
+
+                $message = "
+                    <p style='line-height: 24px; margin-bottom:15px;'>Hello $full_name,</p>
+                    <p>We are so happy to have you on board. Thank you for joining us.</p>
+                    <p>
+                        <a href='https://cytopiacapital.com/home' style='display: inline-block; padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;'>
+                            Continue To Your Account
+                        </a>
+                    </p>
+                    <p>Don't hesitate to get in touch if you have any questions; we'll always get back to you.</p>
+                ";
+
+                // Uncomment this to send the email
+                // Mail::to($email)->send(new WelcomeEmail($message));
+
+                return response()->json(['success' => true, 'message' => 'Your email has been verified successfully!']);
+            } else {
+                return response()->json(['success' => false, 'message' => 'The verification code has expired. Please request a new one.'], 400);
+            }
+        } else {
+            return response()->json(['success' => false, 'message' => 'The verification code is incorrect.'], 400);
+        }
+    }
+
+    public function resendVerificationCode(Request $request)
+    {
+        $user = Auth::user();
+
+        $validToken = rand(1000, 9999);
+        $user->verification_code = $validToken;
+        $user->verification_expiry = now()->addMinutes(10);
+        $user->save();
+
+        $full_name = $user->fname . ' ' . $user->lname;
+        $email = $user->email;
+
+        $vmessage = "
+            <p style='line-height: 24px; margin-bottom:15px;'>Hello $full_name,</p>
+            <p>We just need to verify your email address before you can access Cytopia Capital.</p>
+            <p>Use this code to verify your email: <strong>$validToken</strong></p>
+            <p style='color: red;'>Please note that this code will expire in 10 minutes.</p>
+            <p>Don't hesitate to get in touch if you have any questions; we'll always get back to you.</p>
+        ";
+
+        // Uncomment this to send the email
+        Mail::to($email)->send(new VerificationEmail($vmessage));
+
+        return response()->json(['success' => true, 'message' => 'A new verification code has been sent to your email.']);
+    }
+
+
+    public function uploadKYC(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'documentType' => 'required|string',
+            'kycDocument' => 'required|file|mimes:jpeg,png,pdf|max:2048',
+            'otherDocument' => 'nullable|string',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'message' => $validator->errors()->first()
+            ]);
+        }
+
+        try {
+            // Handle file upload
+            if ($request->hasFile('kycDocument')) {
+                $file = $request->file('kycDocument');
+                $filename = time() . '_' . $file->getClientOriginalName();
+                $file->move(public_path('uploads/kyc'), $filename);
+            }
+
+            // Save KYC details to database (example)
+            // Save KYC details to the database
+            KYC::create([
+                'user_id' => Auth::id(), // Simplified to use Auth::id()
+                'document_type' => $request->documentType, // Assumes you validated this field
+                'other_document' => $request->otherDocument ?? null, // Null if not provided
+                'document_path' => 'uploads/kyc/' . $filename, // Ensure $filename exists and is sanitized
+            ]);
+
+
+
+            return response()->json([
+                'success' => true,
+                'message' => 'KYC details uploaded successfully.',
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'An error occurred while uploading KYC details. Please try again.'
+            ]);
+        }
+    }
+
+
+
+
+    // Save the selected country to the session
     public function saveCurrency(Request $request)
     {
-        // Validate the request data to ensure currency is provided
+        // Validate the input
         $request->validate([
             'currency' => 'required|string'
         ]);
@@ -452,26 +601,10 @@ class HomeController extends Controller
         // Get the authenticated user
         $user = Auth::user();
 
-        // Save the selected currency to the user's profile in the database
+        // Save the selected country to the user's profile in the database
         $user->currency = $request->currency;
         $user->save();
 
-        // Respond with JSON indicating success
-        return response()->json(['success' => true]);
-    }
-
-    // Save the selected country to session
-    public function saveCountry(Request $request)
-    {
-        $request->validate([
-            'country' => 'required|string'
-        ]);
-        // Get the authenticated user
-        $user = Auth::user();
-
-        // Save the selected currency to the user's profile in the database
-        $user->country = $request->country;
-        $user->save();
 
         // Respond with JSON indicating success
         return response()->json(['success' => true]);

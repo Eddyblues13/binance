@@ -21,6 +21,14 @@ class UserMiddleware
             return redirect("login");
         }
 
+        if (Auth::user()->email_verify != 1) {
+            return redirect()->route('welcome');
+        }
+
+        if (Auth::user()->user_authentication != 1) {
+            return redirect()->route('welcome');
+        }
+
         // Check if the user status is '0'
         if (Auth::user()->user_status == '0') {
             return redirect('ver-account');
